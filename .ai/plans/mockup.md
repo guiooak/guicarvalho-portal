@@ -140,13 +140,15 @@ Lightweight, functional screens to validate content workflows, not polished desi
 
 ## Visual direction
 
-Before building every page, settle the look:
+The agreed brief lives in [visual-direction.md](visual-direction.md): a clean white base, a green accent, automatic dark mode, no mascot, and subtle fun from floating illustrated objects, hand-drawn touches and CSS micro-interactions.
+
+Before building every page, settle the details within that brief:
 
 1. Build `styleguide.html` with the token scales (color, type, spacing, radius, shadow) and base components.
-2. Produce **two visual directions** applied to the same two screens (Home and Post header), differing in typography pairing, color palette and density.
+2. Produce **two variations** applied to the same two screens (Home and Post header), differing in typography pairing, green shade and density.
 3. The user picks one (or a mix); its values go into `tokens.css` and the other is deleted.
 
-Decisions to make during this step: heading and body fonts (self-hosted), accent color, reading width (target ~65ch), image treatment, logo/wordmark, favicon.
+Decisions to make during this step are the open items listed in [visual-direction.md](visual-direction.md), plus the reading width (target ~65ch).
 
 ## Quality bar
 
