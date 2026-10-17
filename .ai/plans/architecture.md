@@ -151,11 +151,12 @@ An idempotent rake task (`wordpress:import`) that:
 
 ## Suggested phases
 
-1. **Foundation**: `rails new`, base CSS with Open Props, layout, route i18n, minimal Kamal deploy.
-2. **Blog**: translatable models, public pages, SEO (meta tags, hreflang, sitemap, RSS).
-3. **Admin**: Google sign-in, CRUD for posts, categories, tags, apps and pages with ActionText.
-4. **Migration**: WordPress import, redirects and URL verification.
-5. **Apps and About**: showcase and about page.
-6. **Comments**: model, moderation and notifications.
-7. **Newsletter**: sign-up, double opt-in, SendGrid sending and webhook.
-8. **DNS switch**: point `guicarvalho.com.br` to the new portal and monitor Search Console.
+1. **Mockup**: high-fidelity static prototype in plain HTML and CSS that settles the design, information architecture and content structure. See [mockup.md](mockup.md).
+2. **Foundation**: `rails new`, the approved mockup's CSS and layout ported in, route i18n, minimal Kamal deploy.
+3. **Blog**: translatable models, public pages, SEO (meta tags, hreflang, sitemap, RSS).
+4. **Admin**: Google sign-in, CRUD for posts, categories, tags, apps and pages with ActionText.
+5. **Migration**: WordPress import, redirects and URL verification.
+6. **Apps and About**: showcase and about page.
+7. **Comments**: model, moderation and notifications.
+8. **Newsletter**: sign-up, double opt-in, SendGrid sending and webhook.
+9. **DNS switch**: point `guicarvalho.com.br` to the new portal and monitor Search Console.
