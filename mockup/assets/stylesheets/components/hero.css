@@ -1,0 +1,58 @@
+/* Page-opening block: big title, lead and actions, framed by floating objects. */
+.hero {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-md);
+  padding-block: clamp(var(--size-9), 12vw, var(--size-12));
+  text-align: center;
+}
+
+.hero__title {
+  max-width: 16ch;
+  font-size: var(--text-3xl);
+}
+
+.hero__lead {
+  max-width: 44ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.55;
+}
+
+.hero__actions {
+  justify-content: center;
+}
+
+/* Smaller variant for listing pages (Blog, Apps). */
+.hero--compact {
+  padding-block: clamp(var(--size-8), 8vw, var(--size-10));
+
+  & .hero__title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/*
+ * Narrow screens: the title fills the width, so floating objects would sit
+ * on top of the text. Show four of them in a row above the title instead.
+ */
+@media (max-width: 40rem) {
+  .hero {
+    padding-block-start: calc(var(--size-9) + 3rem);
+  }
+
+  .hero .float-object {
+    inset-block-start: var(--space-lg);
+    width: calc(var(--s, 56px) * 0.75);
+    height: calc(var(--s, 56px) * 0.75);
+  }
+
+  .hero .float-object:nth-of-type(1) { inset-inline-start: 6%; }
+  .hero .float-object:nth-of-type(2) { inset-inline-start: 32%; }
+  .hero .float-object:nth-of-type(3) { inset-inline-start: 58%; }
+  .hero .float-object:nth-of-type(4) { inset-inline-start: 82%; }
+
+  .hero .float-object:nth-of-type(n + 5) {
+    display: none;
+  }
+}

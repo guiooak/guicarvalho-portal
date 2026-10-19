@@ -49,6 +49,11 @@
 }
 
 .post-card__excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   line-height: 1.55;

@@ -32,5 +32,14 @@
 @import url("components/post-body.css") layer(components);
 @import url("components/scribble.css") layer(components);
 @import url("components/floating-objects.css") layer(components);
+@import url("components/hero.css") layer(components);
+@import url("components/section-heading.css") layer(components);
+@import url("components/category-nav.css") layer(components);
+@import url("components/pagination.css") layer(components);
+@import url("components/post-header.css") layer(components);
+@import url("components/avatar.css") layer(components);
+@import url("components/author-box.css") layer(components);
+@import url("components/comments.css") layer(components);
+@import url("components/app-card.css") layer(components);
 
 @import url("utilities.css") layer(utilities);

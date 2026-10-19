@@ -57,6 +57,17 @@
   <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
   <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="icon-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7Z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.8-3.8h-4v3.1A12 12 0 0 0 12 24Z"/><path fill="#FBBC05" d="M5.2 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.2 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8Z"/></symbol>
+  <symbol id="obj-envelope" viewBox="0 0 64 64">
+    <rect x="7" y="15" width="50" height="36" rx="6" fill="var(--f)"/>
+    <path d="M10 19 32 35 54 19" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="32" cy="36" r="4.5" fill="var(--f2)"/>
+  </symbol>
+  <symbol id="obj-chat" viewBox="0 0 64 64">
+    <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
+    <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>
+  </symbol>
   <symbol id="obj-laptop" viewBox="0 0 64 64">
     <rect x="12" y="13" width="40" height="29" rx="4" fill="var(--f)"/>
     <rect x="17" y="18" width="30" height="19" rx="2" fill="var(--f2)"/>

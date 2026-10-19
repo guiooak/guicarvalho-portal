@@ -1,0 +1,29 @@
+/* Round avatar: a photo, or initials on a soft sage background. */
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--avatar-size, 2.5rem);
+  height: var(--avatar-size, 2.5rem);
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-soft-text);
+  font-size: calc(var(--avatar-size, 2.5rem) * 0.4);
+  font-weight: var(--weight-black);
+  line-height: 1;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatar--sm {
+  --avatar-size: 2rem;
+}
+
+.avatar--lg {
+  --avatar-size: 4.5rem;
+}

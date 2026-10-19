@@ -44,6 +44,55 @@
     font-weight: var(--weight-bold);
   }
 
+  /*
+   * CSS-only state switcher: radios inside .mockup-states choose which
+   * [data-state] blocks are visible in the nearest .mockup-stateful.
+   */
+  .mockup-states {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3xs);
+    width: fit-content;
+    padding: var(--space-3xs);
+    border: 2px dashed #d4a017;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-xs);
+
+    & > span {
+      padding-inline: 0.6em;
+      font-weight: var(--weight-black);
+      color: light-dark(#5c4708, #f3e2a9);
+    }
+
+    & label {
+      padding: 0.35em 0.9em;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      font-weight: var(--weight-bold);
+    }
+
+    & input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    & label:has(input:checked) {
+      background: #d4a017;
+      color: #1a1400;
+    }
+
+    & label:has(input:focus-visible) {
+      outline: var(--focus-ring);
+    }
+  }
+
+  .mockup-stateful:has(input[value="signed-out"]:checked) [data-state]:not([data-state~="signed-out"]),
+  .mockup-stateful:has(input[value="signed-in"]:checked) [data-state]:not([data-state~="signed-in"]),
+  .mockup-stateful:has(input[value="empty"]:checked) [data-state]:not([data-state~="empty"]) {
+    display: none;
+  }
+
   :root[data-show-notes] [data-notes-toggle] {
     background: #d4a017;
     color: #1a1400;

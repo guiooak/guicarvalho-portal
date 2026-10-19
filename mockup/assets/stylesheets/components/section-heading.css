@@ -1,0 +1,37 @@
+/* Section title with an optional "see all" link aligned to the right. */
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-md);
+  margin-block-end: var(--space-lg);
+
+  & h2 {
+    font-size: var(--text-xl);
+  }
+
+  & p {
+    flex-basis: 100%;
+    color: var(--color-text-muted);
+  }
+}
+
+.section-heading__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+
+  & svg {
+    width: 1.1em;
+    height: 1.1em;
+    transition: translate var(--duration-base) var(--ease-bounce);
+  }
+
+  &:hover svg {
+    translate: 4px 0;
+  }
+}

@@ -1,0 +1,35 @@
+/* Showcase item for an app: icon, name, tagline and links. */
+.app-card {
+  display: grid;
+  gap: var(--space-xs);
+  align-content: start;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.app-card__icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+
+  & svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+.app-card__name {
+  font-size: var(--text-md);
+  letter-spacing: 0;
+}
+
+.app-card__tagline {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
