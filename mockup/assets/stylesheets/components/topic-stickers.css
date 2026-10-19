@@ -9,10 +9,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-md) var(--space-sm);
-  padding: var(--space-xl) var(--space-lg);
-  border: 2px dashed var(--color-border-input);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg);
+  padding-block: var(--space-lg);
 }
 
 /* Post-it beside the section title explaining the stickers. */
@@ -118,10 +115,6 @@
 }
 
 @media (max-width: 40rem) {
-  .topic-board {
-    padding: var(--space-lg) var(--space-sm);
-  }
-
   .topic-board__note {
     margin-inline-start: 0;
   }
