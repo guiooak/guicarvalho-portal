@@ -21,13 +21,6 @@
   align-items: center;
   gap: var(--space-sm);
   width: min(100%, 42rem);
-
-  & .sticker {
-    --sticker-size: 4rem;
-
-    position: absolute;
-    inset-inline-start: -5.5rem;
-  }
 }
 
 .search-line__input {
@@ -126,10 +119,4 @@ mark {
   border-radius: 3px;
   background: var(--note-bg);
   color: var(--note-fg);
-}
-
-@media (max-width: 52rem) {
-  .search-line .sticker {
-    display: none;
-  }
 }

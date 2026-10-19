@@ -18,10 +18,8 @@
       <section class="container search-hero" aria-labelledby="search-title">
         <h1 id="search-title">What are you looking for?</h1>
         <form class="search-line" role="search" action="#" onsubmit="return false">
-          <span class="sticker" style="--r:-10deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
           <label class="visually-hidden" for="q">Search the blog</label>
-          <input class="search-line__input" id="q" type="search" placeholder="Write here…" value="language" data-state="results">
-          <input class="search-line__input" type="search" placeholder="Write here…" value="diving on mars" aria-label="Search the blog" data-state="no-results">
+          <input class="search-line__input" id="q" type="search" name="q" placeholder="Write here…" value="language">
           <button class="search-line__go" type="submit" aria-label="Search"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
         </form>
       </section>
@@ -39,6 +37,7 @@
       <section class="container search-empty" data-state="no-results" aria-label="No results">
         <span class="sticker" style="--sticker-size: 6rem; --r: 8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
         <div class="sticky-note" style="--r:2deg">Nothing pinned here about “diving on mars”. Try another word, or browse the Portuguese blog, where most posts live.</div>
+        <aside class="mockup-note">In this state, imagine the search was for “diving on mars”: the field would show the searched term.</aside>
         <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="button button--secondary" href="../br/blog.html" hreflang="pt-BR">Portuguese blog →</a></div>
       </section>
 

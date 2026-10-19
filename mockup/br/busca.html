@@ -18,10 +18,8 @@
       <section class="container search-hero" aria-labelledby="search-title">
         <h1 id="search-title">O que você está procurando?</h1>
         <form class="search-line" role="search" action="#" onsubmit="return false">
-          <span class="sticker" style="--r:-10deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
           <label class="visually-hidden" for="q">Buscar no blog</label>
-          <input class="search-line__input" id="q" type="search" placeholder="Escreva aqui…" value="vida" data-state="results">
-          <input class="search-line__input" type="search" placeholder="Escreva aqui…" value="mergulho em marte" aria-label="Buscar no blog" data-state="no-results">
+          <input class="search-line__input" id="q" type="search" name="q" placeholder="Escreva aqui…" value="vida">
           <button class="search-line__go" type="submit" aria-label="Buscar"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
         </form>
       </section>
@@ -42,6 +40,7 @@
       <section class="container search-empty" data-state="no-results" aria-label="Nenhum resultado">
         <span class="sticker" style="--sticker-size: 6rem; --r: 8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
         <div class="sticky-note" style="--r:2deg">Nada colado aqui sobre “mergulho em marte”. Tenta outra palavra, ou puxa um destes adesivos:</div>
+        <aside class="mockup-note">Neste estado, imagine que a busca foi por “mergulho em marte”: o campo mostraria o termo buscado.</aside>
         <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="topic-sticker" href="../br/viva/" style="--r:-4deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Viva</a><a class="topic-sticker topic-sticker--paper" href="../br/coaching/" style="--r:3deg"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Coaching</a><a class="topic-sticker topic-sticker--note" href="../br/homenagens/" style="--r:-2deg"><svg aria-hidden="true"><use href="#obj-note"/></svg>Homenagens</a><a class="topic-sticker topic-sticker--sage" href="../br/casos-de-sucesso/" style="--r:5deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Casos de Sucesso</a><a class="topic-sticker" href="../br/inspiracao/" style="--r:-3deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inspiração</a></div>
       </section>
 
