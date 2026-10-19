@@ -172,7 +172,7 @@ Decisions to make during this step are the open items listed in [visual-directio
 
 Each milestone ends with a review by the user before the next one starts.
 
-**Status (2026-10-19)**: milestones 1–2 done. In milestone 3, the first card-grid version of Home, Blog and Post was rejected as too plain; after prototyping five layout concepts in `mockup/explorations/`, the pages were rebuilt with the chosen "Caderno" layout (see [visual-direction.md](visual-direction.md)). Apps is done with the real apps; About is next.
+**Status (2026-10-19)**: milestones 1–2 done. In milestone 3, the first card-grid version of Home, Blog and Post was rejected as too plain; after prototyping five layout concepts in `mockup/explorations/`, the pages were rebuilt with the chosen "Caderno" layout (see [visual-direction.md](visual-direction.md)). Apps and About are done; the English versions are next.
 
 ## Handover to phase 2
 

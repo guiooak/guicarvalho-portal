@@ -80,6 +80,18 @@
     <circle cx="14" cy="27" r="2.2" fill="var(--f2)"/><circle cx="21" cy="27" r="2.2" fill="var(--f2)"/>
     <path d="M14 38h28M14 46h18" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
   </symbol>
+  <symbol id="obj-mountain" viewBox="0 0 64 64">
+    <circle cx="49" cy="15" r="6" fill="var(--f2)"/>
+    <path d="M4 52 23 20l10 15 8-11 19 28Z" fill="var(--f)"/>
+    <path d="M23 20l-5 8.5 5-2 5 3Z" fill="var(--f2)"/>
+    <path d="M10 56h44" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-bike" viewBox="0 0 64 64">
+    <circle cx="16" cy="42" r="10" stroke="var(--f)" stroke-width="5" fill="none"/>
+    <circle cx="48" cy="42" r="10" stroke="var(--f)" stroke-width="5" fill="none"/>
+    <path d="M16 42 27 25h15l6 17M27 25l9 17h12M24 20h8M42 25l-2-6h5" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="36" cy="42" r="3" fill="var(--f2)"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>

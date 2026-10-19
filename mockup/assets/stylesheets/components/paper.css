@@ -32,4 +32,8 @@
   & .section-heading__link {
     margin-inline-start: auto;
   }
+
+  & h1 + p {
+    margin-block-start: 0.5rem;
+  }
 }
