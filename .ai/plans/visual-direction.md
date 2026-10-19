@@ -136,7 +136,10 @@ Each post uses its own photo as the cover, shown as is, with no color treatment.
 - **Shape**: 16:9 frame with the same rounded corners as cards (16 px), cropped with `object-fit: cover`. An optional focal point per post (`object-position`) avoids bad crops.
 - **Use**: blog listing cards, the post header and the social sharing image (Open Graph, 1200×630).
 - **Accessibility and performance**: alt text for every cover, responsive sizes (`srcset`), lazy loading below the fold.
-- **Open item**: what to show when a new post has no photo.
+- **Fallback when a post has no photo: an automatic typographic cover.** The post title in Nunito Sans 800 over a sage background, with the category's flat object in the top-right corner.
+  - Light theme: background sage `600`, title white. Dark theme: background sage `800`, title sage `50`.
+  - The object uses the flat illustration rules with lighter tones so it reads on the sage background.
+  - Generated from the post data (title and category), so it needs no manual work. The same design, rendered at 1200×630, is the social sharing image for these posts.
 
 ### Home page
 
@@ -151,4 +154,4 @@ Each post uses its own photo as the cover, shown as is, with no color treatment.
 - [x] Illustration style: flat, drawn in-house in sage tones.
 - [x] Logo and favicon: acorn with a leaf, mixed-weight lowercase lockup.
 - [x] Post covers: original photos.
-- [ ] Cover fallback for posts without a photo.
+- [x] Cover fallback: automatic typographic cover.
