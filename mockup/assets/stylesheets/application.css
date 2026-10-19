@@ -47,5 +47,6 @@
 @import url("components/sticker.css") layer(components);
 @import url("components/desk.css") layer(components);
 @import url("components/featured-entry.css") layer(components);
+@import url("components/topic-stickers.css") layer(components);
 
 @import url("utilities.css") layer(utilities);

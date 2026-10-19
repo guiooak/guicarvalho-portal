@@ -1,0 +1,136 @@
+/*
+ * Topics as a sheet of stickers: each category is a tilted sticker with its
+ * illustration, sized by how many posts it has, that "peels up" on hover.
+ */
+.topic-board {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md) var(--space-sm);
+  padding: var(--space-xl) var(--space-lg);
+  border: 2px dashed var(--color-border-input);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+/* Post-it beside the section title explaining the stickers. */
+.topic-board__note {
+  width: min(17rem, 100%);
+  margin-inline-start: auto;
+  padding: 0.8rem 1rem 1.2rem;
+  font-size: var(--text-sm);
+}
+
+.topic-sticker {
+  --sticker-bg: var(--color-accent-soft);
+  --sticker-fg: var(--color-accent-soft-text);
+  --f: var(--illo-main);
+  --f2: var(--illo-soft);
+  --dt: var(--illo-detail);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.45em 1.1em 0.45em 0.5em;
+  border-radius: var(--radius-pill);
+  background: var(--sticker-bg);
+  outline: 4px solid var(--color-bg);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.12);
+  color: var(--sticker-fg);
+  font-size: var(--topic-size, var(--text-sm));
+  font-weight: var(--weight-black);
+  line-height: 1.1;
+  text-decoration: none;
+  rotate: var(--r, 0deg);
+  transition:
+    rotate var(--duration-base) var(--ease-bounce),
+    scale var(--duration-base) var(--ease-bounce),
+    box-shadow var(--duration-base) var(--ease-standard);
+
+  & svg {
+    width: 2.1em;
+    height: 2.1em;
+    flex: none;
+  }
+
+  &:hover {
+    z-index: 1;
+    color: var(--sticker-fg);
+    rotate: 0deg;
+    scale: 1.1;
+    box-shadow: 0 12px 24px rgb(0 0 0 / 0.18);
+  }
+}
+
+/* Size follows how much I write about the topic. */
+.topic-sticker--lg {
+  --topic-size: var(--text-lg);
+}
+
+.topic-sticker--md {
+  --topic-size: var(--text-md);
+}
+
+/* Color variants so the sheet does not look uniform. */
+.topic-sticker--paper {
+  --sticker-bg: var(--photo-frame);
+  --sticker-fg: var(--gray-900);
+  --f: var(--sage-600);
+  --f2: var(--sage-200);
+  --dt: var(--sage-800);
+}
+
+.topic-sticker--note {
+  --sticker-bg: var(--note-bg);
+  --sticker-fg: var(--note-fg);
+  --f: var(--sage-600);
+  --f2: var(--sage-200);
+  --dt: var(--sage-800);
+}
+
+.topic-sticker--sage {
+  --sticker-bg: var(--sage-600);
+  --sticker-fg: #ffffff;
+  --f: var(--sage-200);
+  --f2: var(--sage-700);
+  --dt: var(--sage-50);
+}
+
+/* Post count, as a small round badge stuck on the corner. */
+.topic-sticker__count {
+  position: absolute;
+  inset-block-start: -0.7em;
+  inset-inline-end: -0.5em;
+  display: grid;
+  place-items: center;
+  min-width: 1.9em;
+  height: 1.9em;
+  padding-inline: 0.3em;
+  border-radius: var(--radius-pill);
+  background: var(--color-heading);
+  color: var(--color-bg);
+  font-size: 0.6em;
+  font-weight: var(--weight-black);
+  rotate: 12deg;
+}
+
+@media (max-width: 40rem) {
+  .topic-board {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .topic-board__note {
+    margin-inline-start: 0;
+  }
+
+  .topic-sticker--lg {
+    --topic-size: var(--text-md);
+  }
+
+  .topic-sticker--md {
+    --topic-size: var(--text-base);
+  }
+}
