@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="gui carvalho">
+  <style>
+    .cap { fill: #2d472e; }
+    .stem { stroke: #2d472e; }
+    .nut { fill: #527752; }
+    @media (prefers-color-scheme: dark) {
+      .cap { fill: #ddeddd; }
+      .stem { stroke: #ddeddd; }
+      .nut { fill: #a5c5a5; }
+    }
+  </style>
+  <path class="stem" d="M32 13V6c0-1.5 1-2.5 2.5-2.5" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path class="nut" d="M35 8c6-6 14-6 18-3-3 6-10 9-18 3Z"/>
+  <path class="cap" d="M9 27c0-9 11-14 23-14s23 5 23 14c0 2.2-1.8 4-4 4H13c-2.2 0-4-1.8-4-4Z"/>
+  <path class="nut" d="M13 33h38c0 14-8 25-19 25S13 47 13 33Z"/>
+</svg>

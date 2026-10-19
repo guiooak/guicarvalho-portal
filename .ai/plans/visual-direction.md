@@ -47,13 +47,34 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
 ### Color and theme
 
 - **Background**: pure white in the light theme.
-- **Accent**: green. The exact shade is chosen in the style guide and must pass WCAG AA contrast for text and buttons in both themes.
+- **Accent: sage green**, a calm, slightly gray, natural green. Scale (sRGB approximations of `oklch(L 0.07 145)`, chroma tapered at the ends):
+
+  | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 |
+  |---|---|---|---|---|---|---|---|---|
+  | `#eef9ee` | `#ddeddd` | `#c4dcc4` | `#a5c5a5` | `#85aa85` | `#6c926c` | `#527752` | `#3e5f3f` | `#2d472e` |
+
+  - Light theme: accent `600` (`#527752`) for links and buttons (contrast 5.1:1 on white), `50` for soft highlights and tags, `800` for text on soft green.
+  - Dark theme: accent `300` (`#a5c5a5`) on `#0f1311` (contrast 9.9:1), with `#1f2d1f` for soft highlights.
 - **Dark mode**: automatic via `prefers-color-scheme`, with a manual toggle that writes `data-theme` on `<html>`. Every color is a semantic token with light and dark values.
 
 ### Shape and type
 
 - Rounded language throughout: pill buttons, round icon buttons, rounded tags, generously rounded cards and images.
-- Clean sans-serif, with large headings in a medium weight. Specific typefaces are chosen in the style guide and self-hosted.
+- **Typeface: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)**, a single family for everything (navigation, headings, article body, buttons, UI), self-hosted.
+  - Chosen for comfortable long-form reading while keeping the friendly tone of Nunito.
+  - It covers every scenario without a second family: real weights from 200 to 1000, true italics, full Portuguese accents and an OFL license.
+  - Fonts proposed for the portal must meet these same requirements; display-only families (single weight or no italics) are ruled out.
+
+### Logo
+
+- **Symbol: an acorn with a small leaf on its stem.** "Carvalho" means oak in Portuguese, so the oak's fruit is a playful nod to the surname without being a mascot.
+  - Two-tone: dark sage cap and stem (`800` in light, `100` in dark), sage nut and leaf (`600` in light, `300` in dark).
+  - Source: [`mockup/assets/images/brand/symbol.svg`](../../mockup/assets/images/brand/symbol.svg).
+- **Favicon**: a version of the same symbol drawn for 16–32 px, with a thicker stem, a chunkier leaf and a more compact body, so the leaf stays visible at small sizes. It is used only at small sizes.
+  - Source: [`mockup/assets/images/brand/favicon.svg`](../../mockup/assets/images/brand/favicon.svg).
+  - Both SVGs switch to their dark colors with `prefers-color-scheme`.
+- **Lockup: horizontal, mixed weight.** Symbol to the left of the name, all lowercase, written as one word: **gui** in Nunito Sans 800 and carvalho in Nunito Sans 400, tight letter-spacing (`-0.02em`), symbol about 1.45× the text size.
+  - The lockup is built in HTML/CSS (symbol SVG + live text) rather than a text-in-SVG file, so it always uses the self-hosted font and can be translated or scaled freely.
 
 ### Home page
 
@@ -62,8 +83,9 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
 
 ## Open items for the style guide
 
-- [ ] Typefaces for headings and body.
-- [ ] Exact green shade(s) and the neutral scale, for light and dark.
+- [x] Typeface: Nunito Sans.
+- [x] Green: sage.
+- [ ] Neutral scale for light and dark.
 - [ ] Illustration style for the floating objects (3D, flat or hand-drawn) and their source (placeholders or AI-generated for the mockup, commissioned later if needed).
-- [ ] Wordmark/logo and favicon.
+- [x] Logo and favicon: acorn with a leaf, mixed-weight lowercase lockup.
 - [ ] Cover image style for blog posts.
