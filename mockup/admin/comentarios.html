@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Comentários · Admin · gui carvalho</title>
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body>
+  <div class="admin">
+    <aside class="admin-sidebar">
+      <a class="brand" href="index.html" style="--brand-size: 1.1rem"><svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg><span><span class="brand__first">gui</span><span class="brand__last">admin</span></span></a>
+      <nav class="admin-nav illo" aria-label="Admin"><a href="index.html"><svg aria-hidden="true"><use href="#obj-window"/></svg>Painel</a><a href="posts.html"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Posts</a><a href="comentarios.html" aria-current="page"><svg aria-hidden="true"><use href="#obj-chat"/></svg>Comentários<span class="admin-nav__count">2</span></a><a href="inscritos.html"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inscritos</a><a href="newsletter.html"><svg aria-hidden="true"><use href="#obj-envelope"/></svg>Newsletter</a></nav>
+      <a class="button button--small button--secondary" href="../br/index.html">Ver o site ↗</a>
+      <div class="admin-sidebar__foot"><span class="avatar avatar--sm"><img src="../assets/images/about/gui-paris.jpg" alt=""></span><div><strong>Gui Carvalho</strong>Admin · <a href="#">sair</a></div></div>
+    </aside>
+    <main class="admin-main" id="main">
+      <header class="admin-head"><div><h1>Comentários</h1><p>2 esperando moderação · 3 aprovados</p></div></header>
+      <nav class="segmented" aria-label="Filtrar comentários"><a href="#" aria-current="true">Pendentes (2)</a><a href="#">Aprovados</a><a href="#">Rejeitados</a></nav>
+      <article class="queue-item">
+        <span class="avatar" aria-hidden="true">A</span>
+        <div><p class="text-sm"><strong>Ana Ribeiro</strong> <span class="cell-muted">· primeiro comentário · ana@email.com · agora mesmo</span></p><p class="text-sm text-muted">em <a href="#">O que te impede de aprender outro idioma?</a></p><blockquote>A dica de contar uma piada no idioma é ótima, vou testar no meu próximo call em inglês!</blockquote></div>
+        <div class="actions"><button class="button button--small" type="button">Aprovar</button><button class="button button--small button--secondary" type="button">Responder</button><button class="button button--small button--danger" type="button">Rejeitar</button></div>
+      </article>      <article class="queue-item">
+        <span class="avatar" aria-hidden="true">J</span>
+        <div><p class="text-sm"><strong>João Pedro</strong> <span class="cell-muted">· primeiro comentário · jp@email.com · há 3 horas</span></p><p class="text-sm text-muted">em <a href="#">Quem é mineiro me entende</a></p><blockquote>Uai, sô! Faltou o “trem” na lista, que serve pra tudo.</blockquote></div>
+        <div class="actions"><button class="button button--small" type="button">Aprovar</button><button class="button button--small button--secondary" type="button">Responder</button><button class="button button--small button--danger" type="button">Rejeitar</button></div>
+      </article>
+      <section class="panel" aria-labelledby="rule">
+        <h2 id="rule">Regra de moderação</h2>
+        <label class="cluster text-sm"><input type="checkbox" checked style="accent-color: var(--sage-700); width:1.1rem; height:1.1rem"> Publicar direto comentários de quem já teve um comentário aprovado</label>
+      </section>
+      <aside class="mockup-note">Nomes e comentários fictícios. Aprovar publica no post; Responder abre um campo aqui mesmo, e a resposta sai com o selo “autor”.</aside>
+    </main>
+  </div>
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-theme-toggle><svg width="16" height="16" aria-hidden="true"><use href="#icon-moon"/></svg></button>
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

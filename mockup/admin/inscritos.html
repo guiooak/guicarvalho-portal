@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Inscritos · Admin · gui carvalho</title>
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body>
+  <div class="admin">
+    <aside class="admin-sidebar">
+      <a class="brand" href="index.html" style="--brand-size: 1.1rem"><svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg><span><span class="brand__first">gui</span><span class="brand__last">admin</span></span></a>
+      <nav class="admin-nav illo" aria-label="Admin"><a href="index.html"><svg aria-hidden="true"><use href="#obj-window"/></svg>Painel</a><a href="posts.html"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Posts</a><a href="comentarios.html"><svg aria-hidden="true"><use href="#obj-chat"/></svg>Comentários<span class="admin-nav__count">2</span></a><a href="inscritos.html" aria-current="page"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inscritos</a><a href="newsletter.html"><svg aria-hidden="true"><use href="#obj-envelope"/></svg>Newsletter</a></nav>
+      <a class="button button--small button--secondary" href="../br/index.html">Ver o site ↗</a>
+      <div class="admin-sidebar__foot"><span class="avatar avatar--sm"><img src="../assets/images/about/gui-paris.jpg" alt=""></span><div><strong>Gui Carvalho</strong>Admin · <a href="#">sair</a></div></div>
+    </aside>
+    <main class="admin-main" id="main">
+      <header class="admin-head"><div><h1>Inscritos</h1><p>38 confirmados · 1 aguardando · 3 saíram</p></div>
+        <div class="cluster"><button class="button button--secondary button--small" type="button">Importar CSV</button><button class="button button--secondary button--small" type="button">Exportar</button></div></header>
+      <div class="stats">
+        <div class="stat"><strong>36</strong><span>em português</span></div>
+        <div class="stat"><strong>2</strong><span>em inglês</span></div>
+        <div class="stat"><strong>61%</strong><span>abertura média</span></div>
+      </div>
+      <div class="toolbar">
+        <input class="input" type="search" placeholder="Buscar por e-mail…" aria-label="Buscar inscritos">
+        <nav class="segmented" aria-label="Filtrar por status"><a href="#" aria-current="true">Todos</a><a href="#">Confirmados</a><a href="#">Aguardando</a><a href="#">Saíram</a></nav>
+      </div>
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>E-mail</th><th>Status</th><th>Idioma</th><th>Desde</th><th>Origem</th></tr></thead>
+        <tbody><tr><td><a href="#">ana@email.com</a></td><td><span class="badge badge--ok">Confirmado</span></td><td><span class="badge badge--">pt-BR</span></td><td class="cell-muted">18 out 2026</td><td class="cell-muted">rodapé do post</td></tr><tr><td><a href="#">liam@email.com</a></td><td><span class="badge badge--ok">Confirmado</span></td><td><span class="badge badge--">en</span></td><td class="cell-muted">12 out 2026</td><td class="cell-muted">home</td></tr><tr><td><a href="#">mariana@email.com</a></td><td><span class="badge badge--ok">Confirmado</span></td><td><span class="badge badge--">pt-BR</span></td><td class="cell-muted">02 out 2026</td><td class="cell-muted">importado do WordPress</td></tr><tr><td><a href="#">rafael@email.com</a></td><td><span class="badge badge--wait">Aguardando confirmação</span></td><td><span class="badge badge--">pt-BR</span></td><td class="cell-muted">19 out 2026</td><td class="cell-muted">home</td></tr><tr><td><a href="#">camila@email.com</a></td><td><span class="badge badge--off">Descadastrado</span></td><td><span class="badge badge--">pt-BR</span></td><td class="cell-muted">28 set 2026</td><td class="cell-muted">rodapé do post</td></tr><tr><td><a href="#">bounce@exemplo.com</a></td><td><span class="badge badge--off">E-mail inválido</span></td><td><span class="badge badge--">pt-BR</span></td><td class="cell-muted">15 set 2026</td><td class="cell-muted">importado do WordPress</td></tr><tr><td><a href="#">emma@email.com</a></td><td><span class="badge badge--ok">Confirmado</span></td><td><span class="badge badge--">en</span></td><td class="cell-muted">09 set 2026</td><td class="cell-muted">post em inglês</td></tr></tbody>
+      </table></div>
+      <aside class="mockup-note">E-mails fictícios. A lista real (menos de 50 pessoas) vem do WordPress depois; quem não tiver consentimento registrado recebe um pedido de reconfirmação. Bounces e marcações de spam chegam pelo webhook do SendGrid e mudam o status sozinhos.</aside>
+    </main>
+  </div>
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-theme-toggle><svg width="16" height="16" aria-hidden="true"><use href="#icon-moon"/></svg></button>
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

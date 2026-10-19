@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Painel · Admin · gui carvalho</title>
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body>
+  <div class="admin">
+    <aside class="admin-sidebar">
+      <a class="brand" href="index.html" style="--brand-size: 1.1rem"><svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg><span><span class="brand__first">gui</span><span class="brand__last">admin</span></span></a>
+      <nav class="admin-nav illo" aria-label="Admin"><a href="index.html" aria-current="page"><svg aria-hidden="true"><use href="#obj-window"/></svg>Painel</a><a href="posts.html"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Posts</a><a href="comentarios.html"><svg aria-hidden="true"><use href="#obj-chat"/></svg>Comentários<span class="admin-nav__count">2</span></a><a href="inscritos.html"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inscritos</a><a href="newsletter.html"><svg aria-hidden="true"><use href="#obj-envelope"/></svg>Newsletter</a></nav>
+      <a class="button button--small button--secondary" href="../br/index.html">Ver o site ↗</a>
+      <div class="admin-sidebar__foot"><span class="avatar avatar--sm"><img src="../assets/images/about/gui-paris.jpg" alt=""></span><div><strong>Gui Carvalho</strong>Admin · <a href="#">sair</a></div></div>
+    </aside>
+    <main class="admin-main" id="main">
+      <header class="admin-head"><div><h1>Bom dia, Gui</h1><p>Um resumo do caderno hoje.</p></div>
+        <a class="button" href="post-editar.html">+ Novo post</a></header>
+      <div class="stats">
+        <a class="stat" href="posts.html"><strong>23</strong><span>posts publicados</span></a>
+        <a class="stat" href="posts.html"><strong>1</strong><span>rascunho</span></a>
+        <a class="stat stat--alert" href="comentarios.html"><strong>2</strong><span>comentários para moderar</span></a>
+        <a class="stat" href="inscritos.html"><strong>38</strong><span>inscritos confirmados</span></a>
+      </div>
+      <div class="editor" style="grid-template-columns: minmax(0, 1fr) minmax(0, 22rem)">
+        <section class="panel" aria-labelledby="recent">
+          <h2 id="recent">Posts recentes</h2>
+          <div class="table-wrap"><table class="data-table"><thead><tr><th>Título</th><th>Data</th><th>Status</th></tr></thead><tbody>
+            <tr><td><a href="post-editar.html">Um ano de portal novo</a></td><td class="cell-muted">editado hoje</td><td><span class="badge badge--wait">Rascunho</span></td></tr>
+            <tr><td><a href="post-editar.html">Um turbo para metas pessoais</a></td><td class="cell-muted">13 fev 2021</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Quem é mineiro me entende</a></td><td class="cell-muted">19 mai 2019</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Mas me conta, como vocês dois se conheceram?</a></td><td class="cell-muted">25 nov 2018</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Psicólogo é só para doidos</a></td><td class="cell-muted">21 out 2018</td><td><span class="badge badge--ok">Publicado</span></td></tr></tbody></table></div>
+        </section>
+        <div class="stack" style="--stack-gap: var(--space-md)">
+          <section class="panel" aria-labelledby="todo">
+            <h2 id="todo">Para fazer</h2>
+            <div class="sticky-note" style="--r:-1deg"><ul><li>Moderar 2 comentários</li><li>Terminar “Um ano de portal novo”</li><li>Traduzir mais posts para o inglês (1 de 23)</li></ul></div>
+          </section>
+          <section class="panel" aria-labelledby="last-send">
+            <h2 id="last-send">Última newsletter</h2>
+            <p class="text-sm"><strong>O que te impede de aprender outro idioma?</strong><br><span class="text-muted">Enviada para 36 pessoas · 61% abriram · 0 descadastros</span></p>
+            <a class="section-heading__link" href="newsletter.html">Enviar outra <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+          </section>
+        </div>
+      </div>
+      <aside class="mockup-note">Números e listas ilustrativos. O admin é funcional e simples de propósito: o caderno fica para o site público.</aside>
+    </main>
+  </div>
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-theme-toggle><svg width="16" height="16" aria-hidden="true"><use href="#icon-moon"/></svg></button>
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

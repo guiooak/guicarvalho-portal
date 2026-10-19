@@ -52,5 +52,6 @@
 @import url("components/about.css") layer(components);
 @import url("components/center-stage.css") layer(components);
 @import url("components/search-result.css") layer(components);
+@import url("components/admin.css") layer(components);
 
 @import url("utilities.css") layer(utilities);
