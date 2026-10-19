@@ -87,6 +87,15 @@
     }
   }
 
+  /* Switcher pinned to the bottom-left corner, out of the page flow. */
+  .mockup-states--floating {
+    position: fixed;
+    inset-block-end: var(--space-sm);
+    inset-inline-start: var(--space-sm);
+    z-index: var(--layer-important);
+    background: var(--color-bg);
+  }
+
   .mockup-stateful:has(input[value="signed-out"]:checked) [data-state]:not([data-state~="signed-out"]),
   .mockup-stateful:has(input[value="signed-in"]:checked) [data-state]:not([data-state~="signed-in"]),
   .mockup-stateful:has(input[value="results"]:checked) [data-state]:not([data-state~="results"]),

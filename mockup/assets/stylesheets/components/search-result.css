@@ -1,69 +1,122 @@
-/* One search hit: small taped photo, category, title with the match highlighted, excerpt. */
-.search-results {
+/*
+ * Search page: a big line to write the search on, a post-it with the count,
+ * category stickers to filter, and the hits as polaroids.
+ */
+.search-hero {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   gap: var(--space-md);
-  width: min(100%, 46rem);
-  margin-inline: auto;
-}
+  padding-block: var(--space-2xl) var(--space-xl);
+  text-align: center;
 
-.search-results__summary {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-
-  & strong {
-    color: var(--color-heading);
+  & h1 {
+    font-size: var(--text-2xl);
   }
 }
 
-.search-result {
+.search-line {
   position: relative;
-  display: grid;
-  grid-template-columns: 7rem 1fr;
-  gap: var(--space-md);
+  display: flex;
   align-items: center;
-  padding: var(--space-sm);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg);
-  box-shadow: var(--paper-shadow-sm);
-  transition: translate var(--duration-base) var(--ease-bounce);
+  gap: var(--space-sm);
+  width: min(100%, 42rem);
+
+  & .sticker {
+    --sticker-size: 4rem;
+
+    position: absolute;
+    inset-inline-start: -5.5rem;
+  }
+}
+
+.search-line__input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0.2em 0.1em;
+  border: 0;
+  border-block-end: 4px dashed var(--color-border-input);
+  background: transparent;
+  color: var(--color-heading);
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
+  caret-color: var(--color-accent);
+
+  &::placeholder {
+    color: var(--color-placeholder);
+    font-weight: var(--weight-bold);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-block-end-color: var(--color-accent);
+    border-block-end-style: solid;
+  }
+}
+
+.search-line__go {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  transition: rotate var(--duration-base) var(--ease-bounce);
 
   &:hover {
-    translate: 0 -3px;
+    rotate: -12deg;
   }
 
-  & .polaroid {
-    padding: 6px 6px 10px;
-
-    &::before {
-      width: 44px;
-      height: 14px;
-      inset-block-start: -7px;
-    }
+  & svg {
+    width: 1.6rem;
+    height: 1.6rem;
   }
+}
 
-  & h2 {
+.search-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-block-end: var(--space-xl);
+
+  & .sticky-note {
+    padding: 0.7rem 1.1rem 1rem;
     font-size: var(--text-md);
-    line-height: var(--leading-snug);
-    letter-spacing: 0;
+    font-weight: var(--weight-black);
   }
 
-  & h2 a {
-    color: inherit;
-    font-weight: inherit;
-    text-decoration: none;
+  & .topic-sticker {
+    --topic-size: var(--text-xs);
   }
+}
 
-  & h2 a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-  }
+/* Excerpt with the match, inside a polaroid caption. */
+.polaroid__snippet {
+  display: block;
+  margin-block-start: 0.35rem;
+  color: var(--photo-frame-muted);
+  font-size: var(--text-xs);
+  line-height: 1.45;
+}
 
-  & p {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    line-height: 1.5;
+.search-empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-md);
+  padding-block: var(--space-lg) var(--space-2xl);
+  text-align: center;
+
+  & .sticky-note {
+    max-width: 26rem;
+    font-size: var(--text-md);
   }
 }
 
@@ -75,9 +128,8 @@ mark {
   color: var(--note-fg);
 }
 
-@media (max-width: 36rem) {
-  .search-result {
-    grid-template-columns: 5rem 1fr;
-    gap: var(--space-sm);
+@media (max-width: 52rem) {
+  .search-line .sticker {
+    display: none;
   }
 }

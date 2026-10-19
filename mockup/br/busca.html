@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buscar · gui carvalho</title>
-  <meta name="description" content="Procure nos posts por título, assunto ou palavra.">
+  <meta name="description" content="Busca nos posts do blog.">
   <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/stylesheets/application.css">
   <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
@@ -14,79 +14,43 @@
   <div class="site">
     <site-header root="../" alternate="../en/search.html"></site-header>
 
-    <main id="main" class="container mockup-stateful">
-      <div class="board-title" style="margin-block-start: var(--space-xl)">
-        <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
-        <div>
-          <h1 style="font-size: var(--text-3xl)">Buscar</h1>
-          <p class="text-muted" style="font-size: var(--text-md)">Procure nos posts por título, assunto ou palavra.</p>
-        </div>
-      </div>
+    <main id="main" class="mockup-stateful">
+      <section class="container search-hero" aria-labelledby="search-title">
+        <h1 id="search-title">O que você está procurando?</h1>
+        <form class="search-line" role="search" action="#" onsubmit="return false">
+          <span class="sticker" style="--r:-10deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
+          <label class="visually-hidden" for="q">Buscar no blog</label>
+          <input class="search-line__input" id="q" type="search" placeholder="Escreva aqui…" value="vida" data-state="results">
+          <input class="search-line__input" type="search" placeholder="Escreva aqui…" value="mergulho em marte" aria-label="Buscar no blog" data-state="no-results">
+          <button class="search-line__go" type="submit" aria-label="Buscar"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
+        </form>
+      </section>
 
-      <fieldset class="mockup-states" style="margin-block-end: var(--space-md)">
+      <section class="container" data-state="results" aria-label="Resultados" aria-live="polite">
+        <div class="search-summary">
+          <div class="sticky-note" style="--r:-3deg">4 achados para “vida”</div>
+          <div class="cluster" style="--cluster-gap: var(--space-sm)"><a class="topic-sticker" href="#" style="--r:-4deg">Geral<span class="topic-sticker__count">1</span></a><a class="topic-sticker topic-sticker--paper" href="#" style="--r:3deg">Inspiração<span class="topic-sticker__count">1</span></a><a class="topic-sticker topic-sticker--note" href="#" style="--r:-2deg">Empreendedorismo<span class="topic-sticker__count">1</span></a><a class="topic-sticker topic-sticker--sage" href="#" style="--r:4deg">Viva<span class="topic-sticker__count">1</span></a></div>
+        </div>
+        <div class="wall">
+          <a class="polaroid" href="../br/geral/o-preco-da-midia-gratuita/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/life-without-tv-768x513.jpg" alt="" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O Preço da Mídia Gratuita</span><span class="polaroid__snippet">…gratuitas” possuem uma influência muito mais forte em nossa <mark>vida</mark> do que imaginamos.</span><time class="polaroid__meta" datetime="2018-09-30">30 set 2018</time></span></a>
+          <a class="polaroid" href="../br/inspiracao/invictus-o-poema-que-inspirou-nelson-mandela/"><span class="polaroid__tag">Inspiração</span><img src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Invictus: O poema que inspirou Nelson Mandela</span><span class="polaroid__snippet">… pequeno poema em um pedaço de papel que fez a diferença na <mark>vida</mark> de Nelson Mandela durante seus 27 anos de prisão.</span><time class="polaroid__meta" datetime="2017-04-23">23 abr 2017</time></span></a>
+          <a class="polaroid" href="../br/empreendedorismo/inspiracao-de-vida-e-empreendedora/"><span class="polaroid__tag">Empreendedorismo</span><img src="../assets/images/covers/silvio-santos-blog-guicarvalho-768x526.jpg" alt="" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Inspiração de <mark>Vida</mark> e Empreendedora</span><span class="polaroid__snippet">Uma das histórias brasileiras de <mark>vida</mark> mais inspiradoras e empreendedoras da atualidade. De camelô à dono de canal de televisão sem perder o bom humor.</span><time class="polaroid__meta" datetime="2016-09-24">24 set 2016</time></span></a>
+          <a class="polaroid" href="../br/viva/o-desapego-o-amor-e-os-ciclos-da-vida/"><span class="polaroid__tag">Viva</span><img src="../assets/images/covers/amor-e-apego-768x592.jpg" alt="" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O desapego, o amor e os ciclos da <mark>vida</mark></span><span class="polaroid__snippet">Uma coisa que aprendi depois de “apanhar” um bocado da <mark>vida</mark> é que ela é feita de ciclos. Muitas vezes insistimos em algo que pertenceu ao nosso cotidi…</span><time class="polaroid__meta" datetime="2015-09-03">3 set 2015</time></span></a>
+        </div>
+      </section>
+
+      <section class="container search-empty" data-state="no-results" aria-label="Nenhum resultado">
+        <span class="sticker" style="--sticker-size: 6rem; --r: 8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
+        <div class="sticky-note" style="--r:2deg">Nada colado aqui sobre “mergulho em marte”. Tenta outra palavra, ou puxa um destes adesivos:</div>
+        <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="topic-sticker" href="../br/viva/" style="--r:-4deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Viva</a><a class="topic-sticker topic-sticker--paper" href="../br/coaching/" style="--r:3deg"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Coaching</a><a class="topic-sticker topic-sticker--note" href="../br/homenagens/" style="--r:-2deg"><svg aria-hidden="true"><use href="#obj-note"/></svg>Homenagens</a><a class="topic-sticker topic-sticker--sage" href="../br/casos-de-sucesso/" style="--r:5deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Casos de Sucesso</a><a class="topic-sticker" href="../br/inspiracao/" style="--r:-3deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inspiração</a></div>
+      </section>
+
+      <fieldset class="mockup-states mockup-states--floating">
         <legend class="visually-hidden">Estado:</legend>
         <span>Estado:</span>
         <label><input type="radio" name="search-state" value="results" checked>Com resultados</label>
         <label><input type="radio" name="search-state" value="no-results">Sem resultados</label>
       </fieldset>
-
-      <form class="search-form" role="search" action="#" onsubmit="return false" style="margin-block-end: var(--space-xl)">
-        <label class="visually-hidden" for="q">Buscar no blog</label>
-        <input class="input" id="q" type="search" placeholder="O que você procura?" value="vida" data-state="results">
-        <input class="input" type="search" placeholder="O que você procura?" value="mergulho em marte" aria-label="Buscar no blog" data-state="no-results">
-        <button class="button" type="submit">Buscar</button>
-      </form>
-
-      <section class="search-results" aria-live="polite" data-state="results">
-        <p class="search-results__summary"><strong>4 resultados</strong> para “vida”</p>
-          <article class="search-result">
-            <span class="polaroid" style="--r:-3deg"><img src="../assets/images/covers/life-without-tv-768x513.jpg" alt="" loading="lazy"></span>
-            <div class="stack" style="--stack-gap: 0.3rem">
-              <span class="eyebrow">Geral</span>
-              <h2><a href="../br/geral/o-preco-da-midia-gratuita/">O Preço da Mídia Gratuita</a></h2>
-              <p>A TV aberta e redes sociais “gratuitas” possuem uma influência muito mais forte em nossa <mark>vida</mark> do que imaginamos.</p>
-              <span class="polaroid__meta" style="color: var(--color-text-muted)">30 de setembro de 2018</span>
-            </div>
-          </article>
-          <article class="search-result">
-            <span class="polaroid" style="--r:-3deg"><img src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="" loading="lazy"></span>
-            <div class="stack" style="--stack-gap: 0.3rem">
-              <span class="eyebrow">Inspiração</span>
-              <h2><a href="../br/inspiracao/invictus-o-poema-que-inspirou-nelson-mandela/">Invictus: O poema que inspirou Nelson Mandela</a></h2>
-              <p>A história de um pequeno poema em um pedaço de papel que fez a diferença na <mark>vida</mark> de Nelson Mandela durante seus 27 anos de prisão.</p>
-              <span class="polaroid__meta" style="color: var(--color-text-muted)">23 de abril de 2017</span>
-            </div>
-          </article>
-          <article class="search-result">
-            <span class="polaroid" style="--r:-3deg"><img src="../assets/images/covers/silvio-santos-blog-guicarvalho-768x526.jpg" alt="" loading="lazy"></span>
-            <div class="stack" style="--stack-gap: 0.3rem">
-              <span class="eyebrow">Empreendedorismo</span>
-              <h2><a href="../br/empreendedorismo/inspiracao-de-vida-e-empreendedora/">Inspiração de <mark>Vida</mark> e Empreendedora</a></h2>
-              <p>Uma das histórias brasileiras de <mark>vida</mark> mais inspiradoras e empreendedoras da atualidade. De camelô à dono de canal de televisão sem perder o bom humor.</p>
-              <span class="polaroid__meta" style="color: var(--color-text-muted)">24 de setembro de 2016</span>
-            </div>
-          </article>
-          <article class="search-result">
-            <span class="polaroid" style="--r:-3deg"><img src="../assets/images/covers/amor-e-apego-768x592.jpg" alt="" loading="lazy"></span>
-            <div class="stack" style="--stack-gap: 0.3rem">
-              <span class="eyebrow">Viva</span>
-              <h2><a href="../br/viva/o-desapego-o-amor-e-os-ciclos-da-vida/">O desapego, o amor e os ciclos da <mark>vida</mark></a></h2>
-              <p>Uma coisa que aprendi depois de “apanhar” um bocado da <mark>vida</mark> é que ela é feita de ciclos. Muitas vezes insistimos em algo que pertenceu ao nosso cotidiano no passado, na esperança de isso continuar nos fazendo bem ou apenas pela dificuldade do desapego. Acontece que, as vezes em algum momento um ciclo acaba sem…</p>
-              <span class="polaroid__meta" style="color: var(--color-text-muted)">3 de setembro de 2015</span>
-            </div>
-          </article>
-      </section>
-
-      <section class="center-stage" data-state="no-results" style="padding-block-start: 0">
-        <span class="sticker center-stage__sticker" style="--r:8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
-        <div class="sheet center-stage__card">
-          <h2 style="font-size: var(--text-xl)">Nada colado aqui sobre “mergulho em marte”</h2>
-          <p class="text-muted">Tenta outra palavra, ou começa por um destes assuntos:</p>
-          <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="topic-sticker" href="../br/viva/" style="--r:-4deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Viva</a><a class="topic-sticker topic-sticker--paper" href="../br/coaching/" style="--r:3deg"><svg aria-hidden="true"><use href="#obj-pencil"/></svg>Coaching</a><a class="topic-sticker topic-sticker--note" href="../br/homenagens/" style="--r:-2deg"><svg aria-hidden="true"><use href="#obj-note"/></svg>Homenagens</a><a class="topic-sticker topic-sticker--sage" href="../br/casos-de-sucesso/" style="--r:5deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Casos de Sucesso</a><a class="topic-sticker" href="../br/inspiracao/" style="--r:-3deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg>Inspiração</a></div>
-          <a class="section-heading__link" href="../br/blog.html">Ou folheie o blog inteiro <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-        </div>
-      </section>
-      <aside class="mockup-note" style="margin-block-start: var(--space-lg)">A busca procura no título, no resumo e no texto dos posts do idioma da página.</aside>
     </main>
 
     <site-footer root="../"></site-footer>

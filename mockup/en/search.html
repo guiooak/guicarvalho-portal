@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Search · gui carvalho</title>
-  <meta name="description" content="Look through the posts by title, topic or word.">
+  <meta name="description" content="Search the blog posts.">
   <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/stylesheets/application.css">
   <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
@@ -14,52 +14,40 @@
   <div class="site">
     <site-header root="../" alternate="../br/busca.html"></site-header>
 
-    <main id="main" class="container mockup-stateful">
-      <div class="board-title" style="margin-block-start: var(--space-xl)">
-        <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
-        <div>
-          <h1 style="font-size: var(--text-3xl)">Search</h1>
-          <p class="text-muted" style="font-size: var(--text-md)">Look through the posts by title, topic or word.</p>
-        </div>
-      </div>
+    <main id="main" class="mockup-stateful">
+      <section class="container search-hero" aria-labelledby="search-title">
+        <h1 id="search-title">What are you looking for?</h1>
+        <form class="search-line" role="search" action="#" onsubmit="return false">
+          <span class="sticker" style="--r:-10deg"><svg aria-hidden="true"><use href="#obj-magnifier"/></svg></span>
+          <label class="visually-hidden" for="q">Search the blog</label>
+          <input class="search-line__input" id="q" type="search" placeholder="Write here…" value="language" data-state="results">
+          <input class="search-line__input" type="search" placeholder="Write here…" value="diving on mars" aria-label="Search the blog" data-state="no-results">
+          <button class="search-line__go" type="submit" aria-label="Search"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
+        </form>
+      </section>
 
-      <fieldset class="mockup-states" style="margin-block-end: var(--space-md)">
+      <section class="container" data-state="results" aria-label="Results" aria-live="polite">
+        <div class="search-summary">
+          <div class="sticky-note" style="--r:-3deg">1 find for “language”</div>
+          <div class="cluster" style="--cluster-gap: var(--space-sm)"><a class="topic-sticker" href="#" style="--r:-4deg">Languages<span class="topic-sticker__count">1</span></a></div>
+        </div>
+        <div class="wall">
+          <a class="polaroid" href="../en/languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">Languages</span><img src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">What stops you from learning another <mark>language</mark>?</span><span class="polaroid__snippet">Many of us dream of mastering a second <mark>language</mark>, but sometimes it takes lessons you won&#x27;t find in any grammar book.</span><time class="polaroid__meta" datetime="2016-12-19">Dec 19, 2016</time></span></a>
+        </div>
+      </section>
+
+      <section class="container search-empty" data-state="no-results" aria-label="No results">
+        <span class="sticker" style="--sticker-size: 6rem; --r: 8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
+        <div class="sticky-note" style="--r:2deg">Nothing pinned here about “diving on mars”. Try another word, or browse the Portuguese blog, where most posts live.</div>
+        <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="button button--secondary" href="../br/blog.html" hreflang="pt-BR">Portuguese blog →</a></div>
+      </section>
+
+      <fieldset class="mockup-states mockup-states--floating">
         <legend class="visually-hidden">State:</legend>
         <span>State:</span>
         <label><input type="radio" name="search-state" value="results" checked>With results</label>
         <label><input type="radio" name="search-state" value="no-results">No results</label>
       </fieldset>
-
-      <form class="search-form" role="search" action="#" onsubmit="return false" style="margin-block-end: var(--space-xl)">
-        <label class="visually-hidden" for="q">Search the blog</label>
-        <input class="input" id="q" type="search" placeholder="What are you looking for?" value="language" data-state="results">
-        <input class="input" type="search" placeholder="What are you looking for?" value="diving on mars" aria-label="Search the blog" data-state="no-results">
-        <button class="button" type="submit">Search</button>
-      </form>
-
-      <section class="search-results" aria-live="polite" data-state="results">
-        <p class="search-results__summary"><strong>1 result</strong> for “language”</p>
-          <article class="search-result">
-            <span class="polaroid" style="--r:-3deg"><img src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="" loading="lazy"></span>
-            <div class="stack" style="--stack-gap: 0.3rem">
-              <span class="eyebrow">Languages</span>
-              <h2><a href="../en/languages/what-stops-you-from-learning-another-language/">What stops you from learning another <mark>language</mark>?</a></h2>
-              <p>Many of us dream of mastering a second <mark>language</mark>, but sometimes it takes lessons you won&#x27;t find in any grammar book.</p>
-              <span class="polaroid__meta" style="color: var(--color-text-muted)">December 19, 2016</span>
-            </div>
-          </article>
-      </section>
-
-      <section class="center-stage" data-state="no-results" style="padding-block-start: 0">
-        <span class="sticker center-stage__sticker" style="--r:8deg"><svg aria-hidden="true"><use href="#obj-map"/></svg></span>
-        <div class="sheet center-stage__card">
-          <h2 style="font-size: var(--text-xl)">Nothing pinned here about “diving on mars”</h2>
-          <p class="text-muted">Try another word, or start with the Portuguese blog, where most posts live.</p>
-          <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-sm)"><a class="button button--secondary" href="../br/blog.html" hreflang="pt-BR">Portuguese blog →</a></div>
-          <a class="section-heading__link" href="../en/blog.html">Browse the blog <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-        </div>
-      </section>
-      <aside class="mockup-note" style="margin-block-start: var(--space-lg)">Search looks through the titles, excerpts and text of posts in the page's language.</aside>
     </main>
 
     <site-footer root="../"></site-footer>
