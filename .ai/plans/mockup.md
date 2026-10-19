@@ -28,7 +28,9 @@ ruby -run -e httpd mockup -p 8000
 ```
 mockup/
   index.html                  # page directory for reviewers
-  styleguide.html             # tokens and every component in isolation
+  styleguide/                 # the style guide, in its own folder
+    index.html                # tokens and every component in isolation
+    styleguide.css            # layout of the style guide page; NOT ported
   assets/
     stylesheets/
       application.css         # @layer order + imports (same file as in Rails)
@@ -81,6 +83,7 @@ Only `mockup.js`, a classic script (so `file://` keeps working), containing:
 1. **Shared chrome**: `<site-header>` and `<site-footer>` custom elements that render the header and footer markup from one place, so a navigation change is a single edit across every page. In phase 2 these become Rails partials; the markup is copied out of the template strings.
 2. **Theme switch** for reviewing light/dark (writes `data-theme` on `<html>`).
 3. **Annotations switch** that shows or hides `.mockup-note` callouts.
+4. **SVG sprite**: injects the shared symbols (logo, UI icons, flat illustrations) once per page, so every page can `<use>` them without an external sprite file, which `file://` would block. In phase 2 the sprite becomes a Rails partial rendered in the layout.
 
 Everything else (mobile menu, language switcher, share menu, dialogs) uses native HTML (`popover`, `<details>`, `<dialog>`). If a page ever needs more, it is discussed first and implemented as a future Stimulus controller.
 
@@ -144,7 +147,7 @@ The agreed brief lives in [visual-direction.md](visual-direction.md): a clean wh
 
 Before building every page, settle the details within that brief:
 
-1. Build `styleguide.html` with the token scales (color, type, spacing, radius, shadow) and base components.
+1. Build the style guide (`styleguide/index.html`) with the token scales (color, type, spacing, radius, shadow) and base components.
 2. Produce **two variations** applied to the same two screens (Home and Post header), differing in typography pairing, green shade and density.
 3. The user picks one (or a mix); its values go into `tokens.css` and the other is deleted.
 

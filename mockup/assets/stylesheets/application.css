@@ -1,0 +1,36 @@
+/*
+ * Entry point. The layer order is declared once here; later layers win.
+ * This file and everything it imports is ported unchanged to the Rails app.
+ */
+@layer reset, vendor, tokens, base, layout, components, utilities, mockup;
+
+@import url("reset.css") layer(reset);
+
+@import url("vendor/open-props/sizes.min.css") layer(vendor);
+@import url("vendor/open-props/fonts.min.css") layer(vendor);
+@import url("vendor/open-props/borders.min.css") layer(vendor);
+@import url("vendor/open-props/shadows.min.css") layer(vendor);
+@import url("vendor/open-props/easings.min.css") layer(vendor);
+@import url("vendor/open-props/animations.min.css") layer(vendor);
+@import url("vendor/open-props/zindex.min.css") layer(vendor);
+@import url("vendor/open-props/aspects.min.css") layer(vendor);
+
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+
+@import url("components/brand.css") layer(components);
+@import url("components/button.css") layer(components);
+@import url("components/tag.css") layer(components);
+@import url("components/card.css") layer(components);
+@import url("components/post-card.css") layer(components);
+@import url("components/cover.css") layer(components);
+@import url("components/form.css") layer(components);
+@import url("components/newsletter-form.css") layer(components);
+@import url("components/site-header.css") layer(components);
+@import url("components/site-footer.css") layer(components);
+@import url("components/post-body.css") layer(components);
+@import url("components/scribble.css") layer(components);
+@import url("components/floating-objects.css") layer(components);
+
+@import url("utilities.css") layer(utilities);

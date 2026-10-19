@@ -1,0 +1,29 @@
+.newsletter {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-soft-text);
+
+  & h2,
+  & h3 {
+    color: var(--color-heading);
+    font-size: var(--text-lg);
+  }
+}
+
+.newsletter__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+
+  & .input {
+    flex: 1 1 14rem;
+  }
+}
+
+.newsletter__note {
+  font-size: var(--text-xs);
+  opacity: 0.85;
+}

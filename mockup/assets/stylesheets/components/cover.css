@@ -1,0 +1,49 @@
+/* Post cover: the post's own photo, or the typographic fallback. */
+.cover {
+  position: relative;
+  aspect-ratio: var(--ratio-widescreen);
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-subtle);
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--focal-point, center);
+  }
+}
+
+/* Fallback when a post has no photo: title over sage + category object. */
+.cover--type {
+  --illo-main: var(--cover-illo-main);
+  --illo-soft: var(--cover-illo-soft);
+  --illo-detail: var(--cover-illo-detail);
+
+  display: flex;
+  align-items: flex-end;
+  padding: 7% 8%;
+  background: var(--cover-bg);
+  color: var(--cover-fg);
+  container-type: inline-size;
+}
+
+.cover__title {
+  position: relative;
+  max-width: 75%;
+  color: inherit;
+  font-size: clamp(1rem, 7.5cqi, 2.5rem);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+.cover__object {
+  position: absolute;
+  inset-block-start: 10%;
+  inset-inline-end: 6%;
+  width: 28%;
+  aspect-ratio: 1;
+  rotate: 8deg;
+}

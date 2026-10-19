@@ -1,0 +1,35 @@
+/* Logo lockup: acorn symbol + "gui" (black) "carvalho" (regular). */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--color-heading);
+  font-size: var(--brand-size, 1.25rem);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-heading);
+  }
+}
+
+.brand__symbol {
+  width: 1.45em;
+  height: 1.45em;
+  flex: none;
+  transition: rotate var(--duration-base) var(--ease-bounce);
+}
+
+.brand:hover .brand__symbol {
+  rotate: -8deg;
+}
+
+.brand__first {
+  font-weight: var(--weight-black);
+}
+
+.brand__last {
+  font-weight: var(--weight-regular);
+}

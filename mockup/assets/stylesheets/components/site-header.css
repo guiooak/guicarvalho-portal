@@ -1,0 +1,105 @@
+.site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--layer-3);
+  border-block-end: 1px solid transparent;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  transition: border-color var(--duration-base) var(--ease-standard);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 4.5rem;
+}
+
+.site-header__brand {
+  margin-inline-end: auto;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.site-nav__link {
+  display: inline-block;
+  padding: 0.35em 0.85em;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+
+  &:hover {
+    background: var(--color-subtle);
+    color: var(--color-heading);
+  }
+
+  &[aria-current="page"] {
+    color: var(--color-heading);
+    font-weight: var(--weight-black);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.45em;
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.lang-switch {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+}
+
+/* Mobile: navigation moves into a popover panel. */
+.site-header__menu-button {
+  display: none;
+}
+
+.site-menu {
+  inset: 4.5rem var(--gutter) auto auto;
+  margin: 0;
+  width: min(20rem, 100vw - 2 * var(--gutter));
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-card-hover);
+
+  & .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  & .site-nav__link {
+    display: block;
+    padding: 0.6em 1em;
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .site-header .site-nav,
+  .site-header .lang-switch,
+  .site-header .site-header__newsletter {
+    display: none;
+  }
+
+  .site-header__menu-button {
+    display: inline-grid;
+  }
+}

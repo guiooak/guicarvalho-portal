@@ -1,0 +1,16 @@
+/* Hand-drawn underline under a key word: <span class="scribble">Gui</span> */
+.scribble {
+  position: relative;
+  white-space: nowrap;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: -3%;
+    inset-block-end: -0.16em;
+    height: 0.3em;
+    background: var(--color-accent);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 14 C 50 4, 120 4, 197 11' fill='none' stroke='black' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    pointer-events: none;
+  }
+}

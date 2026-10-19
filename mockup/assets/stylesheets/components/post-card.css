@@ -1,0 +1,74 @@
+/* Blog listing item: cover, category, title, date. */
+.post-card {
+  position: relative;
+  display: grid;
+  gap: var(--space-2xs);
+  align-content: start;
+}
+
+.post-card__cover {
+  margin-block-end: var(--space-2xs);
+  transition:
+    translate var(--duration-base) var(--ease-bounce),
+    rotate var(--duration-base) var(--ease-bounce),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.post-card:hover .post-card__cover {
+  translate: 0 -4px;
+  rotate: -0.75deg;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.post-card__title {
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+
+  & a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  /* The whole card is clickable through the title link. */
+  & a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  & a:focus-visible {
+    outline: none;
+  }
+}
+
+.post-card:has(a:focus-visible) {
+  outline: var(--focus-ring);
+  outline-offset: 6px;
+  border-radius: var(--radius-card);
+}
+
+.post-card__excerpt {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+.post-card__meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+/* Featured variant: cover beside the text on wide containers. */
+.post-card--featured {
+  container-type: inline-size;
+}
+
+@container (min-width: 40rem) {
+  .post-card--featured .post-card__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+}

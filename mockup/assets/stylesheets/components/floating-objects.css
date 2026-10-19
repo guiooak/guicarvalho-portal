@@ -1,0 +1,35 @@
+/*
+ * Flat illustrations floating around a hero area.
+ * <div class="float-stage"> … <svg class="float-object" style="--x:8%;--y:12%;--r:-10deg;--s:64px"> …
+ */
+.float-stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.float-object {
+  position: absolute;
+  inset-inline-start: var(--x, 0);
+  inset-block-start: var(--y, 0);
+  z-index: -1;
+  width: var(--s, 56px);
+  height: var(--s, 56px);
+  rotate: var(--r, 0deg);
+  overflow: visible;
+  pointer-events: none;
+  animation: float var(--duration-float) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes float {
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+/* Illustration symbols read their colors from these properties. */
+.illo {
+  --f: var(--illo-main);
+  --f2: var(--illo-soft);
+  --dt: var(--illo-detail);
+}

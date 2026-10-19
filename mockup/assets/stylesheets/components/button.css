@@ -1,0 +1,96 @@
+.button {
+  --button-bg: var(--color-accent);
+  --button-fg: var(--color-on-accent);
+  --button-border: var(--color-accent);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  min-height: 2.75rem;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--button-border);
+  border-radius: var(--radius-pill);
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    translate var(--duration-base) var(--ease-bounce),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+
+  &:hover {
+    --button-bg: var(--color-accent-hover);
+    --button-border: var(--color-accent-hover);
+    color: var(--button-fg);
+    translate: 0 -2px;
+  }
+
+  &:active {
+    translate: 0 1px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.button--secondary {
+  --button-bg: transparent;
+  --button-fg: var(--color-accent);
+
+  &:hover {
+    --button-bg: var(--color-accent-soft);
+    --button-fg: var(--color-accent-hover);
+  }
+}
+
+.button--ghost {
+  --button-bg: transparent;
+  --button-fg: var(--color-text);
+  --button-border: transparent;
+
+  &:hover {
+    --button-bg: var(--color-subtle);
+    --button-fg: var(--color-heading);
+    --button-border: transparent;
+  }
+}
+
+.button--small {
+  min-height: 2.25rem;
+  padding: 0.35em 1em;
+  font-size: var(--text-xs);
+}
+
+/* Round button holding a single icon (search, theme, menu). */
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-heading);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    rotate var(--duration-base) var(--ease-bounce);
+
+  & svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &:hover {
+    border-color: var(--color-accent);
+    rotate: -10deg;
+  }
+}

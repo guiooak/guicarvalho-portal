@@ -1,0 +1,57 @@
+/* Page shell: header, main and footer, with the footer pushed down. */
+.site {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: var(--space-2xs);
+  inset-inline-start: var(--space-2xs);
+  z-index: var(--layer-important);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  translate: 0 -200%;
+
+  &:focus {
+    translate: 0 0;
+  }
+}
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - 2 * var(--gutter), var(--container-narrow));
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+/* Vertical rhythm between direct children. */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-md));
+}
+
+/* Horizontal group that wraps. */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, var(--space-xs));
+}
+
+/* Responsive grid with a minimum column width. */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--grid-min, 16rem)), 1fr));
+  gap: var(--grid-gap, var(--space-lg) var(--space-md));
+}

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style guide · gui carvalho</title>
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body>
+  <div class="site">
+    <site-header root="../"></site-header>
+
+    <main id="main" class="container">
+      <div class="sg-intro">
+        <span class="eyebrow">Mockup · fase 1</span>
+        <h1>Style guide do <span class="scribble">portal</span></h1>
+        <p class="measure text-muted">Tokens e componentes do portal, escritos exatamente como irão para o app Rails. Use o botão de tema no cabeçalho para ver tudo no modo escuro. As decisões por trás de cada valor estão em <code>.ai/plans/visual-direction.md</code>.</p>
+      </div>
+
+      <div class="sg">
+        <nav class="sg-toc" aria-label="Seções do style guide">
+          <a href="#marca">Marca</a>
+          <a href="#cores">Cores</a>
+          <a href="#tipografia">Tipografia</a>
+          <a href="#espaco-forma">Espaço e forma</a>
+          <a href="#componentes">Componentes</a>
+          <a href="#ilustracoes">Ilustrações</a>
+          <a href="#movimento">Movimento</a>
+        </nav>
+
+        <div>
+          <!-- Brand -->
+          <section class="sg-section" id="marca">
+            <header>
+              <h2>Marca</h2>
+              <p class="measure text-muted">A bolota com folhinha: o fruto do carvalho, do sobrenome. O nome vai em minúsculas, numa palavra só, com <b>gui</b> em 800 e carvalho em 400.</p>
+            </header>
+            <div class="sg-themes">
+              <div class="sg-theme sg-theme--light"><span class="sg-theme__name">Tema claro</span>
+                <span class="brand" style="--brand-size: 1.75rem"><svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg><span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span></span>
+                <div class="sg-symbols">
+                  <svg width="16" height="16" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="32" height="32" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="64" height="64" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="112" height="112" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                </div>
+              </div>
+              <div class="sg-theme sg-theme--dark"><span class="sg-theme__name">Tema escuro</span>
+                <span class="brand" style="--brand-size: 1.75rem"><svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg><span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span></span>
+                <div class="sg-symbols">
+                  <svg width="16" height="16" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="32" height="32" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="64" height="64" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                  <svg width="112" height="112" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Favicon</h3>
+              <p class="measure text-muted">Versão própria para tamanhos pequenos, com cabinho e folha mais grossos. Usada só abaixo de 32 px.</p>
+              <div class="sg-symbols">
+                <img src="../assets/images/brand/favicon.svg" width="16" height="16" alt="Favicon a 16 px">
+                <img src="../assets/images/brand/favicon.svg" width="32" height="32" alt="Favicon a 32 px">
+                <span class="sg-label">assets/images/brand/favicon.svg</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Color -->
+          <section class="sg-section" id="cores">
+            <header>
+              <h2>Cores</h2>
+              <p class="measure text-muted">Sálvia é a única cor do site. Os neutros são cinzas puros, sem matiz. Os componentes usam só os tokens semânticos (<code>--color-*</code>), que já trocam sozinhos entre os temas.</p>
+            </header>
+            <div class="sg-block">
+              <h3>Sálvia</h3>
+              <div class="sg-scale">
+            <div style="--swatch: var(--sage-50); --swatch-text: #0c0c0c"><b>50</b><span>#eef9ee</span></div>
+            <div style="--swatch: var(--sage-100); --swatch-text: #0c0c0c"><b>100</b><span>#ddeddd</span></div>
+            <div style="--swatch: var(--sage-200); --swatch-text: #0c0c0c"><b>200</b><span>#c4dcc4</span></div>
+            <div style="--swatch: var(--sage-300); --swatch-text: #0c0c0c"><b>300</b><span>#a5c5a5</span></div>
+            <div style="--swatch: var(--sage-400); --swatch-text: #0c0c0c"><b>400</b><span>#85aa85</span></div>
+            <div style="--swatch: var(--sage-500); --swatch-text: #ffffff"><b>500</b><span>#6c926c</span></div>
+            <div style="--swatch: var(--sage-600); --swatch-text: #ffffff"><b>600</b><span>#527752</span></div>
+            <div style="--swatch: var(--sage-700); --swatch-text: #ffffff"><b>700</b><span>#3e5f3f</span></div>
+            <div style="--swatch: var(--sage-800); --swatch-text: #ffffff"><b>800</b><span>#2d472e</span></div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Cinza</h3>
+              <div class="sg-scale">
+            <div style="--swatch: var(--gray-50); --swatch-text: #0c0c0c"><b>50</b><span>#fafafa</span></div>
+            <div style="--swatch: var(--gray-100); --swatch-text: #0c0c0c"><b>100</b><span>#f4f4f4</span></div>
+            <div style="--swatch: var(--gray-200); --swatch-text: #0c0c0c"><b>200</b><span>#e6e6e6</span></div>
+            <div style="--swatch: var(--gray-300); --swatch-text: #0c0c0c"><b>300</b><span>#d4d4d4</span></div>
+            <div style="--swatch: var(--gray-400); --swatch-text: #0c0c0c"><b>400</b><span>#a1a1a1</span></div>
+            <div style="--swatch: var(--gray-500); --swatch-text: #ffffff"><b>500</b><span>#737373</span></div>
+            <div style="--swatch: var(--gray-600); --swatch-text: #ffffff"><b>600</b><span>#545454</span></div>
+            <div style="--swatch: var(--gray-700); --swatch-text: #ffffff"><b>700</b><span>#404040</span></div>
+            <div style="--swatch: var(--gray-800); --swatch-text: #ffffff"><b>800</b><span>#262626</span></div>
+            <div style="--swatch: var(--gray-900); --swatch-text: #ffffff"><b>900</b><span>#171717</span></div>
+            <div style="--swatch: var(--gray-950); --swatch-text: #ffffff"><b>950</b><span>#0c0c0c</span></div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Tokens semânticos</h3>
+              <div class="sg-themes">
+              <div class="sg-theme sg-theme--light"><span class="sg-theme__name">Tema claro</span>
+                <div class="sg-tokens">
+                <div class="sg-token"><i style="--swatch: var(--color-bg)"></i><span><code>--color-bg</code><small>Fundo da página</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-surface)"></i><span><code>--color-surface</code><small>Cards</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-subtle)"></i><span><code>--color-subtle</code><small>Tags e blocos de código</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-border)"></i><span><code>--color-border</code><small>Bordas decorativas</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-border-input)"></i><span><code>--color-border-input</code><small>Borda de campos (≥ 3:1)</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-text-muted)"></i><span><code>--color-text-muted</code><small>Texto secundário</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-text)"></i><span><code>--color-text</code><small>Texto</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-heading)"></i><span><code>--color-heading</code><small>Títulos</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent)"></i><span><code>--color-accent</code><small>Destaque: links e botões</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-hover)"></i><span><code>--color-accent-hover</code><small>Destaque no hover</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-soft)"></i><span><code>--color-accent-soft</code><small>Fundo suave de destaque</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-soft-text)"></i><span><code>--color-accent-soft-text</code><small>Texto sobre fundo suave</small></span></div>
+                </div>
+              </div>
+              <div class="sg-theme sg-theme--dark"><span class="sg-theme__name">Tema escuro</span>
+                <div class="sg-tokens">
+                <div class="sg-token"><i style="--swatch: var(--color-bg)"></i><span><code>--color-bg</code><small>Fundo da página</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-surface)"></i><span><code>--color-surface</code><small>Cards</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-subtle)"></i><span><code>--color-subtle</code><small>Tags e blocos de código</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-border)"></i><span><code>--color-border</code><small>Bordas decorativas</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-border-input)"></i><span><code>--color-border-input</code><small>Borda de campos (≥ 3:1)</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-text-muted)"></i><span><code>--color-text-muted</code><small>Texto secundário</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-text)"></i><span><code>--color-text</code><small>Texto</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-heading)"></i><span><code>--color-heading</code><small>Títulos</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent)"></i><span><code>--color-accent</code><small>Destaque: links e botões</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-hover)"></i><span><code>--color-accent-hover</code><small>Destaque no hover</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-soft)"></i><span><code>--color-accent-soft</code><small>Fundo suave de destaque</small></span></div>
+                <div class="sg-token"><i style="--swatch: var(--color-accent-soft-text)"></i><span><code>--color-accent-soft-text</code><small>Texto sobre fundo suave</small></span></div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          <!-- Typography -->
+          <section class="sg-section" id="tipografia">
+            <header>
+              <h2>Tipografia</h2>
+              <p class="measure text-muted">Nunito Sans para tudo, hospedada no próprio site. Pesos de 200 a 1000 com itálico verdadeiro. Os títulos usam 800 com espaçamento levemente apertado; o texto, 400 a 18 px com entrelinha 1.7.</p>
+            </header>
+            <div class="sg-block">
+              <h3>Escala</h3>
+              <div>
+                <div class="sg-type-row"><span class="sg-label">--text-3xl · h1 · fluido 38–60 px</span><span class="sg-specimen-line" style="font-size:var(--text-3xl);font-weight:800;letter-spacing:var(--tracking-tight)">Oi, eu sou o Gui 👋</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-2xl · h2 · fluido 32–44 px</span><span class="sg-specimen-line" style="font-size:var(--text-2xl);font-weight:800;letter-spacing:var(--tracking-tight)">Últimos posts do blog</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-xl · h3 · fluido 26–34 px</span><span class="sg-specimen-line" style="font-size:var(--text-xl);font-weight:800;letter-spacing:var(--tracking-tight)">O que te impede de aprender outro idioma?</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-lg · h4 · fluido 22–26 px</span><span class="sg-specimen-line" style="font-size:var(--text-lg);font-weight:800">A primeira conversa de verdade</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-md · 20 px · subtítulos e destaques</span><span style="font-size:var(--text-md)">Escrevo sobre carreira, metas, idiomas e as presepadas da vida.</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-base · 18 px · texto</span><span style="font-size:var(--text-base)">Muitos de nós sonhamos em dominar um segundo idioma.</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-sm · 15 px · interface</span><span style="font-size:var(--text-sm)">Blog · Apps · Sobre · Assinar a newsletter</span></div>
+                <div class="sg-type-row"><span class="sg-label">--text-xs · 13 px · datas e legendas</span><span style="font-size:var(--text-xs)" class="text-muted">19 de dezembro de 2016 · 6 min de leitura</span></div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Pesos</h3>
+              <div class="cluster" style="--cluster-gap: var(--space-md); font-size: var(--text-lg); color: var(--color-heading)">
+                <span style="font-weight:400">Regular 400</span>
+                <span style="font-weight:600">Medium 600</span>
+                <span style="font-weight:700">Bold 700</span>
+                <span style="font-weight:800">Black 800</span>
+                <span style="font-style:italic">Itálico</span>
+                <span style="font-style:italic;font-weight:800">Itálico 800</span>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Texto de artigo <span class="sg-label">.post-body</span></h3>
+              <div class="post-body">
+                <p>Muitos de nós sonhamos em dominar um segundo idioma, mas às vezes é preciso aprender lições que <strong>não existem em livro de gramática algum</strong>. Quando cheguei à Irlanda, achava que o problema era vocabulário. Em pouco tempo percebi que era outra coisa: <em>medo de errar na frente dos outros</em>. <a href="#">Conto mais neste outro post</a>.</p>
+                <blockquote><p>Errar em voz alta foi o atalho mais rápido que encontrei.</p></blockquote>
+                <h2>Três coisas que funcionaram</h2>
+                <ul>
+                  <li>Falar <strong>todos os dias</strong>, mesmo que fossem cinco minutos.</li>
+                  <li>Trocar o objetivo de "falar certo" por "ser entendido".</li>
+                  <li>Anotar expressões novas e usá-las no dia seguinte.</li>
+                </ul>
+                <h3>E um pouco de código</h3>
+                <p>Para os posts técnicos, código inline como <code>rails new portal</code> e em bloco:</p>
+                <pre><code>git commit -m "Primeiro post no portal novo"</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- Space and shape -->
+          <section class="sg-section" id="espaco-forma">
+            <header>
+              <h2>Espaço e forma</h2>
+              <p class="measure text-muted">Espaçamentos com base nos tamanhos do Open Props. Tudo arredondado: pílulas em botões e tags, 16 px em cards e capas, 24 px em blocos grandes.</p>
+            </header>
+            <div class="sg-block">
+              <h3>Espaçamento</h3>
+              <div class="stack" style="--stack-gap: var(--space-2xs)">
+                <div class="sg-space"><span class="sg-label">--space-3xs</span><i style="--w: var(--space-3xs)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-2xs</span><i style="--w: var(--space-2xs)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-xs</span><i style="--w: var(--space-xs)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-sm</span><i style="--w: var(--space-sm)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-md</span><i style="--w: var(--space-md)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-lg</span><i style="--w: var(--space-lg)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-xl</span><i style="--w: var(--space-xl)"></i></div>
+                <div class="sg-space"><span class="sg-label">--space-2xl (fluido)</span><i style="--w: var(--space-2xl)"></i></div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Cantos e sombras</h3>
+              <div class="sg-shapes">
+                <div class="sg-shape" style="border-radius: var(--radius-sm)">--radius-sm<br>8 px</div>
+                <div class="sg-shape" style="border-radius: var(--radius-md)">--radius-md<br>12 px</div>
+                <div class="sg-shape" style="border-radius: var(--radius-card)">--radius-card<br>16 px</div>
+                <div class="sg-shape" style="border-radius: var(--radius-lg)">--radius-lg<br>24 px</div>
+                <div class="sg-shape" style="border-radius: var(--radius-card); box-shadow: var(--shadow-card)">--shadow-card</div>
+                <div class="sg-shape" style="border-radius: var(--radius-card); box-shadow: var(--shadow-card-hover)">--shadow-card-hover</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Components -->
+          <section class="sg-section" id="componentes">
+            <header>
+              <h2>Componentes</h2>
+              <p class="measure text-muted">Cada componente tem um arquivo próprio em <code>assets/stylesheets/components/</code> e vira um partial no Rails. Passe o mouse para ver as microinterações.</p>
+            </header>
+
+            <div class="sg-block">
+              <h3>Botões <span class="sg-label">.button · .icon-button</span></h3>
+              <div class="cluster">
+                <a class="button" href="#">Ler o blog</a>
+                <a class="button button--secondary" href="#">Ver meus apps</a>
+                <a class="button button--ghost" href="#">Saiba mais <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+                <a class="button button--small" href="#">Newsletter</a>
+                <button class="button" type="button" disabled>Desabilitado</button>
+                <button class="icon-button" type="button" aria-label="Buscar"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
+                <button class="icon-button" type="button" aria-label="Menu"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>
+              </div>
+            </div>
+
+            <div class="sg-block">
+              <h3>Tags e categoria <span class="sg-label">.tag · .eyebrow</span></h3>
+              <div class="cluster">
+                <span class="eyebrow">Idiomas</span>
+                <a class="tag" href="#">gestão de tempo</a>
+                <a class="tag" href="#">irlanda</a>
+                <a class="tag" href="#" aria-current="page">idiomas</a>
+                <span class="tag tag--accent">novo</span>
+              </div>
+            </div>
+
+            <div class="sg-block">
+              <h3>Formulário <span class="sg-label">.field · .input</span></h3>
+              <div class="grid-auto" style="--grid-min: 16rem">
+                <div class="field">
+                  <label class="field__label" for="sg-name">Nome</label>
+                  <input class="input" id="sg-name" placeholder="Como posso te chamar?">
+                  <span class="field__hint">Aparece junto do seu comentário.</span>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="sg-email">E-mail</label>
+                  <input class="input" id="sg-email" value="gui@" aria-invalid="true" aria-describedby="sg-email-error">
+                  <span class="field__error" id="sg-email-error">Digite um e-mail válido.</span>
+                </div>
+                <div class="field" style="grid-column: 1 / -1">
+                  <label class="field__label" for="sg-comment">Comentário</label>
+                  <textarea class="input" id="sg-comment" placeholder="O que você achou?"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="sg-block">
+              <h3>Newsletter <span class="sg-label">.newsletter</span></h3>
+              <div class="newsletter" id="newsletter">
+                <h3>Receba os próximos posts por e-mail ✉️</h3>
+                <p>Um e-mail quando sair post novo. Sem spam, e dá para sair quando quiser.</p>
+                <form class="newsletter__form" onsubmit="return false">
+                  <label class="visually-hidden" for="sg-news">Seu e-mail</label>
+                  <input class="input" id="sg-news" type="email" placeholder="seu@email.com">
+                  <button class="button" type="submit">Inscrever</button>
+                </form>
+                <span class="newsletter__note">Você vai receber um e-mail para confirmar a inscrição.</span>
+              </div>
+            </div>
+
+            <div class="sg-block">
+              <h3>Cards de post <span class="sg-label">.post-card · .cover</span></h3>
+              <p class="measure text-muted">Com a foto do post, e com a capa tipográfica automática para posts sem foto.</p>
+              <div class="grid-auto">
+                <article class="post-card">
+                  <div class="cover post-card__cover"><img src="../assets/images/covers/homem-banheira-768x512.jpg" alt="Homem sentado dentro de uma banheira vazia, em preto e branco" loading="lazy"></div>
+                  <a class="eyebrow" href="#">Coaching</a>
+                  <h3 class="post-card__title"><a href="#">Psicólogo é só para doidos</a></h3>
+                  <p class="post-card__excerpt">Uma forma diferente de pensar sobre tratamentos psicológicos, baseada em experiência própria.</p>
+                  <span class="post-card__meta">21 de outubro de 2018 · 5 min</span>
+                </article>
+                <article class="post-card">
+                  <div class="cover post-card__cover"><img src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="Maria-fumaça soltando vapor em Tiradentes" loading="lazy"></div>
+                  <a class="eyebrow" href="#">Casos de sucesso</a>
+                  <h3 class="post-card__title"><a href="#">Quem é mineiro me entende</a></h3>
+                  <p class="post-card__excerpt">A cultura mineira é tão singular que tem um vocabulário próprio.</p>
+                  <span class="post-card__meta">19 de maio de 2019 · 4 min</span>
+                </article>
+                <article class="post-card">
+                  <div class="cover cover--type post-card__cover illo">
+                    <svg class="cover__object" aria-hidden="true"><use href="#obj-clock"/></svg>
+                    <span class="cover__title">Um turbo para metas pessoais</span>
+                  </div>
+                  <a class="eyebrow" href="#">Gestão de tempo</a>
+                  <h3 class="post-card__title"><a href="#">Um turbo para metas pessoais</a></h3>
+                  <p class="post-card__excerpt">Depois de falhar bastante com metas pessoais, criei uma ferramenta para me gerenciar melhor.</p>
+                  <span class="post-card__meta">13 de fevereiro de 2021 · 7 min</span>
+                </article>
+              </div>
+              <aside class="mockup-note">O terceiro card simula um post sem foto: a capa tipográfica é gerada a partir do título e da categoria.</aside>
+            </div>
+
+            <div class="sg-block">
+              <h3>Card genérico <span class="sg-label">.card · .card--interactive</span></h3>
+              <div class="grid-auto" style="--grid-min: 14rem">
+                <div class="card"><h4>Card estático</h4><p class="text-muted text-sm">Fundo de superfície e borda suave.</p></div>
+                <a class="card card--interactive" href="#"><h4>Card clicável</h4><p class="text-muted text-sm">Sobe e inclina levemente no hover.</p></a>
+              </div>
+            </div>
+
+            <div class="sg-block">
+              <h3>Cabeçalho e rodapé</h3>
+              <p class="measure text-muted">São os desta própria página. Em telas estreitas, o menu vai para um painel aberto pelo botão ☰, feito com o atributo <code>popover</code> do HTML, sem JavaScript.</p>
+            </div>
+          </section>
+
+          <!-- Illustrations -->
+          <section class="sg-section" id="ilustracoes">
+            <header>
+              <h2>Ilustrações</h2>
+              <p class="measure text-muted">Estilo flat em tons de sálvia: forma principal, forma secundária e um ou dois detalhes em traço. Sem contorno, gradiente ou sombra. Estes 8 são o início do conjunto de cerca de 25 objetos previsto.</p>
+            </header>
+            <div class="sg-themes">
+              <div class="sg-theme sg-theme--light"><span class="sg-theme__name">Tema claro</span>
+                <div class="sg-objects illo">
+                <figure><svg aria-hidden="true"><use href="#obj-laptop"/></svg><figcaption>Notebook</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-mug"/></svg><figcaption>Caneca</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-plane"/></svg><figcaption>Avião de papel</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-pencil"/></svg><figcaption>Lápis</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-note"/></svg><figcaption>Nota musical</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-clock"/></svg><figcaption>Despertador</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-clover"/></svg><figcaption>Trevo</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-bulb"/></svg><figcaption>Lâmpada</figcaption></figure>
+                </div>
+              </div>
+              <div class="sg-theme sg-theme--dark"><span class="sg-theme__name">Tema escuro</span>
+                <div class="sg-objects illo">
+                <figure><svg aria-hidden="true"><use href="#obj-laptop"/></svg><figcaption>Notebook</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-mug"/></svg><figcaption>Caneca</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-plane"/></svg><figcaption>Avião de papel</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-pencil"/></svg><figcaption>Lápis</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-note"/></svg><figcaption>Nota musical</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-clock"/></svg><figcaption>Despertador</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-clover"/></svg><figcaption>Trevo</figcaption></figure>
+                <figure><svg aria-hidden="true"><use href="#obj-bulb"/></svg><figcaption>Lâmpada</figcaption></figure>
+                </div>
+              </div>
+            </div>
+            <div class="sg-block">
+              <h3>Objetos flutuando <span class="sg-label">.float-stage · .float-object</span></h3>
+              <div class="sg-hero float-stage illo">
+                <svg class="float-object" style="--x:6%;--y:10%;--r:-10deg;--s:64px" aria-hidden="true"><use href="#obj-laptop"/></svg>
+                <svg class="float-object" style="--x:82%;--y:8%;--r:8deg;--s:54px;--delay:-1s" aria-hidden="true"><use href="#obj-mug"/></svg>
+                <svg class="float-object" style="--x:86%;--y:66%;--r:-6deg;--s:56px;--delay:-2s" aria-hidden="true"><use href="#obj-plane"/></svg>
+                <svg class="float-object" style="--x:5%;--y:70%;--r:6deg;--s:50px;--delay:-3s" aria-hidden="true"><use href="#obj-pencil"/></svg>
+                <svg class="float-object" style="--x:28%;--y:80%;--r:-8deg;--s:44px;--delay:-4s" aria-hidden="true"><use href="#obj-note"/></svg>
+                <svg class="float-object" style="--x:64%;--y:80%;--r:10deg;--s:46px;--delay:-1.5s" aria-hidden="true"><use href="#obj-clock"/></svg>
+                <svg class="float-object" style="--x:58%;--y:4%;--r:-12deg;--s:42px;--delay:-2.5s" aria-hidden="true"><use href="#obj-clover"/></svg>
+                <svg class="float-object" style="--x:26%;--y:5%;--r:8deg;--s:46px;--delay:-3.5s" aria-hidden="true"><use href="#obj-bulb"/></svg>
+                <div class="stack" style="--stack-gap: var(--space-sm); justify-items: center">
+                  <h2 style="font-size: var(--text-3xl)">Oi, eu sou o <span class="scribble">Gui</span> 👋</h2>
+                  <p class="text-muted" style="font-size: var(--text-md)">Escrevo sobre a vida e construo apps.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Motion -->
+          <section class="sg-section" id="movimento">
+            <header>
+              <h2>Movimento</h2>
+              <p class="measure text-muted">Pequeno e com propósito, tudo em CSS. Quem prefere menos movimento no sistema (<code>prefers-reduced-motion</code>) não vê nenhuma animação.</p>
+            </header>
+            <ul class="post-body" style="max-width: none">
+              <li><strong>Botões:</strong> sobem 2 px no hover com um leve "pulinho" (<code>--ease-bounce</code>).</li>
+              <li><strong>Cards e capas:</strong> sobem 4 px e inclinam meio grau, com sombra.</li>
+              <li><strong>Logo:</strong> a bolota balança ao passar o mouse.</li>
+              <li><strong>Objetos flutuantes:</strong> sobem e descem 8 px num ciclo de 6 s, cada um em um tempo diferente.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <site-footer root="../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>
