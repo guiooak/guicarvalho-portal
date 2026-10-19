@@ -490,6 +490,10 @@ select.input {
   border-radius: var(--radius-lg);
   background: var(--color-bg);
 
+  & .cell-muted {
+    white-space: normal;
+  }
+
   & blockquote {
     margin-block: 0.4rem 0;
     color: var(--color-heading);

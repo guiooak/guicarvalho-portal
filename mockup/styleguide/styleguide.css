@@ -2,13 +2,14 @@
 @layer mockup {
   .sg {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-xl);
     padding-block: var(--space-xl);
   }
 
   @media (min-width: 64rem) {
     .sg {
-      grid-template-columns: 13rem 1fr;
+      grid-template-columns: 13rem minmax(0, 1fr);
       align-items: start;
     }
   }
@@ -49,6 +50,7 @@
 
   .sg-section {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-lg);
     padding-block-end: var(--space-2xl);
     border-block-end: 1px solid var(--color-border);
@@ -66,6 +68,7 @@
 
   .sg-block {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-sm);
 
     & > h3 {
