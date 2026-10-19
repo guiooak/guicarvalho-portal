@@ -64,6 +64,22 @@
     <path d="M10 19 32 35 54 19" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     <circle cx="32" cy="36" r="4.5" fill="var(--f2)"/>
   </symbol>
+  <symbol id="obj-bat" viewBox="0 0 64 64">
+    <path d="M32 24c-3 0-5 2-6 5-5-6-13-8-21-5 3 3 4 7 3 11 4-2 8-1 11 2 2-2 5-2 8 0 1 4 3 7 5 9 2-2 4-5 5-9 3-2 6-2 8 0 3-3 7-4 11-2-1-4 0-8 3-11-8-3-16-1-21 5-1-3-3-5-6-5Z" fill="var(--f)"/>
+    <path d="M27 26l-2-7 5 4M37 26l2-7-5 4" fill="var(--f)"/>
+    <circle cx="29.5" cy="31" r="2" fill="var(--f2)"/><circle cx="34.5" cy="31" r="2" fill="var(--f2)"/>
+  </symbol>
+  <symbol id="obj-doc" viewBox="0 0 64 64">
+    <path d="M19 7h19l12 12v33a5 5 0 0 1-5 5H19a5 5 0 0 1-5-5V12a5 5 0 0 1 5-5Z" fill="var(--f)"/>
+    <path d="M38 7l12 12h-8a4 4 0 0 1-4-4Z" fill="var(--f2)"/>
+    <path d="M22 31h20M22 38h20M22 45h12" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-window" viewBox="0 0 64 64">
+    <rect x="17" y="7" width="40" height="30" rx="5" fill="var(--f2)"/>
+    <rect x="7" y="20" width="42" height="36" rx="5" fill="var(--f)"/>
+    <circle cx="14" cy="27" r="2.2" fill="var(--f2)"/><circle cx="21" cy="27" r="2.2" fill="var(--f2)"/>
+    <path d="M14 38h28M14 46h18" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>

@@ -1,0 +1,91 @@
+/*
+ * One app on the Apps page: a taped screenshot beside an index card with
+ * what it does, highlights, tech and links. Sides alternate down the page.
+ */
+.app-spread {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  padding-block: var(--space-xl);
+  scroll-margin-top: 6rem;
+}
+
+.app-spread:nth-of-type(even) .app-spread__shot {
+  order: 2;
+}
+
+.app-spread__shot img {
+  aspect-ratio: 1200 / 630;
+}
+
+.app-spread__card {
+  position: relative;
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  box-shadow: var(--paper-shadow-sm);
+  rotate: var(--r, 0deg);
+}
+
+.app-spread__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  & h2 {
+    font-size: var(--text-xl);
+  }
+
+  & p {
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+}
+
+.app-spread__card > p {
+  color: var(--color-text);
+}
+
+.app-spread__highlights {
+  display: grid;
+  gap: 0.4rem;
+  padding-inline-start: 1.2rem;
+  font-size: var(--text-sm);
+
+  & li::marker {
+    content: "✓  ";
+    color: var(--color-accent);
+    font-weight: var(--weight-black);
+  }
+}
+
+.app-spread__tech {
+  --cluster-gap: 0.4rem;
+}
+
+.app-spread__actions {
+  --cluster-gap: var(--space-2xs);
+
+  margin-block-start: var(--space-2xs);
+
+  & svg {
+    width: 1.1em;
+    height: 1.1em;
+  }
+}
+
+@media (max-width: 52rem) {
+  .app-spread {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .app-spread:nth-of-type(even) .app-spread__shot {
+    order: 0;
+  }
+}
