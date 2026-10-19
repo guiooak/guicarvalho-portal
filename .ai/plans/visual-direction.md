@@ -128,6 +128,16 @@ Base set for the mockup (about 25 objects):
 | Newsletter | envelope |
 | 404 | folded map |
 
+### Post covers: original photo
+
+Each post uses its own photo as the cover, shown as is, with no color treatment. Chosen over sage-toned photos, generated illustrated covers, generated typographic covers and no covers.
+
+- The 23 migrated posts keep their current WordPress featured images.
+- **Shape**: 16:9 frame with the same rounded corners as cards (16 px), cropped with `object-fit: cover`. An optional focal point per post (`object-position`) avoids bad crops.
+- **Use**: blog listing cards, the post header and the social sharing image (Open Graph, 1200×630).
+- **Accessibility and performance**: alt text for every cover, responsive sizes (`srcset`), lazy loading below the fold.
+- **Open item**: what to show when a new post has no photo.
+
 ### Home page
 
 - Opens with a personal, first-person introduction (e.g. "Oi, eu sou o Gui 👋") and a short line about what I do and write, framed by floating illustrated objects.
@@ -140,4 +150,5 @@ Base set for the mockup (about 25 objects):
 - [x] Neutrals: pure gray.
 - [x] Illustration style: flat, drawn in-house in sage tones.
 - [x] Logo and favicon: acorn with a leaf, mixed-weight lowercase lockup.
-- [ ] Cover image style for blog posts.
+- [x] Post covers: original photos.
+- [ ] Cover fallback for posts without a photo.
