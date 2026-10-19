@@ -155,7 +155,7 @@ The first card-grid layout was rejected as too plain. Five alternative concepts 
 
 - Left: the title "Oi, eu sou o Gui." with the hand-drawn underline, a short line about the notebook and two buttons. **No waving-hand emoji and no sticker above the title.**
 - Right: a collage presenting me and the portal: a polaroid photo of me, a "Quem escreve aqui" post-it and index cards for Blog, Apps and Sobre.
-- Then: the latest posts as a polaroid wall, the apps shelf, the topics and the newsletter post-it.
+- Then: the apps shelf, the latest posts as a polaroid wall, the topics as a sheet of stickers and the newsletter post-it.
 - **No intro video.**
 
 ### Blog listing
