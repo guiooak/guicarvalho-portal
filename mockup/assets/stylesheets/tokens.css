@@ -95,6 +95,21 @@
   --illo-soft: light-dark(var(--sage-200), var(--sage-700));
   --illo-detail: light-dark(var(--sage-800), var(--sage-100));
 
+  /* Notebook ("Caderno") layout */
+  --paper-dot: light-dark(var(--gray-300), var(--gray-800));
+  --paper-dot-gap: 22px;
+  --photo-frame: light-dark(#ffffff, var(--gray-100));
+  --photo-frame-text: var(--gray-800);
+  --photo-frame-heading: var(--gray-950);
+  --photo-frame-muted: var(--gray-600);
+  --tape: rgb(165 197 165 / 0.7);
+  --note-bg: light-dark(#fff3a8, #e9d97c);
+  --note-bg-soft: light-dark(#fffbe0, #f4eaae);
+  --note-fg: #3b3200;
+  --note-border: #a08a2c;
+  --paper-shadow: 0 10px 30px rgb(0 0 0 / 0.14);
+  --paper-shadow-sm: 0 6px 16px rgb(0 0 0 / 0.1);
+
   /* Typographic fallback cover */
   --cover-bg: light-dark(var(--sage-600), var(--sage-800));
   --cover-fg: light-dark(#ffffff, var(--sage-50));

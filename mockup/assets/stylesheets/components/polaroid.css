@@ -1,0 +1,112 @@
+/*
+ * Photo taped to the page. Tilted by --r; straightens on hover.
+ * <a class="polaroid" style="--r:-3deg"><img …><span class="polaroid__caption">…</span></a>
+ */
+.polaroid {
+  position: relative;
+  display: block;
+  padding: 12px 12px 16px;
+  border-radius: 6px;
+  background: var(--photo-frame);
+  color: var(--photo-frame-text);
+  box-shadow: var(--paper-shadow);
+  font-weight: inherit;
+  text-decoration: none;
+  rotate: var(--r, 0deg);
+  transition:
+    rotate var(--duration-base) var(--ease-bounce),
+    scale var(--duration-base) var(--ease-bounce);
+
+  & img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: var(--focal-point, center);
+    border-radius: 2px;
+  }
+
+  /* Tape strip. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block-start: -12px;
+    inset-inline-start: 50%;
+    z-index: 1;
+    width: 84px;
+    height: 26px;
+    border-radius: 2px;
+    background: var(--tape);
+    translate: -50% 0;
+    rotate: -4deg;
+  }
+}
+
+a.polaroid:hover {
+  z-index: 5;
+  color: var(--photo-frame-text);
+  rotate: 0deg;
+  scale: 1.04;
+}
+
+a.polaroid:focus-visible {
+  outline-offset: 4px;
+}
+
+.polaroid--wide img {
+  aspect-ratio: 3 / 2;
+}
+
+.polaroid__caption {
+  display: grid;
+  gap: 0.15rem;
+  margin-block-start: 0.6rem;
+}
+
+.polaroid__title {
+  color: var(--photo-frame-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-black);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.polaroid__meta {
+  color: var(--photo-frame-muted);
+  font-size: var(--text-xs);
+}
+
+/* Category label stuck on the corner. */
+.polaroid__tag {
+  position: absolute;
+  inset-block-start: -14px;
+  inset-inline-end: -10px;
+  z-index: 2;
+  padding: 0.25em 0.7em;
+  border-radius: var(--radius-pill);
+  background: var(--sage-600);
+  color: #ffffff;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.15);
+  rotate: 6deg;
+}
+
+/* Wall of polaroids, each with its own tilt. */
+.wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-xl) var(--space-lg);
+  padding-block: var(--space-md);
+
+  & > .polaroid:nth-child(3n + 1) {
+    --r: -2.5deg;
+  }
+
+  & > .polaroid:nth-child(3n + 2) {
+    --r: 1.8deg;
+  }
+
+  & > .polaroid:nth-child(3n) {
+    --r: -1deg;
+  }
+}

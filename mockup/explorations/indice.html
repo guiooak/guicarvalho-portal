@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Índice · conceito de layout</title>
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+  <style>
+    @layer mockup {
+      .concept-bar { display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; justify-content:space-between; padding:.6rem var(--gutter); background:#d4a017; color:#1a1400; font-size:var(--text-xs); font-weight:800; }
+      .concept-bar a { color:inherit; }
+
+.book { display:grid; grid-template-columns: 22rem 1fr; gap:var(--space-2xl); padding-block:var(--space-2xl); align-items:start; }
+.cover-page { position:sticky; top:6rem; display:grid; gap:var(--space-md); padding:var(--space-lg); border-radius:var(--radius-lg); background:var(--cover-bg); color:var(--cover-fg); min-height:30rem; align-content:space-between; }
+.cover-page h1 { color:var(--cover-fg); font-size:2.75rem; line-height:1; }
+.cover-page h1 b { font-weight:900; } .cover-page h1 span { font-weight:300; }
+.cover-page p { opacity:.9; }
+.cover-page .illo { --illo-main:var(--cover-illo-main); --illo-soft:var(--cover-illo-soft); --illo-detail:var(--cover-illo-detail); display:flex; gap:.75rem; }
+.cover-page .illo svg { width:46px; height:46px; }
+.cover-page .button { --button-bg:var(--cover-fg); --button-fg:var(--cover-bg); --button-border:var(--cover-fg); }
+.toc h2 { font-size:var(--text-xs); text-transform:uppercase; letter-spacing:.12em; color:var(--color-text-muted); margin-bottom:var(--space-sm); }
+.chapter { margin-bottom:var(--space-xl); }
+.chapter > h3 { display:flex; align-items:baseline; gap:.75rem; font-size:var(--text-xl); padding-bottom:.4rem; border-bottom:3px solid var(--color-heading); margin-bottom:.5rem; }
+.chapter > h3 em { font-style:normal; font-family:var(--font-mono); font-size:var(--text-sm); color:var(--color-accent); }
+.entry { position:relative; display:flex; align-items:baseline; gap:.5rem; padding-block:.55rem; color:var(--color-heading); text-decoration:none; font-weight:700; }
+.entry .t { flex:none; max-width:75%; }
+.entry .dots { flex:1; border-bottom:2px dotted var(--color-border-input); translate:0 -4px; }
+.entry .pg { flex:none; font-family:var(--font-mono); font-size:var(--text-xs); color:var(--color-text-muted); }
+.entry:hover { color:var(--color-accent); }
+.entry .peek { position:absolute; right:6rem; top:50%; width:11rem; aspect-ratio:3/2; object-fit:cover; border-radius:12px; box-shadow:var(--shadow-card-hover); opacity:0; translate:0 -50%; scale:.9; rotate:-3deg; pointer-events:none; transition: opacity var(--duration-fast), scale var(--duration-base) var(--ease-bounce); z-index:3; }
+.entry:hover .peek { opacity:1; scale:1; }
+@media (max-width: 56rem) { .book { grid-template-columns:1fr; } .cover-page { position:static; min-height:auto; } .entry .peek { display:none; } .entry .t { max-width:80%; } }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="concept-bar"><span>Conceito 5 · Índice: o portal como o sumário de um livro</span><a href="index.html">← todos os conceitos</a></div>
+  <div class="site">
+    <site-header root="../"></site-header>
+    <main id="main">
+
+      <div class="container">
+        <div class="book">
+          <aside class="cover-page">
+            <div class="illo"><svg class="" style="" aria-hidden="true"><use href="#obj-pencil"/></svg><svg class="" style="" aria-hidden="true"><use href="#obj-mug"/></svg><svg class="" style="" aria-hidden="true"><use href="#obj-clover"/></svg></div>
+            <div class="stack" style="--stack-gap: var(--space-sm)">
+              <h1><b>gui</b><span>carvalho</span></h1>
+              <p>Um livro em construção desde 2015: histórias, metas, idiomas e os apps que eu faço. Escolha um capítulo.</p>
+            </div>
+            <a class="button" href="#">Começar pelo último post</a>
+          </aside>
+          <nav class="toc" aria-label="Sumário">
+            <h2>Sumário</h2>
+            <section class="chapter"><h3><em>I</em>Vida</h3><a class="entry" href="#"><span class="t">Quem é mineiro me entende</span><span class="dots"></span><span class="pg">2019</span><img class="peek" src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Psicólogo é só para doidos</span><span class="dots"></span><span class="pg">2018</span><img class="peek" src="../assets/images/covers/homem-banheira-768x512.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Um dia de bátima</span><span class="dots"></span><span class="pg">2017</span><img class="peek" src="../assets/images/covers/4-768x576.png" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O desapego, o amor e os ciclos da vida</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/amor-e-apego-768x592.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Feliz dia dos Pais</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/father-768x432.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Sawabona Shikoba</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/pensando-sozinha.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Parabéns mães!</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/gui-video-maes-2015-768x438.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Mulheres</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/women.jpg" alt="" loading="lazy"></a></section><section class="chapter"><h3><em>II</em>Mundo afora</h3><a class="entry" href="../br/idiomas/o-que-te-impede-de-aprender-outro-idioma/"><span class="t">O que te impede de aprender outro idioma?</span><span class="dots"></span><span class="pg">2016</span><img class="peek" src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Suporte aos desabrigados na Irlanda</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/irish-homeless-768x489.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O dia bonito longe do equador</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/St-Stephens-Green-Dublin-768x432.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O Mercadinho Brasileiro e os 10 Centavos</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/real-vs-euro-2-768x512.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O Slane Castle e o Rock and Roll</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/foof_sunderland_post_750.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O Início dos Sonhos</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/dream-768x590.jpg" alt="" loading="lazy"></a></section><section class="chapter"><h3><em>III</em>Crescer</h3><a class="entry" href="#"><span class="t">Um turbo para metas pessoais</span><span class="dots"></span><span class="pg">2021</span><img class="peek" src="../assets/images/covers/roadmap-dashboard-gui-carvalho-default-768x433.png" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Mas me conta, como vocês dois se conheceram?</span><span class="dots"></span><span class="pg">2018</span><img class="peek" src="../assets/images/covers/Gui-e-Joice-Inhotim-768x294.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">O Preço da Mídia Gratuita</span><span class="dots"></span><span class="pg">2018</span><img class="peek" src="../assets/images/covers/life-without-tv-768x513.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Invictus: O poema que inspirou Nelson Mandela</span><span class="dots"></span><span class="pg">2017</span><img class="peek" src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">As pequenas grandes hipóteses do dia a dia</span><span class="dots"></span><span class="pg">2017</span><img class="peek" src="../assets/images/covers/garota-pensando-768x462.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Aumentando sua auto-confiança em apenas 2 minutos</span><span class="dots"></span><span class="pg">2016</span><img class="peek" src="../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Inspiração de Vida e Empreendedora</span><span class="dots"></span><span class="pg">2016</span><img class="peek" src="../assets/images/covers/silvio-santos-blog-guicarvalho-768x526.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Welcome Back</span><span class="dots"></span><span class="pg">2016</span><img class="peek" src="../assets/images/covers/welcome-home-768x432.jpg" alt="" loading="lazy"></a><a class="entry" href="#"><span class="t">Liderança em um minuto</span><span class="dots"></span><span class="pg">2015</span><img class="peek" src="../assets/images/covers/project-management-3-768x614.jpg" alt="" loading="lazy"></a></section><section class="chapter"><h3><em>IV</em>Apps</h3><a class="entry" href="#"><span class="t">Nome do app</span><span class="dots"></span><span class="pg">app</span></a><a class="entry" href="#"><span class="t">Outro app</span><span class="dots"></span><span class="pg">app</span></a><a class="entry" href="#"><span class="t">Mais um app</span><span class="dots"></span><span class="pg">app</span></a></section><section class="chapter"><h3><em>V</em>Sobre o autor</h3><a class="entry" href="#"><span class="t">Quem é o Gui</span><span class="dots"></span><span class="pg">sobre</span></a><a class="entry" href="#newsletter"><span class="t">Receber os próximos capítulos por e-mail</span><span class="dots"></span><span class="pg">✉️</span></a></section>
+          </nav>
+        </div>
+        <aside class="mockup-note">Conceito Índice: o portal é um livro. A home é o sumário, com capítulos que agrupam as categorias, linhas pontilhadas e o ano no lugar da página. Passe o mouse num título para "espiar" a capa do post.</aside>
+      </div>
+
+    </main>
+    <site-footer root="../"></site-footer>
+  </div>
+</body>
+</html>

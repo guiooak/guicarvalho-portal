@@ -1,0 +1,35 @@
+/* Dotted notebook paper behind the whole page: <body class="paper"> */
+.paper {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(var(--paper-dot) 1.2px, transparent 1.2px);
+  background-size: var(--paper-dot-gap) var(--paper-dot-gap);
+}
+
+/* A clean sheet laid on the paper, for long reading (post body, comments). */
+.sheet {
+  padding: clamp(var(--space-md), 5vw, var(--space-2xl));
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  box-shadow: var(--paper-shadow);
+}
+
+.sheet > .comments {
+  padding-block-start: 0;
+}
+
+/* Section title preceded by a sticker. */
+.board-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-block: var(--space-2xl) var(--space-lg);
+
+  & h2 {
+    font-size: var(--text-2xl);
+  }
+
+  & .section-heading__link {
+    margin-inline-start: auto;
+  }
+}

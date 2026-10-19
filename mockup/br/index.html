@@ -4,80 +4,86 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>gui carvalho · Histórias, metas, idiomas e apps</title>
-  <meta name="description" content="Blog e portfólio de Guilherme Carvalho: histórias, metas, idiomas e os apps que ele constrói.">
+  <meta name="description" content="O caderno de Guilherme Carvalho: histórias, metas, idiomas, viagens e os apps que ele constrói.">
   <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/stylesheets/application.css">
   <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
   <script src="../assets/javascripts/mockup.js"></script>
 </head>
-<body>
+<body class="paper">
   <div class="site">
     <site-header root="../"></site-header>
 
     <main id="main">
-      <section class="container float-stage illo hero" aria-labelledby="hero-title">
-        <svg class="float-object" style="--x:4%;--y:14%;--r:-10deg;--s:64px;--delay:0s" aria-hidden="true"><use href="#obj-laptop"/></svg>
-        <svg class="float-object" style="--x:86%;--y:10%;--r:8deg;--s:54px;--delay:-1s" aria-hidden="true"><use href="#obj-mug"/></svg>
-        <svg class="float-object" style="--x:88%;--y:70%;--r:-6deg;--s:56px;--delay:-2s" aria-hidden="true"><use href="#obj-plane"/></svg>
-        <svg class="float-object" style="--x:6%;--y:74%;--r:6deg;--s:50px;--delay:-3s" aria-hidden="true"><use href="#obj-pencil"/></svg>
-        <svg class="float-object" style="--x:22%;--y:86%;--r:-8deg;--s:44px;--delay:-4s" aria-hidden="true"><use href="#obj-note"/></svg>
-        <svg class="float-object" style="--x:70%;--y:86%;--r:10deg;--s:46px;--delay:-1.5s" aria-hidden="true"><use href="#obj-clock"/></svg>
-        <svg class="float-object" style="--x:66%;--y:4%;--r:-12deg;--s:42px;--delay:-2.5s" aria-hidden="true"><use href="#obj-clover"/></svg>
-        <svg class="float-object" style="--x:26%;--y:2%;--r:8deg;--s:46px;--delay:-3.5s" aria-hidden="true"><use href="#obj-bulb"/></svg>
-        <h1 class="hero__title" id="hero-title">Oi, eu sou o <span class="scribble">Gui</span> 👋</h1>
-        <p class="hero__lead">Escrevo sobre carreira, metas, idiomas e as presepadas da vida. Também construo apps, e você encontra todos eles aqui.</p>
-        <div class="cluster hero__actions">
-          <a class="button" href="../br/blog.html">Ler o blog</a>
-          <a class="button button--secondary" href="../br/apps.html">Ver meus apps</a>
+      <section class="container desk" aria-labelledby="intro-title">
+        <div>
+          <h1 class="desk__title" id="intro-title">Oi, eu sou o <span class="scribble">Gui</span>.</h1>
+          <p class="desk__lead">Este é o meu caderno: histórias, metas, idiomas, viagens e os apps que eu construo, colados aqui desde 2015.</p>
+          <div class="cluster">
+            <a class="button" href="../br/blog.html">Folhear o blog</a>
+            <a class="button button--secondary" href="../br/apps.html">Meus apps</a>
+          </div>
+        </div>
+        <div class="collage">
+          <figure class="polaroid collage__photo" style="--r:-5deg">
+            <img src="../assets/images/about/gui-paris.jpg" alt="Gui sorrindo em Paris, com a cidade ao fundo" width="768" height="576">
+            <figcaption class="polaroid__caption"><span class="polaroid__title">Esse sou eu</span><span class="polaroid__meta">Paris, 2016</span></figcaption>
+          </figure>
+          <div class="sticky-note collage__note" style="--r:4deg">
+            <span class="sticky-note__title">Quem escreve aqui</span>
+            <ul>
+              <li>Mineiro de Ipatinga</li>
+              <li>Cientista da computação pela UFV</li>
+              <li>Morei um ano em Dublin</li>
+              <li>Rock, pedal e cerveja artesanal</li>
+            </ul>
+          </div>
+          <nav class="collage__cards" aria-label="O que tem por aqui">
+            <span class="collage__cards-title">O que tem por aqui</span>
+            <a class="index-card" href="../br/blog.html" style="--r:-2deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-pencil"/></svg></span><span><b>Blog</b><small>23 histórias desde 2015</small></span></a>
+            <a class="index-card" href="../br/apps.html" style="--r:1.5deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-laptop"/></svg></span><span><b>Apps</b><small>Coisas que eu construí</small></span></a>
+            <a class="index-card" href="../br/sobre.html" style="--r:-1deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-bulb"/></svg></span><span><b>Sobre</b><small>A biografia autorizada</small></span></a>
+          </nav>
+          <span class="sticker collage__deco" style="--r:12deg"><svg aria-hidden="true"><use href="#obj-clover"/></svg></span>
+        </div>
+        <aside class="mockup-note" style="grid-column: 1 / -1">A foto e os itens do post-it vêm da página "Sobre o Gui" do blog atual e são provisórios até chegar o material novo.</aside>
+      </section>
+
+      <section class="container" aria-labelledby="blog-title">
+        <div class="board-title">
+          <span class="sticker" style="--r:-6deg"><svg aria-hidden="true"><use href="#obj-plane"/></svg></span>
+          <h2 id="blog-title">Do blog</h2>
+          <a class="section-heading__link" href="../br/blog.html">Folhear todos os posts <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        </div>
+        <div class="wall">
+          <a class="polaroid " href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/"><span class="polaroid__tag">Gestão de tempo</span><img src="../assets/images/covers/roadmap-dashboard-gui-carvalho-default-768x433.png" alt="Painel de Controle para Gestão de Metas Pessoais" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Um turbo para metas pessoais</span><time class="polaroid__meta" datetime="2021-02-13">13 fev 2021</time></span></a>
+          <a class="polaroid " href="../br/homenagens/quem-e-mineiro-me-entende/"><span class="polaroid__tag">Homenagens</span><img src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="O Trem Mineiro" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Quem é mineiro me entende</span><time class="polaroid__meta" datetime="2019-05-19">19 mai 2019</time></span></a>
+          <a class="polaroid " href="../br/casos-de-sucesso/mas-me-conta-como-voces-dois-se-conheceram/"><span class="polaroid__tag">Casos de Sucesso</span><img src="../assets/images/covers/Gui-e-Joice-Inhotim-768x294.jpg" alt="Gui e Joice Inhotim" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Mas me conta, como vocês dois se conheceram?</span><time class="polaroid__meta" datetime="2018-11-25">25 nov 2018</time></span></a>
+          <a class="polaroid " href="../br/viva/psicologo-e-so-para-doidos/"><span class="polaroid__tag">Viva</span><img src="../assets/images/covers/homem-banheira-768x512.jpg" alt="Homem Camisa de Força em Banheira" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Psicólogo é só para doidos</span><time class="polaroid__meta" datetime="2018-10-21">21 out 2018</time></span></a>
+          <a class="polaroid " href="../br/geral/o-preco-da-midia-gratuita/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/life-without-tv-768x513.jpg" alt="Vida sem televisão" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O Preço da Mídia Gratuita</span><time class="polaroid__meta" datetime="2018-09-30">30 set 2018</time></span></a>
+          <a class="polaroid " href="../br/presepadas/um-dia-de-batima/"><span class="polaroid__tag">Presepadas</span><img src="../assets/images/covers/4-768x576.png" alt="Um dia de bátima" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Um dia de bátima</span><time class="polaroid__meta" datetime="2017-11-02">2 nov 2017</time></span></a>
+          <a class="polaroid " href="../br/inspiracao/invictus-o-poema-que-inspirou-nelson-mandela/"><span class="polaroid__tag">Inspiração</span><img src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="Nelson Mandela Jovem" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Invictus: O poema que inspirou Nelson Mandela</span><time class="polaroid__meta" datetime="2017-04-23">23 abr 2017</time></span></a>
+          <a class="polaroid " href="../br/geral/as-pequenas-grandes-hipoteses-do-dia-dia/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/garota-pensando-768x462.jpg" alt="Garota Pessando" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">As pequenas grandes hipóteses do dia a dia</span><time class="polaroid__meta" datetime="2017-02-19">19 fev 2017</time></span></a>
         </div>
       </section>
 
-      <section class="section container" aria-labelledby="latest-title">
-        <div class="section-heading">
-          <h2 id="latest-title">Do blog</h2>
-          <a class="section-heading__link" href="../br/blog.html">Ver todos os posts <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      <section class="container" aria-labelledby="apps-title">
+        <div class="board-title">
+          <span class="sticker" style="--r:8deg"><svg aria-hidden="true"><use href="#obj-laptop"/></svg></span>
+          <h2 id="apps-title">Coisas que eu construí</h2>
+          <a class="section-heading__link" href="../br/apps.html">Ver todos os apps <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
         </div>
-        <div class="stack" style="--stack-gap: var(--space-xl)">
-      <article class="post-card post-card--featured">
-        <div class="post-card__inner">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/roadmap-dashboard-gui-carvalho-default-768x433.png" alt="Painel de Controle para Gestão de Metas Pessoais" width="768" height="512"></div>
-          <div class="stack" style="--stack-gap: var(--space-2xs)">
-            <span class="tag tag--accent" style="width: fit-content">Post mais recente</span>
-            <a class="eyebrow" href="../br/gestao-de-tempo/">Gestão de tempo</a>
-          <h3 class="post-card__title" style="font-size: var(--text-xl)"><a href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/">Um turbo para metas pessoais</a></h3>
-          <p class="post-card__excerpt">Depois de falhar bastante com metas pessoais, resolvi criar uma ferramenta para me gerenciar melhor, e tem funcionado bem.</p>
-          <time class="post-card__meta" datetime="2021-02-13">13 de fevereiro de 2021</time>
-          </div>
+        <div class="apps-shelf">
+          <a class="apps-shelf__app" href="../br/apps.html"><span class="sticker" style="--r:-6deg"><svg aria-hidden="true"><use href="#obj-clock"/></svg></span><span>Nome do app<small>O que ele faz, em uma frase</small></span></a>
+          <a class="apps-shelf__app" href="../br/apps.html"><span class="sticker" style="--r:5deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg></span><span>Outro app<small>O que ele faz, em uma frase</small></span></a>
+          <a class="apps-shelf__app" href="../br/apps.html"><span class="sticker" style="--r:-3deg"><svg aria-hidden="true"><use href="#obj-note"/></svg></span><span>Mais um app<small>O que ele faz, em uma frase</small></span></a>
         </div>
-      </article>
-          <div class="grid-auto">
-        <article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="O Trem Mineiro" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/homenagens/">Homenagens</a>
-          <h3 class="post-card__title"><a href="../br/homenagens/quem-e-mineiro-me-entende/">Quem é mineiro me entende</a></h3>
-          <p class="post-card__excerpt">A cultura Mineira é tão singular que possui um vocabulário próprio, que para nós mineiros é tão óbvio que chega ser até difícil de explicar.</p>
-          <time class="post-card__meta" datetime="2019-05-19">19 de maio de 2019</time>
-        </article>
-        <article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/Gui-e-Joice-Inhotim-768x294.jpg" alt="Gui e Joice Inhotim" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/casos-de-sucesso/">Casos de Sucesso</a>
-          <h3 class="post-card__title"><a href="../br/casos-de-sucesso/mas-me-conta-como-voces-dois-se-conheceram/">Mas me conta, como vocês dois se conheceram?</a></h3>
-          <p class="post-card__excerpt">Caso você tenha curiosidade mas não tenha tanto tempo disponível para ouvir a história inteira, aqui está o resumo dela. Mas se quiser, podemos tomar uma cerveja e eu conta-la novamente sem problemas, pois essa é uma das minhas histórias preferidas. 🙂</p>
-          <time class="post-card__meta" datetime="2018-11-25">25 de novembro de 2018</time>
-        </article>
-        <article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/homem-banheira-768x512.jpg" alt="Homem Camisa de Força em Banheira" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/viva/">Viva</a>
-          <h3 class="post-card__title"><a href="../br/viva/psicologo-e-so-para-doidos/">Psicólogo é só para doidos</a></h3>
-          <p class="post-card__excerpt">Uma forma diferente de pensar sobre tratamentos psicológicos baseado em experiência própria. E se isso é só para doidos, talvez eu seja doido mesmo.</p>
-          <time class="post-card__meta" datetime="2018-10-21">21 de outubro de 2018</time>
-        </article>
-          </div>
-        </div>
+        <aside class="mockup-note" style="margin-block-start: var(--space-sm)">Apps provisórios: aguardando a lista real (nome, frase, links e ícones).</aside>
       </section>
 
-      <section class="section container" aria-labelledby="topics-title">
-        <div class="section-heading">
+      <section class="container" aria-labelledby="topics-title">
+        <div class="board-title">
+          <span class="sticker" style="--r:-4deg"><svg aria-hidden="true"><use href="#obj-note"/></svg></span>
           <h2 id="topics-title">Sobre o que eu escrevo</h2>
         </div>
         <div class="cluster">
@@ -99,49 +105,18 @@
         </div>
       </section>
 
-      <section class="section container" aria-labelledby="apps-title">
-        <div class="section-heading">
-          <h2 id="apps-title">Apps que eu construí</h2>
-          <a class="section-heading__link" href="../br/apps.html">Ver todos os apps <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-          <p>Projetos que nasceram de problemas meus e agora estão por aí.</p>
-        </div>
-        <aside class="mockup-note" style="margin-block-end: var(--space-md)">Conteúdo provisório: os cards de apps aguardam a lista real de apps (nome, descrição, links e ícones).</aside>
-        <div class="grid-auto">
-          <article class="app-card illo">
-            <div class="app-card__icon"><svg aria-hidden="true"><use href="#obj-clock"/></svg></div>
-            <h3 class="app-card__name">Nome do app</h3>
-            <p class="app-card__tagline">Uma frase curta explicando o que o app faz e para quem.</p>
-            <a class="section-heading__link" href="../br/apps.html">Conhecer <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-          </article>
-          <article class="app-card illo">
-            <div class="app-card__icon"><svg aria-hidden="true"><use href="#obj-laptop"/></svg></div>
-            <h3 class="app-card__name">Outro app</h3>
-            <p class="app-card__tagline">Uma frase curta explicando o que o app faz e para quem.</p>
-            <a class="section-heading__link" href="../br/apps.html">Conhecer <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-          </article>
-          <article class="app-card illo">
-            <div class="app-card__icon"><svg aria-hidden="true"><use href="#obj-bulb"/></svg></div>
-            <h3 class="app-card__name">Mais um app</h3>
-            <p class="app-card__tagline">Uma frase curta explicando o que o app faz e para quem.</p>
-            <a class="section-heading__link" href="../br/apps.html">Conhecer <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
-          </article>
-        </div>
-      </section>
-
-    <section class="section" aria-labelledby="newsletter-title">
-      <div class="container">
-        <div class="newsletter" id="newsletter">
-          <h2 id="newsletter-title">Receba os próximos posts por e-mail ✉️</h2>
-          <p>Um e-mail quando sair post novo. Sem spam, e dá para sair quando quiser.</p>
-          <form class="newsletter__form" action="#" onsubmit="return false">
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Quer receber o próximo post? ✉️</h2>
+          <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
+          <form action="#" onsubmit="return false">
             <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
             <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
-            <button class="button" type="submit">Inscrever</button>
+            <button class="button" type="submit">Colar meu e-mail</button>
           </form>
-          <span class="newsletter__note">Você vai receber um e-mail para confirmar a inscrição.</span>
+          <small>Você vai receber um e-mail para confirmar a inscrição.</small>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
 
     <site-footer root="../"></site-footer>

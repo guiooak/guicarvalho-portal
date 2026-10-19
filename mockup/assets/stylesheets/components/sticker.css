@@ -1,0 +1,95 @@
+/* Round sticker holding a flat illustration. */
+.sticker {
+  --f: var(--illo-main);
+  --f2: var(--illo-soft);
+  --dt: var(--illo-detail);
+
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--sticker-size, 4.5rem);
+  height: var(--sticker-size, 4.5rem);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  outline: 5px solid var(--color-bg);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+  rotate: var(--r, -8deg);
+
+  & svg {
+    width: 62%;
+    height: 62%;
+  }
+}
+
+.sticker--sm {
+  --sticker-size: 2.75rem;
+
+  outline-width: 3px;
+  box-shadow: none;
+}
+
+/* Index card: a small linked card that points to a section of the portal. */
+.index-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.6rem 0.9rem 0.6rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg);
+  box-shadow: var(--paper-shadow-sm);
+  color: var(--color-heading);
+  font-weight: inherit;
+  text-decoration: none;
+  rotate: var(--r, 0deg);
+  transition:
+    rotate var(--duration-base) var(--ease-bounce),
+    translate var(--duration-base) var(--ease-bounce);
+
+  &:hover {
+    color: var(--color-heading);
+    rotate: 0deg;
+    translate: -6px 0;
+  }
+
+  & b {
+    display: block;
+    font-weight: var(--weight-black);
+  }
+
+  & small {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+}
+
+/* Shelf with the apps, as stickers in a dashed box. */
+.apps-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 2px dashed var(--color-border-input);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.apps-shelf__app {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-heading);
+  font-weight: var(--weight-black);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  & small {
+    display: block;
+    color: var(--color-text-muted);
+    font-weight: var(--weight-medium);
+  }
+}

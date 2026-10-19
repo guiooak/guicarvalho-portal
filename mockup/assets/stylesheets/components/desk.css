@@ -1,0 +1,95 @@
+/*
+ * Home opening: text on the left, a collage on the right (photo of me,
+ * "who writes here" note and index cards to the portal sections).
+ */
+.desk {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  padding-block: var(--space-2xl);
+}
+
+.desk__title {
+  font-size: clamp(2.75rem, 2rem + 3vw, 4.75rem);
+  line-height: 1;
+}
+
+.desk__lead {
+  max-width: 36ch;
+  margin-block: var(--space-sm) var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.collage {
+  position: relative;
+  min-height: 34rem;
+}
+
+.collage__photo {
+  position: absolute;
+  inset-block-start: 3rem;
+  inset-inline-start: 0;
+  z-index: 1;
+  width: min(15rem, 44%);
+}
+
+.collage__note {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 2%;
+  z-index: 2;
+  width: min(15rem, 46%);
+}
+
+.collage__cards {
+  position: absolute;
+  inset-block-start: 14rem;
+  inset-inline-end: 0;
+  z-index: 3;
+  display: grid;
+  gap: 0.6rem;
+  width: min(16.5rem, 50%);
+}
+
+.collage__cards-title {
+  margin-inline-start: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.collage__deco {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 18%;
+}
+
+@media (max-width: 52rem) {
+  .desk {
+    grid-template-columns: 1fr;
+  }
+
+  .collage {
+    display: grid;
+    gap: var(--space-lg);
+    justify-items: center;
+    min-height: 0;
+    padding-block-start: var(--space-md);
+  }
+
+  .collage__photo,
+  .collage__note,
+  .collage__cards {
+    position: relative;
+    inset: auto;
+    width: min(20rem, 90%);
+  }
+
+  .collage__deco {
+    display: none;
+  }
+}

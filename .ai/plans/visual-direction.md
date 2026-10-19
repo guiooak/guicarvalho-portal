@@ -41,7 +41,7 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
 
 1. **Illustrated objects and shapes**: loose elements floating around hero areas, themed per section (e.g. objects related to writing on the blog, to building things on the apps page).
 2. **Color**: a green accent, used with intent on links, buttons, highlights and illustrations.
-3. **Small hand-drawn touches**: a drawn underline or scribble on a key heading word, and an occasional emoji such as 👋.
+3. **Small hand-drawn touches**: a drawn underline or scribble on a key heading word. No waving-hand emoji in headings.
 4. **Micro-interactions in pure CSS**: cards that lift or tilt slightly on hover, buttons with a small bounce, smooth focus states. All of them respect `prefers-reduced-motion`.
 
 ### Color and theme
@@ -141,10 +141,31 @@ Each post uses its own photo as the cover, shown as is, with no color treatment.
   - The object uses the flat illustration rules with lighter tones so it reads on the sage background.
   - Generated from the post data (title and category), so it needs no manual work. The same design, rendered at 1200×630, is the social sharing image for these posts.
 
+### Layout: "Caderno" (notebook)
+
+The first card-grid layout was rejected as too plain. Five alternative concepts were prototyped in `mockup/explorations/` (Bento, Revista, Linha do tempo, Caderno, Índice), and **Caderno** was chosen: the portal feels like a personal notebook.
+
+- **Paper**: the page background is dotted paper (`.paper`). Long reading happens on a clean sheet laid on top (`.sheet`) with a soft shadow.
+- **Polaroids**: post photos are framed as polaroids taped to the page, each slightly tilted, straightening on hover (`.polaroid`, `.wall`). The category goes on a small label stuck to the corner.
+- **Post-its**: yellow notes for short lists, the latest-post teaser, the author note and the newsletter sign-up (`.sticky-note`, `.newsletter-note`). Yellow (`--note-bg`) is the one extra color allowed besides sage, and only for notes.
+- **Stickers**: the flat illustrations appear as round stickers next to section titles and on the apps shelf (`.sticker`, `.board-title`, `.apps-shelf`).
+- **Index cards**: small tilted cards that point to the portal sections (`.index-card`).
+
 ### Home page
 
-- Opens with a personal, first-person introduction (e.g. "Oi, eu sou o Gui 👋") and a short line about what I do and write, framed by floating illustrated objects.
+- Left: the title "Oi, eu sou o Gui." with the hand-drawn underline, a short line about the notebook and two buttons. **No waving-hand emoji and no sticker above the title.**
+- Right: a collage presenting me and the portal: a polaroid photo of me, a "Quem escreve aqui" post-it and index cards for Blog, Apps and Sobre.
+- Then: the latest posts as a polaroid wall, the apps shelf, the topics and the newsletter post-it.
 - **No intro video.**
+
+### Blog listing
+
+- Title with a sticker, category filter chips, the latest post as a wide polaroid next to a post-it teaser, then a polaroid wall and pagination.
+
+### Post page
+
+- Title, lead and meta on the paper; the cover as a wide taped polaroid overlapping a white sheet that holds the article, tags, share links and an author note (small photo plus post-it).
+- Then the newsletter post-it, "Leia também" as polaroids and the comments on their own sheet.
 
 ## Open items for the style guide
 

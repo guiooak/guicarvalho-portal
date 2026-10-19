@@ -80,6 +80,14 @@
   }
 }
 
+/* Post cover on the notebook layout: a wide polaroid overlapping the sheet. */
+.post-photo {
+  position: relative;
+  z-index: 1;
+  margin-block-end: calc(-1 * var(--space-lg));
+  margin-inline: calc(-1 * var(--space-sm));
+}
+
 /* Footer of the article: tags and share links. */
 .post-footer {
   display: flex;

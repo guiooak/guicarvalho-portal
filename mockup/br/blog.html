@@ -4,27 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog · gui carvalho</title>
-  <meta name="description" content="Histórias, metas, idiomas, viagens e as presepadas da vida.">
+  <meta name="description" content="Histórias, metas, idiomas, viagens e as presepadas da vida, desde 2015.">
   <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/stylesheets/application.css">
   <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
   <script src="../assets/javascripts/mockup.js"></script>
 </head>
-<body>
+<body class="paper">
   <div class="site">
     <site-header root="../" current="blog"></site-header>
 
     <main id="main">
-      <section class="container float-stage illo hero hero--compact" aria-labelledby="blog-title">
-        <svg class="float-object" style="--x:8%;--y:18%;--r:8deg;--s:54px;--delay:0s" aria-hidden="true"><use href="#obj-pencil"/></svg>
-        <svg class="float-object" style="--x:84%;--y:14%;--r:-8deg;--s:48px;--delay:-1.5s" aria-hidden="true"><use href="#obj-note"/></svg>
-        <svg class="float-object" style="--x:80%;--y:68%;--r:-6deg;--s:50px;--delay:-3s" aria-hidden="true"><use href="#obj-plane"/></svg>
-        <svg class="float-object" style="--x:12%;--y:66%;--r:6deg;--s:46px;--delay:-2s" aria-hidden="true"><use href="#obj-mug"/></svg>
-        <h1 class="hero__title" id="blog-title">Blog</h1>
-        <p class="hero__lead">Histórias, metas, idiomas, viagens e as presepadas da vida. 23 posts desde 2015.</p>
-      </section>
-
-      <div class="container">
+      <section class="container blog-intro" aria-labelledby="blog-title">
+        <div class="board-title" style="margin-block-start: var(--space-xl)">
+          <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-pencil"/></svg></span>
+          <div>
+            <h1 id="blog-title" style="font-size: var(--text-3xl)">Blog</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">23 histórias coladas aqui desde 2015.</p>
+          </div>
+        </div>
         <nav class="category-nav" aria-label="Categorias">
           <ul class="category-nav__list" role="list">
           <li><a class="tag" href="../br/blog.html" aria-current="page">Todos<span class="category-nav__count">23</span></a></li>
@@ -45,130 +43,53 @@
           <li><a class="tag" href="../br/viva/">Viva<span class="category-nav__count">10</span></a></li>
           </ul>
         </nav>
-        <aside class="mockup-note" style="margin-block-end: var(--space-md)">Os filtros levam às páginas de categoria (<code>/br/&lt;categoria&gt;/</code>), que reaproveitam este layout e entram no marco 4.</aside>
+      </section>
 
-        <div class="stack" style="--stack-gap: var(--space-2xl)">
-      <article class="post-card post-card--featured">
-        <div class="post-card__inner">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/roadmap-dashboard-gui-carvalho-default-768x433.png" alt="Painel de Controle para Gestão de Metas Pessoais" width="768" height="512"></div>
-          <div class="stack" style="--stack-gap: var(--space-2xs)">
-            <span class="tag tag--accent" style="width: fit-content">Post mais recente</span>
-            <a class="eyebrow" href="../br/gestao-de-tempo/">Gestão de tempo</a>
-          <h3 class="post-card__title" style="font-size: var(--text-xl)"><a href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/">Um turbo para metas pessoais</a></h3>
-          <p class="post-card__excerpt">Depois de falhar bastante com metas pessoais, resolvi criar uma ferramenta para me gerenciar melhor, e tem funcionado bem.</p>
-          <time class="post-card__meta" datetime="2021-02-13">13 de fevereiro de 2021</time>
-          </div>
+      <section class="container featured-entry" aria-label="Post mais recente">
+        <a class="polaroid polaroid--wide featured-entry__photo" href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/" style="--r:-2deg"><span class="polaroid__tag">Gestão de tempo</span><img src="../assets/images/covers/roadmap-dashboard-gui-carvalho-default-768x433.png" alt="Painel de Controle para Gestão de Metas Pessoais" width="768" height="512"><span class="polaroid__caption"><span class="polaroid__title">Um turbo para metas pessoais</span><time class="polaroid__meta" datetime="2021-02-13">13 fev 2021</time></span></a>
+        <div class="sticky-note featured-entry__note" style="--r:3deg">
+          <span class="sticky-note__title">Post mais recente</span>
+          <h2 class="featured-entry__title"><a href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/">Um turbo para metas pessoais</a></h2>
+          <p>Depois de falhar bastante com metas pessoais, resolvi criar uma ferramenta para me gerenciar melhor, e tem funcionado bem.</p>
+          <a class="featured-entry__more" href="../br/gestao-de-tempo/um-turbo-para-metas-pessoais/">Ler agora <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
         </div>
-      </article>
-          <div class="grid-auto">
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="O Trem Mineiro" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/homenagens/">Homenagens</a>
-          <h3 class="post-card__title"><a href="../br/homenagens/quem-e-mineiro-me-entende/">Quem é mineiro me entende</a></h3>
-          <p class="post-card__excerpt">A cultura Mineira é tão singular que possui um vocabulário próprio, que para nós mineiros é tão óbvio que chega ser até difícil de explicar.</p>
-          <time class="post-card__meta" datetime="2019-05-19">19 de maio de 2019</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/Gui-e-Joice-Inhotim-768x294.jpg" alt="Gui e Joice Inhotim" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/casos-de-sucesso/">Casos de Sucesso</a>
-          <h3 class="post-card__title"><a href="../br/casos-de-sucesso/mas-me-conta-como-voces-dois-se-conheceram/">Mas me conta, como vocês dois se conheceram?</a></h3>
-          <p class="post-card__excerpt">Caso você tenha curiosidade mas não tenha tanto tempo disponível para ouvir a história inteira, aqui está o resumo dela. Mas se quiser, podemos tomar uma cerveja e eu conta-la novamente sem problemas, pois essa é uma das minhas histórias preferidas. 🙂</p>
-          <time class="post-card__meta" datetime="2018-11-25">25 de novembro de 2018</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/homem-banheira-768x512.jpg" alt="Homem Camisa de Força em Banheira" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/viva/">Viva</a>
-          <h3 class="post-card__title"><a href="../br/viva/psicologo-e-so-para-doidos/">Psicólogo é só para doidos</a></h3>
-          <p class="post-card__excerpt">Uma forma diferente de pensar sobre tratamentos psicológicos baseado em experiência própria. E se isso é só para doidos, talvez eu seja doido mesmo.</p>
-          <time class="post-card__meta" datetime="2018-10-21">21 de outubro de 2018</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/life-without-tv-768x513.jpg" alt="Vida sem televisão" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/geral/">Geral</a>
-          <h3 class="post-card__title"><a href="../br/geral/o-preco-da-midia-gratuita/">O Preço da Mídia Gratuita</a></h3>
-          <p class="post-card__excerpt">A TV aberta e redes sociais “gratuitas” possuem uma influência muito mais forte em nossa vida do que imaginamos.</p>
-          <time class="post-card__meta" datetime="2018-09-30">30 de setembro de 2018</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/4-768x576.png" alt="Um dia de bátima" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/presepadas/">Presepadas</a>
-          <h3 class="post-card__title"><a href="../br/presepadas/um-dia-de-batima/">Um dia de bátima</a></h3>
-          <p class="post-card__excerpt">Sabe aquela idiotice que te diverte? Dentre várias, uma das minhas foi me vestir de Batman e sair fazendo arte pela universidade, em Viçosa/MG.</p>
-          <time class="post-card__meta" datetime="2017-11-02">2 de novembro de 2017</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="Nelson Mandela Jovem" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/inspiracao/">Inspiração</a>
-          <h3 class="post-card__title"><a href="../br/inspiracao/invictus-o-poema-que-inspirou-nelson-mandela/">Invictus: O poema que inspirou Nelson Mandela</a></h3>
-          <p class="post-card__excerpt">A história de um pequeno poema em um pedaço de papel que fez a diferença na vida de Nelson Mandela durante seus 27 anos de prisão.</p>
-          <time class="post-card__meta" datetime="2017-04-23">23 de abril de 2017</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/garota-pensando-768x462.jpg" alt="Garota Pessando" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/geral/">Geral</a>
-          <h3 class="post-card__title"><a href="../br/geral/as-pequenas-grandes-hipoteses-do-dia-dia/">As pequenas grandes hipóteses do dia a dia</a></h3>
-          <p class="post-card__excerpt">Uma boa dica para saber como encarar as centenas de hipóteses diárias que criamos em nossas cabeças.</p>
-          <time class="post-card__meta" datetime="2017-02-19">19 de fevereiro de 2017</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="Quebra Cabeça de Idiomas" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/idiomas/">Idiomas</a>
-          <h3 class="post-card__title"><a href="../br/idiomas/o-que-te-impede-de-aprender-outro-idioma/">O que te impede de aprender outro idioma?</a></h3>
-          <p class="post-card__excerpt">Muitos de nós sonhamos em dominar um segundo idioma, mas para isso as vezes é preciso aprender lições que não existem em um livro de gramática sequer.</p>
-          <time class="post-card__meta" datetime="2016-12-19">19 de dezembro de 2016</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="Linguagem Corporal de Herói" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/coaching/">Coaching</a>
-          <h3 class="post-card__title"><a href="../br/coaching/aumentando-sua-auto-confianca-em-apenas-2-minutos/">Aumentando sua auto-confiança em apenas 2 minutos</a></h3>
-          <p class="post-card__excerpt">Já não é difícil de acreditar que o nosso corpo expõe parte de nossos pensamentos através de gestos. Mas e o contrário, será que vale também?</p>
-          <time class="post-card__meta" datetime="2016-10-22">22 de outubro de 2016</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/silvio-santos-blog-guicarvalho-768x526.jpg" alt="Silvio Santos e Shi Tzu" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/empreendedorismo/">Empreendedorismo</a>
-          <h3 class="post-card__title"><a href="../br/empreendedorismo/inspiracao-de-vida-e-empreendedora/">Inspiração de Vida e Empreendedora</a></h3>
-          <p class="post-card__excerpt">Uma das histórias brasileiras de vida mais inspiradoras e empreendedoras da atualidade. De camelô à dono de canal de televisão sem perder o bom humor.</p>
-          <time class="post-card__meta" datetime="2016-09-24">24 de setembro de 2016</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/welcome-home-768x432.jpg" alt="Estamos de Volta" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/geral/">Geral</a>
-          <h3 class="post-card__title"><a href="../br/geral/welcome-back/">Welcome Back</a></h3>
-          <p class="post-card__excerpt">O blog está de volta! Depois de um ano sem postagens, o blog está de cara nova. Dê uma olhadinha e me diga depois a sua opinião. 🙂</p>
-          <time class="post-card__meta" datetime="2016-09-16">16 de setembro de 2016</time>
-        </article>
-<article class="post-card">
-          <div class="cover post-card__cover"><img src="../assets/images/covers/project-management-3-768x614.jpg" alt="Liderança em um minuto" width="768" height="512" loading="lazy"></div>
-          <a class="eyebrow" href="../br/lideranca/">Liderança</a>
-          <h3 class="post-card__title"><a href="../br/lideranca/lideranca-em-um-minuto/">Liderança em um minuto</a></h3>
-          <p class="post-card__excerpt">No ambiente de negócios às vezes é fácil ficar confuso sobre liderança e poder, especialmente para os gestores. Um gerente usa apenas o poder quando ele dá ordens para a sua equipe sem se importar se eles estão motivados ou não fazê-lo. O caso mais comum é quando os funcionários fazem as tarefas só porque precisam do…</p>
-          <time class="post-card__meta" datetime="2015-09-13">13 de setembro de 2015</time>
-        </article>
-          </div>
-        </div>
+      </section>
 
+      <section class="container" aria-label="Todos os posts">
+        <div class="wall" style="margin-block-start: var(--space-xl)">
+          <a class="polaroid " href="../br/homenagens/quem-e-mineiro-me-entende/"><span class="polaroid__tag">Homenagens</span><img src="../assets/images/covers/maria-fumaca-tiradentes-768x512.jpg" alt="O Trem Mineiro" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Quem é mineiro me entende</span><time class="polaroid__meta" datetime="2019-05-19">19 mai 2019</time></span></a>
+          <a class="polaroid " href="../br/casos-de-sucesso/mas-me-conta-como-voces-dois-se-conheceram/"><span class="polaroid__tag">Casos de Sucesso</span><img src="../assets/images/covers/Gui-e-Joice-Inhotim-768x294.jpg" alt="Gui e Joice Inhotim" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Mas me conta, como vocês dois se conheceram?</span><time class="polaroid__meta" datetime="2018-11-25">25 nov 2018</time></span></a>
+          <a class="polaroid " href="../br/viva/psicologo-e-so-para-doidos/"><span class="polaroid__tag">Viva</span><img src="../assets/images/covers/homem-banheira-768x512.jpg" alt="Homem Camisa de Força em Banheira" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Psicólogo é só para doidos</span><time class="polaroid__meta" datetime="2018-10-21">21 out 2018</time></span></a>
+          <a class="polaroid " href="../br/geral/o-preco-da-midia-gratuita/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/life-without-tv-768x513.jpg" alt="Vida sem televisão" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O Preço da Mídia Gratuita</span><time class="polaroid__meta" datetime="2018-09-30">30 set 2018</time></span></a>
+          <a class="polaroid " href="../br/presepadas/um-dia-de-batima/"><span class="polaroid__tag">Presepadas</span><img src="../assets/images/covers/4-768x576.png" alt="Um dia de bátima" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Um dia de bátima</span><time class="polaroid__meta" datetime="2017-11-02">2 nov 2017</time></span></a>
+          <a class="polaroid " href="../br/inspiracao/invictus-o-poema-que-inspirou-nelson-mandela/"><span class="polaroid__tag">Inspiração</span><img src="../assets/images/covers/nelson-mandela-jovem-768x432.jpg" alt="Nelson Mandela Jovem" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Invictus: O poema que inspirou Nelson Mandela</span><time class="polaroid__meta" datetime="2017-04-23">23 abr 2017</time></span></a>
+          <a class="polaroid " href="../br/geral/as-pequenas-grandes-hipoteses-do-dia-dia/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/garota-pensando-768x462.jpg" alt="Garota Pessando" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">As pequenas grandes hipóteses do dia a dia</span><time class="polaroid__meta" datetime="2017-02-19">19 fev 2017</time></span></a>
+          <a class="polaroid " href="../br/idiomas/o-que-te-impede-de-aprender-outro-idioma/"><span class="polaroid__tag">Idiomas</span><img src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="Quebra Cabeça de Idiomas" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O que te impede de aprender outro idioma?</span><time class="polaroid__meta" datetime="2016-12-19">19 dez 2016</time></span></a>
+          <a class="polaroid " href="../br/coaching/aumentando-sua-auto-confianca-em-apenas-2-minutos/"><span class="polaroid__tag">Coaching</span><img src="../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="Linguagem Corporal de Herói" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Aumentando sua auto-confiança em apenas 2 minutos</span><time class="polaroid__meta" datetime="2016-10-22">22 out 2016</time></span></a>
+          <a class="polaroid " href="../br/empreendedorismo/inspiracao-de-vida-e-empreendedora/"><span class="polaroid__tag">Empreendedorismo</span><img src="../assets/images/covers/silvio-santos-blog-guicarvalho-768x526.jpg" alt="Silvio Santos e Shi Tzu" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Inspiração de Vida e Empreendedora</span><time class="polaroid__meta" datetime="2016-09-24">24 set 2016</time></span></a>
+          <a class="polaroid " href="../br/geral/welcome-back/"><span class="polaroid__tag">Geral</span><img src="../assets/images/covers/welcome-home-768x432.jpg" alt="Estamos de Volta" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Welcome Back</span><time class="polaroid__meta" datetime="2016-09-16">16 set 2016</time></span></a>
+          <a class="polaroid " href="../br/lideranca/lideranca-em-um-minuto/"><span class="polaroid__tag">Liderança</span><img src="../assets/images/covers/project-management-3-768x614.jpg" alt="Liderança em um minuto" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Liderança em um minuto</span><time class="polaroid__meta" datetime="2015-09-13">13 set 2015</time></span></a>
+        </div>
         <nav class="pagination" aria-label="Paginação">
           <a class="pagination__page" href="../br/blog.html" aria-current="page">1</a>
           <a class="pagination__page" href="#">2</a>
           <a class="pagination__page" href="#">Próxima <svg width="16" height="16" aria-hidden="true" style="margin-inline-start:.3em"><use href="#icon-arrow-right"/></svg></a>
         </nav>
-      </div>
+        <aside class="mockup-note" style="margin-block-start: var(--space-md)">Os filtros levam às páginas de categoria, que reaproveitam este layout. Só o post "O que te impede de aprender outro idioma?" tem página no mockup.</aside>
+      </section>
 
-    <section class="section" aria-labelledby="newsletter-title">
-      <div class="container">
-        <div class="newsletter" id="newsletter">
-          <h2 id="newsletter-title">Receba os próximos posts por e-mail ✉️</h2>
-          <p>Um e-mail quando sair post novo. Sem spam, e dá para sair quando quiser.</p>
-          <form class="newsletter__form" action="#" onsubmit="return false">
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Quer receber o próximo post? ✉️</h2>
+          <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
+          <form action="#" onsubmit="return false">
             <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
             <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
-            <button class="button" type="submit">Inscrever</button>
+            <button class="button" type="submit">Colar meu e-mail</button>
           </form>
-          <span class="newsletter__note">Você vai receber um e-mail para confirmar a inscrição.</span>
+          <small>Você vai receber um e-mail para confirmar a inscrição.</small>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
 
     <site-footer root="../"></site-footer>

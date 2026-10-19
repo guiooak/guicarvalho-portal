@@ -1,0 +1,51 @@
+/* Latest post on the blog listing: a wide photo with a post-it beside it. */
+.featured-entry {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-block: var(--space-lg);
+}
+
+.featured-entry__photo .polaroid__title {
+  font-size: var(--text-md);
+}
+
+.featured-entry__note {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+
+  & p {
+    margin-block: var(--space-2xs) var(--space-sm);
+    font-weight: var(--weight-regular);
+  }
+}
+
+.featured-entry__title {
+  color: var(--note-fg);
+  font-size: var(--text-xl);
+
+  & a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+}
+
+.featured-entry__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-weight: var(--weight-black);
+  text-decoration: none;
+
+  & svg {
+    width: 1.1em;
+    height: 1.1em;
+  }
+}
+
+@media (max-width: 48rem) {
+  .featured-entry {
+    grid-template-columns: 1fr;
+  }
+}

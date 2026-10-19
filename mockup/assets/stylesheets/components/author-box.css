@@ -1,3 +1,28 @@
+/* Notebook version: a small photo with a post-it about the author. */
+.author-note {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  padding-block: var(--space-md);
+
+  & .sticky-note p {
+    margin-block: 0.25rem 0.5rem;
+    font-weight: var(--weight-regular);
+  }
+}
+
+@media (max-width: 36rem) {
+  .author-note {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    & .polaroid {
+      width: 9rem;
+    }
+  }
+}
+
 .author-box {
   display: flex;
   gap: var(--space-md);
