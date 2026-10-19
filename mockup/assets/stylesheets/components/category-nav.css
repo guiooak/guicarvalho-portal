@@ -12,6 +12,7 @@
 .category-nav .tag {
   padding: 0.45em 1em;
   font-size: var(--text-sm);
+  white-space: nowrap;
 }
 
 .category-nav__count {

@@ -89,6 +89,8 @@
 
   .mockup-stateful:has(input[value="signed-out"]:checked) [data-state]:not([data-state~="signed-out"]),
   .mockup-stateful:has(input[value="signed-in"]:checked) [data-state]:not([data-state~="signed-in"]),
+  .mockup-stateful:has(input[value="results"]:checked) [data-state]:not([data-state~="results"]),
+  .mockup-stateful:has(input[value="no-results"]:checked) [data-state]:not([data-state~="no-results"]),
   .mockup-stateful:has(input[value="empty"]:checked) [data-state]:not([data-state~="empty"]) {
     display: none;
   }

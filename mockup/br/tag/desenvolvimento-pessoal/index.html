@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#Desenvolvimento Pessoal · Blog · gui carvalho</title>
+  <meta name="description" content="Posts com a tag Desenvolvimento Pessoal.">
+  <link rel="icon" href="../../../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../../../assets/stylesheets/mockup.css">
+  <script src="../../../assets/javascripts/mockup.js"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../../../" current="blog"></site-header>
+
+    <main id="main">
+      <section class="container" aria-labelledby="tag-title">
+        <nav aria-label="Você está em" style="margin-block-start: var(--space-xl)">
+          <ol class="breadcrumb" role="list"><li><a href="../../../br/blog.html">Blog</a></li><li>Tag</li></ol>
+        </nav>
+        <div class="board-title" style="margin-block-start: var(--space-sm)">
+          <span class="sticker" style="--r:6deg"><svg aria-hidden="true"><use href="#obj-bulb"/></svg></span>
+          <div>
+            <h1 id="tag-title" style="font-size: var(--text-3xl)"><span class="text-muted">#</span>desenvolvimento pessoal</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">3 posts com esta tag. As tags são mais específicas que as categorias e aparecem no rodapé de cada post.</p>
+          </div>
+        </div>
+        <div class="wall">
+          <a class="polaroid " href="../../../br/geral/o-preco-da-midia-gratuita/"><span class="polaroid__tag">Geral</span><img src="../../../assets/images/covers/life-without-tv-768x513.jpg" alt="Vida sem televisão" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">O Preço da Mídia Gratuita</span><time class="polaroid__meta" datetime="2018-09-30">30 set 2018</time></span></a>
+          <a class="polaroid " href="../../../br/geral/as-pequenas-grandes-hipoteses-do-dia-dia/"><span class="polaroid__tag">Geral</span><img src="../../../assets/images/covers/garota-pensando-768x462.jpg" alt="Garota Pessando" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">As pequenas grandes hipóteses do dia a dia</span><time class="polaroid__meta" datetime="2017-02-19">19 fev 2017</time></span></a>
+          <a class="polaroid " href="../../../br/coaching/aumentando-sua-auto-confianca-em-apenas-2-minutos/"><span class="polaroid__tag">Coaching</span><img src="../../../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="Linguagem Corporal de Herói" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Aumentando sua auto-confiança em apenas 2 minutos</span><time class="polaroid__meta" datetime="2016-10-22">22 out 2016</time></span></a>
+        </div>
+        <aside class="mockup-note" style="margin-block-start: var(--space-md)">O blog atual tem 36 tags, quase todas usadas uma vez só. Vale decidir na migração se elas continuam ou se ficam só as categorias.</aside>
+      </section>
+
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Quer receber o próximo post? ✉️</h2>
+          <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
+          <form action="#" onsubmit="return false">
+            <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
+            <button class="button" type="submit">Colar meu e-mail</button>
+          </form>
+          <small>Você vai receber um e-mail para confirmar a inscrição.</small>
+        </div>
+      </section>
+    </main>
+
+    <site-footer root="../../../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

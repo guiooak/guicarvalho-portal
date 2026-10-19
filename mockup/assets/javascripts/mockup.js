@@ -93,6 +93,17 @@
     <path d="M16 42 27 25h15l6 17M27 25l9 17h12M24 20h8M42 25l-2-6h5" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     <circle cx="36" cy="42" r="3" fill="var(--f2)"/>
   </symbol>
+  <symbol id="obj-map" viewBox="0 0 64 64">
+    <path d="M6 14 22 8l20 6 16-6v42l-16 6-20-6-16 6Z" fill="var(--f)"/>
+    <path d="M22 8v42M42 14v42" stroke="var(--f2)" stroke-width="3" fill="none"/>
+    <path d="M12 42c6-5 10 2 16-4s9-12 17-8" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5" fill="none"/>
+    <circle cx="47" cy="29" r="4.5" fill="var(--f2)"/>
+  </symbol>
+  <symbol id="obj-magnifier" viewBox="0 0 64 64">
+    <path d="M38 38l15 15" stroke="var(--f)" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <circle cx="26" cy="26" r="16" fill="var(--f2)" stroke="var(--f)" stroke-width="6"/>
+    <path d="M18 22a9 9 0 0 1 8-6" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>
@@ -169,6 +180,7 @@
       home: "gui carvalho, página inicial",
       main: "Principal",
       search: "Buscar",
+      searchHref: "br/busca.html",
       menu: "Abrir menu",
       subscribe: "Assinar a newsletter",
       other: { code: "EN", name: "English", lang: "en", home: "en/index.html" },
@@ -184,6 +196,7 @@
       home: "gui carvalho, home page",
       main: "Main",
       search: "Search",
+      searchHref: "en/search.html",
       menu: "Open menu",
       subscribe: "Subscribe to the newsletter",
       other: { code: "PT", name: "Português", lang: "pt-BR", home: "br/index.html" },
@@ -221,7 +234,7 @@
             </nav>
             <div class="site-header__actions">
               <a class="lang-switch" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}" title="${s.other.name}">${s.other.code}</a>
-              <button class="icon-button" type="button" aria-label="${s.search}"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
+              <a class="icon-button" href="${root}${s.searchHref}" aria-label="${s.search}"><svg aria-hidden="true"><use href="#icon-search"/></svg></a>
               <button class="icon-button" type="button" data-theme-toggle><svg aria-hidden="true"><use href="#icon-moon"/></svg></button>
               <a class="button button--small site-header__newsletter" href="#newsletter">Newsletter</a>
               <button class="icon-button site-header__menu-button" type="button" popovertarget="site-menu" aria-label="${s.menu}"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>

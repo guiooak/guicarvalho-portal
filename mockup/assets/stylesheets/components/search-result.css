@@ -1,0 +1,83 @@
+/* One search hit: small taped photo, category, title with the match highlighted, excerpt. */
+.search-results {
+  display: grid;
+  gap: var(--space-md);
+  width: min(100%, 46rem);
+  margin-inline: auto;
+}
+
+.search-results__summary {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+
+  & strong {
+    color: var(--color-heading);
+  }
+}
+
+.search-result {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  box-shadow: var(--paper-shadow-sm);
+  transition: translate var(--duration-base) var(--ease-bounce);
+
+  &:hover {
+    translate: 0 -3px;
+  }
+
+  & .polaroid {
+    padding: 6px 6px 10px;
+
+    &::before {
+      width: 44px;
+      height: 14px;
+      inset-block-start: -7px;
+    }
+  }
+
+  & h2 {
+    font-size: var(--text-md);
+    line-height: var(--leading-snug);
+    letter-spacing: 0;
+  }
+
+  & h2 a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  & h2 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  & p {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+}
+
+/* Highlighter mark on the matched words. */
+mark {
+  padding-inline: 0.15em;
+  border-radius: 3px;
+  background: var(--note-bg);
+  color: var(--note-fg);
+}
+
+@media (max-width: 36rem) {
+  .search-result {
+    grid-template-columns: 5rem 1fr;
+    gap: var(--space-sm);
+  }
+}

@@ -1,0 +1,85 @@
+/*
+ * Short, single-purpose pages (sign in, newsletter steps, 404): one centered
+ * note or sheet on the paper, with a big sticker on top.
+ */
+.center-stage {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-lg);
+  padding-block: var(--space-2xl);
+  text-align: center;
+}
+
+.center-stage__card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  width: min(100%, 34rem);
+  padding: var(--space-xl) var(--space-lg);
+
+  & h1 {
+    font-size: var(--text-2xl);
+  }
+
+  & p {
+    max-width: 40ch;
+  }
+}
+
+.center-stage__card.sticky-note h1 {
+  color: var(--note-fg);
+}
+
+.center-stage__sticker {
+  --sticker-size: 6.5rem;
+
+  margin-block-end: calc(-1 * var(--space-md));
+}
+
+.center-stage__actions {
+  justify-content: center;
+}
+
+.center-stage__fine {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.sticky-note .center-stage__fine {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* Big search field: used on the search and 404 pages. */
+.search-form {
+  display: flex;
+  gap: var(--space-2xs);
+  width: min(100%, 36rem);
+
+  & .input {
+    flex: 1;
+    min-height: 3.25rem;
+    font-size: var(--text-base);
+  }
+}
+
+/* Feedback options on the unsubscribe page. */
+.choice-list {
+  display: grid;
+  gap: var(--space-2xs);
+  width: 100%;
+  text-align: start;
+
+  & label {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    font-size: var(--text-sm);
+  }
+
+  & input {
+    accent-color: var(--sage-700);
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}

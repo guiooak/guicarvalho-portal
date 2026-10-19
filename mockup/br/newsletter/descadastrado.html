@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscrição cancelada · gui carvalho</title>
+  <meta name="description" content="Você saiu da newsletter.">
+  <link rel="icon" href="../../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/mockup.css">
+  <script src="../../assets/javascripts/mockup.js"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../../" alternate="../../en/newsletter/unsubscribed.html"></site-header>
+
+    <main id="main" class="container">
+      <section class="center-stage">
+        <span class="sticker center-stage__sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+        <div class="sheet center-stage__card" style="--r:-1deg">
+          <h1>Você saiu da newsletter</h1>
+          <p class="text-muted">Pronto, você não vai mais receber os posts por e-mail. Se foi engano, é só voltar:</p>
+          <button class="button" type="button">Me inscrever de novo</button>
+          <form class="stack" action="#" onsubmit="return false" style="--stack-gap: var(--space-sm); width: 100%; margin-block-start: var(--space-md); padding-block-start: var(--space-md); border-top: 1px dashed var(--color-border)">
+            <fieldset class="choice-list" style="border: 0; padding: 0">
+              <legend class="field__label" style="margin-block-end: var(--space-2xs)">Se quiser, me conta por quê (opcional):</legend>
+              <label><input type="radio" name="why" value="many">Recebia e-mails demais</label>
+              <label><input type="radio" name="why" value="topics">Os assuntos não me interessam mais</label>
+              <label><input type="radio" name="why" value="never">Não lembro de ter me inscrito</label>
+              <label><input type="radio" name="why" value="other">Outro motivo</label>
+            </fieldset>
+            <button class="button button--secondary" type="submit" style="justify-self: center">Enviar</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <site-footer root="../../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

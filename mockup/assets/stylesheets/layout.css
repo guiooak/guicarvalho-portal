@@ -1,6 +1,8 @@
 /* Page shell: header, main and footer, with the footer pushed down. */
 .site {
   display: grid;
+  /* minmax(0, …) stops wide scrollable rows (e.g. the category chips) from stretching the page. */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
   min-height: 100dvh;
 }
