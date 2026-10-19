@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-mails · mockup · gui carvalho</title>
+  <meta name="description" content="Templates de e-mail do portal.">
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+  <link rel="stylesheet" href="../styleguide/styleguide.css">
+  <style>
+    @layer mockup {
+      .email-previews { display: flex; flex-wrap: wrap; gap: var(--space-lg); align-items: start; }
+      .email-previews figure { display: grid; gap: var(--space-2xs); max-width: 100%; }
+      .email-previews iframe { max-width: 100%; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: #f4f4f4; box-shadow: var(--paper-shadow-sm); }
+    }
+  </style>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../"></site-header>
+
+    <main id="main" class="container">
+      <div class="board-title" style="margin-block-start: var(--space-xl)">
+        <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+        <div>
+          <h1 style="font-size: var(--text-3xl)">E-mails</h1>
+          <p class="text-muted" style="font-size: var(--text-md)">Os e-mails que o portal envia, em HTML de e-mail: tabelas e estilos inline, para funcionar no Gmail, Outlook e Apple Mail.</p>
+        </div>
+      </div>
+      <aside class="mockup-note" style="margin-block-end: var(--space-xl)">Nos e-mails, o logo é PNG (o Gmail não mostra SVG), as fotos usam endereço completo em produção e a fonte cai para Helvetica/Arial onde a Nunito Sans não carrega. O descadastro em um clique também vai no cabeçalho List-Unsubscribe, que não aparece aqui.</aside>
+      <section class="stack" style="--stack-gap: var(--space-sm); margin-block-end: var(--space-2xl)" aria-label="Confirmação de inscrição">
+        <div class="board-title" style="margin-block: 0">
+          <span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+          <div><h2 style="font-size: var(--text-xl)">Confirmação de inscrição</h2><p class="text-muted text-sm">Enviado logo depois que alguém se inscreve (double opt-in).</p></div>
+        </div>
+        <div class="index-card" style="--r:0deg; display:grid; gap:.15rem; max-width: 46rem">
+          <small>De: Gui Carvalho &lt;ola@guicarvalho.com.br&gt;</small>
+          <b>Confirma que é você? ✉️</b>
+          <small>Falta só um clique para receber os posts do Gui por e-mail.</small>
+        </div>
+        <div class="email-previews">
+          <figure><figcaption class="sg-label">Computador · 640 px</figcaption><iframe src="confirmacao-inscricao.html" title="Confirmação de inscrição, computador" width="640" height="980" loading="lazy"></iframe></figure>
+          <figure><figcaption class="sg-label">Celular · 375 px</figcaption><iframe src="confirmacao-inscricao.html" title="Confirmação de inscrição, celular" width="375" height="980" loading="lazy"></iframe></figure>
+        </div>
+        <a class="section-heading__link" href="confirmacao-inscricao.html">Abrir o e-mail sozinho <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </section>
+      <section class="stack" style="--stack-gap: var(--space-sm); margin-block-end: var(--space-2xl)" aria-label="Subscription confirmation (EN)">
+        <div class="board-title" style="margin-block: 0">
+          <span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+          <div><h2 style="font-size: var(--text-xl)">Subscription confirmation (EN)</h2><p class="text-muted text-sm">Same, for subscribers who signed up on the English pages.</p></div>
+        </div>
+        <div class="index-card" style="--r:0deg; display:grid; gap:.15rem; max-width: 46rem">
+          <small>De: Gui Carvalho &lt;ola@guicarvalho.com.br&gt;</small>
+          <b>Is this you? ✉️</b>
+          <small>One click away from getting Gui&#x27;s posts by email.</small>
+        </div>
+        <div class="email-previews">
+          <figure><figcaption class="sg-label">Computador · 640 px</figcaption><iframe src="en/subscription-confirmation.html" title="Subscription confirmation (EN), computador" width="640" height="980" loading="lazy"></iframe></figure>
+          <figure><figcaption class="sg-label">Celular · 375 px</figcaption><iframe src="en/subscription-confirmation.html" title="Subscription confirmation (EN), celular" width="375" height="980" loading="lazy"></iframe></figure>
+        </div>
+        <a class="section-heading__link" href="en/subscription-confirmation.html">Abrir o e-mail sozinho <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </section>
+      <section class="stack" style="--stack-gap: var(--space-sm); margin-block-end: var(--space-2xl)" aria-label="Post novo">
+        <div class="board-title" style="margin-block: 0">
+          <span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+          <div><h2 style="font-size: var(--text-xl)">Post novo</h2><p class="text-muted text-sm">Enviado quando você clica em “Enviar newsletter” no admin.</p></div>
+        </div>
+        <div class="index-card" style="--r:0deg; display:grid; gap:.15rem; max-width: 46rem">
+          <small>De: Gui Carvalho &lt;ola@guicarvalho.com.br&gt;</small>
+          <b>O que te impede de aprender outro idioma?</b>
+          <small>Muitos de nós sonhamos em dominar um segundo idioma, mas para isso as vezes é preciso aprender lições que não existem em um livro de gramática sequer.</small>
+        </div>
+        <div class="email-previews">
+          <figure><figcaption class="sg-label">Computador · 640 px</figcaption><iframe src="novo-post.html" title="Post novo, computador" width="640" height="980" loading="lazy"></iframe></figure>
+          <figure><figcaption class="sg-label">Celular · 375 px</figcaption><iframe src="novo-post.html" title="Post novo, celular" width="375" height="980" loading="lazy"></iframe></figure>
+        </div>
+        <a class="section-heading__link" href="novo-post.html">Abrir o e-mail sozinho <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </section>
+      <section class="stack" style="--stack-gap: var(--space-sm); margin-block-end: var(--space-2xl)" aria-label="New post (EN)">
+        <div class="board-title" style="margin-block: 0">
+          <span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+          <div><h2 style="font-size: var(--text-xl)">New post (EN)</h2><p class="text-muted text-sm">Sent to English subscribers when a post has an English version.</p></div>
+        </div>
+        <div class="index-card" style="--r:0deg; display:grid; gap:.15rem; max-width: 46rem">
+          <small>De: Gui Carvalho &lt;ola@guicarvalho.com.br&gt;</small>
+          <b>What stops you from learning another language?</b>
+          <small>Many of us dream of mastering a second language, but sometimes it takes lessons you won&#x27;t find in any grammar book.</small>
+        </div>
+        <div class="email-previews">
+          <figure><figcaption class="sg-label">Computador · 640 px</figcaption><iframe src="en/new-post.html" title="New post (EN), computador" width="640" height="980" loading="lazy"></iframe></figure>
+          <figure><figcaption class="sg-label">Celular · 375 px</figcaption><iframe src="en/new-post.html" title="New post (EN), celular" width="375" height="980" loading="lazy"></iframe></figure>
+        </div>
+        <a class="section-heading__link" href="en/new-post.html">Abrir o e-mail sozinho <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </section>
+      <section class="stack" style="--stack-gap: var(--space-sm); margin-block-end: var(--space-2xl)" aria-label="Comentário para moderar">
+        <div class="board-title" style="margin-block: 0">
+          <span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
+          <div><h2 style="font-size: var(--text-xl)">Comentário para moderar</h2><p class="text-muted text-sm">Só para você: chega a cada comentário novo pendente.</p></div>
+        </div>
+        <div class="index-card" style="--r:0deg; display:grid; gap:.15rem; max-width: 46rem">
+          <small>De: Gui Carvalho &lt;ola@guicarvalho.com.br&gt;</small>
+          <b>Novo comentário em “O que te impede de aprender outro idioma?”</b>
+          <small>Ana Ribeiro comentou e está esperando moderação.</small>
+        </div>
+        <div class="email-previews">
+          <figure><figcaption class="sg-label">Computador · 640 px</figcaption><iframe src="comentario-para-moderar.html" title="Comentário para moderar, computador" width="640" height="980" loading="lazy"></iframe></figure>
+          <figure><figcaption class="sg-label">Celular · 375 px</figcaption><iframe src="comentario-para-moderar.html" title="Comentário para moderar, celular" width="375" height="980" loading="lazy"></iframe></figure>
+        </div>
+        <a class="section-heading__link" href="comentario-para-moderar.html">Abrir o e-mail sozinho <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </section>
+    </main>
+
+    <site-footer root="../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>
