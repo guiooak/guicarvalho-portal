@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog · gui carvalho</title>
+  <meta name="description" content="Stories about goals, languages, travel and life&#x27;s shenanigans.">
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../" current="blog" alternate="../br/blog.html"></site-header>
+
+    <main id="main">
+      <section class="container" aria-labelledby="blog-title">
+        <div class="board-title" style="margin-block-start: var(--space-xl)">
+          <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-pencil"/></svg></span>
+          <div>
+            <h1 id="blog-title" style="font-size: var(--text-3xl)">Blog</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">Stories about goals, languages, travel and life's shenanigans.</p>
+          </div>
+        </div>
+        <nav class="category-nav" aria-label="Categories">
+          <ul class="category-nav__list" role="list">
+            <li><a class="tag" href="../en/blog.html" aria-current="page">All<span class="category-nav__count">1</span></a></li>
+            <li><a class="tag" href="#">Coaching<span class="category-nav__count">1</span></a></li>
+            <li><a class="tag" href="#">Languages<span class="category-nav__count">1</span></a></li>
+            <li><a class="tag" href="#">Travel<span class="category-nav__count">1</span></a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="container featured-entry" aria-label="Latest post">
+        <a class="polaroid polaroid--wide featured-entry__photo" href="../en/languages/what-stops-you-from-learning-another-language/" style="--r:-2deg"><span class="polaroid__tag">Languages</span><img src="../assets/images/covers/quebra-cabeca-idiomas.jpg" alt="Puzzle pieces painted with flags from different countries" width="768" height="512"><span class="polaroid__caption"><span class="polaroid__title">What stops you from learning another language?</span><time class="polaroid__meta" datetime="2016-12-19">Dec 19, 2016</time></span></a>
+        <div class="sticky-note featured-entry__note" style="--r:3deg">
+          <span class="sticky-note__title">Latest in English</span>
+          <h2 class="featured-entry__title"><a href="../en/languages/what-stops-you-from-learning-another-language/">What stops you from learning another language?</a></h2>
+          <p>Many of us dream of mastering a second language, but sometimes it takes lessons you won&#x27;t find in any grammar book.</p>
+          <a class="featured-entry__more" href="../en/languages/what-stops-you-from-learning-another-language/">Read it now <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        </div>
+      </section>
+
+      <section class="container" aria-label="Posts in Portuguese">
+        <div class="cluster" style="justify-content: center; margin-block: var(--space-2xl)">
+          <div class="sticky-note sticky-note--sage" style="--r:-2deg">
+            <span class="sticky-note__title">More in Portuguese</span>
+            <p>Most of my 23 posts are written in Portuguese, and translations come out little by little.</p>
+            <a href="../br/blog.html" hreflang="pt-BR"><b>Read the Portuguese blog →</b></a>
+          </div>
+        </div>
+        <aside class="mockup-note">Each language only lists posts that have a translation in it, and categories only show their translated posts. Here that is a single post, so there is no wall or pagination yet.</aside>
+      </section>
+
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Want the next post by email? ✉️</h2>
+          <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
+          <form action="#" onsubmit="return false">
+            <label class="visually-hidden" for="newsletter-email">Your email</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            <button class="button" type="submit">Stick my email here</button>
+          </form>
+          <small>You'll get an email to confirm your subscription. Most posts are written in Portuguese.</small>
+        </div>
+      </section>
+    </main>
+
+    <site-footer root="../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Mockup tools">
+    <button type="button" data-notes-toggle>Mockup notes</button>
+  </div>
+</body>
+</html>

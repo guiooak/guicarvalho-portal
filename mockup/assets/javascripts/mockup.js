@@ -33,7 +33,8 @@
   const syncThemeButtons = () => {
     const dark = currentTheme() === "dark";
     document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
-      button.setAttribute("aria-label", dark ? "Usar tema claro" : "Usar tema escuro");
+      const en = (document.documentElement.lang || "").startsWith("en");
+      button.setAttribute("aria-label", dark ? (en ? "Use light theme" : "Usar tema claro") : (en ? "Use dark theme" : "Usar tema escuro"));
       button.querySelector("use")?.setAttribute("href", dark ? "#icon-sun" : "#icon-moon");
     });
   };
@@ -157,48 +158,82 @@
   };
 
   // 3. Shared chrome ------------------------------------------------------
-  // `root` is the relative path from the page to the mockup folder.
-  const NAV = [
-    ["blog", "Blog", "br/blog.html"],
-    ["apps", "Apps", "br/apps.html"],
-    ["about", "Sobre", "br/sobre.html"]
-  ];
+  // Attributes: `root` is the relative path from the page to the mockup
+  // folder, `current` marks the active section, `alternate` is the same page
+  // in the other language. The locale comes from <html lang>.
+  const STRINGS = {
+    pt: {
+      dir: "br/",
+      nav: [["blog", "Blog", "br/blog.html"], ["apps", "Apps", "br/apps.html"], ["about", "Sobre", "br/sobre.html"]],
+      skip: "Pular para o conteúdo",
+      home: "gui carvalho, página inicial",
+      main: "Principal",
+      search: "Buscar",
+      menu: "Abrir menu",
+      subscribe: "Assinar a newsletter",
+      other: { code: "EN", name: "English", lang: "en", home: "en/index.html" },
+      tagline: "Histórias, metas, idiomas e os apps que eu construo.",
+      portal: "Portal",
+      social: "Redes",
+      madeWith: "Feito com Rails, CSS puro e um pouco de café ☕"
+    },
+    en: {
+      dir: "en/",
+      nav: [["blog", "Blog", "en/blog.html"], ["apps", "Apps", "en/apps.html"], ["about", "About", "en/about.html"]],
+      skip: "Skip to content",
+      home: "gui carvalho, home page",
+      main: "Main",
+      search: "Search",
+      menu: "Open menu",
+      subscribe: "Subscribe to the newsletter",
+      other: { code: "PT", name: "Português", lang: "pt-BR", home: "br/index.html" },
+      tagline: "Stories, goals, languages and the apps I build.",
+      portal: "Portal",
+      social: "Social",
+      madeWith: "Made with Rails, plain CSS and a bit of coffee ☕"
+    }
+  };
+
+  const locale = () => (document.documentElement.lang || "pt").toLowerCase().startsWith("en") ? "en" : "pt";
+  const t = () => STRINGS[locale()];
 
   const navLinks = (root, current) =>
-    NAV.map(([key, label, href]) => `
+    t().nav.map(([key, label, href]) => `
       <li><a class="site-nav__link" href="${root}${href}"${key === current ? ' aria-current="page"' : ""}>${label}</a></li>`).join("");
 
   class SiteHeader extends HTMLElement {
     connectedCallback() {
       injectSprite();
+      const s = t();
       const root = this.getAttribute("root") || "";
       const current = this.getAttribute("current") || "";
+      const alternate = this.getAttribute("alternate") || `${root}${s.other.home}`;
       this.innerHTML = `
-        <a class="skip-link" href="#main">Pular para o conteúdo</a>
+        <a class="skip-link" href="#main">${s.skip}</a>
         <header class="site-header">
           <div class="container site-header__inner">
-            <a class="brand site-header__brand" href="${root}br/index.html" aria-label="gui carvalho, página inicial">
+            <a class="brand site-header__brand" href="${root}${s.dir}index.html" aria-label="${s.home}">
               <svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg>
               <span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span>
             </a>
-            <nav class="site-nav" aria-label="Principal">
+            <nav class="site-nav" aria-label="${s.main}">
               <ul class="site-nav__list" role="list">${navLinks(root, current)}</ul>
             </nav>
             <div class="site-header__actions">
-              <a class="lang-switch" href="${root}en/index.html" hreflang="en" lang="en">EN</a>
-              <button class="icon-button" type="button" aria-label="Buscar"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
+              <a class="lang-switch" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}" title="${s.other.name}">${s.other.code}</a>
+              <button class="icon-button" type="button" aria-label="${s.search}"><svg aria-hidden="true"><use href="#icon-search"/></svg></button>
               <button class="icon-button" type="button" data-theme-toggle><svg aria-hidden="true"><use href="#icon-moon"/></svg></button>
               <a class="button button--small site-header__newsletter" href="#newsletter">Newsletter</a>
-              <button class="icon-button site-header__menu-button" type="button" popovertarget="site-menu" aria-label="Abrir menu"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>
+              <button class="icon-button site-header__menu-button" type="button" popovertarget="site-menu" aria-label="${s.menu}"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>
             </div>
           </div>
           <div class="site-menu" id="site-menu" popover>
-            <nav aria-label="Principal">
+            <nav aria-label="${s.main}">
               <ul class="site-nav__list" role="list">${navLinks(root, current)}
-                <li><a class="site-nav__link" href="${root}en/index.html" hreflang="en" lang="en">English</a></li>
+                <li><a class="site-nav__link" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}">${s.other.name}</a></li>
               </ul>
             </nav>
-            <a class="button" href="#newsletter" style="width:100%;margin-top:var(--space-xs)">Assinar a newsletter</a>
+            <a class="button" href="#newsletter" style="width:100%;margin-top:var(--space-xs)">${s.subscribe}</a>
           </div>
         </header>`;
       syncThemeButtons();
@@ -208,31 +243,31 @@
   class SiteFooter extends HTMLElement {
     connectedCallback() {
       injectSprite();
+      const s = t();
       const root = this.getAttribute("root") || "";
       this.innerHTML = `
         <footer class="site-footer">
           <div class="container">
             <div class="site-footer__grid">
               <div class="stack" style="--stack-gap: var(--space-xs)">
-                <a class="brand" href="${root}br/index.html" style="--brand-size: 1.125rem">
+                <a class="brand" href="${root}${s.dir}index.html" style="--brand-size: 1.125rem">
                   <svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg>
                   <span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span>
                 </a>
-                <p>Histórias, metas, idiomas e os apps que eu construo.</p>
+                <p>${s.tagline}</p>
               </div>
               <div>
-                <h2 class="site-footer__title">Portal</h2>
+                <h2 class="site-footer__title">${s.portal}</h2>
                 <ul class="site-footer__links" role="list">
-                  <li><a href="${root}br/blog.html">Blog</a></li>
-                  <li><a href="${root}br/apps.html">Apps</a></li>
-                  <li><a href="${root}br/sobre.html">Sobre</a></li>
+                  ${s.nav.map(([, label, href]) => `<li><a href="${root}${href}">${label}</a></li>`).join("")}
                   <li><a href="#">RSS</a></li>
                 </ul>
               </div>
               <div>
-                <h2 class="site-footer__title">Redes</h2>
+                <h2 class="site-footer__title">${s.social}</h2>
                 <ul class="site-footer__links" role="list">
                   <li><a href="https://www.linkedin.com/in/linkguicarvalho">LinkedIn</a></li>
+                  <li><a href="https://github.com/guiooak">GitHub</a></li>
                   <li><a href="https://youtube.com/c/GuilhermeCarvalhoOnline">YouTube</a></li>
                   <li><a href="https://www.instagram.com/guicarvalho.com.br">Instagram</a></li>
                 </ul>
@@ -240,7 +275,7 @@
             </div>
             <div class="site-footer__bottom">
               <span>© ${new Date().getFullYear()} Guilherme Carvalho</span>
-              <span>Feito com Rails, CSS puro e um pouco de café ☕</span>
+              <span>${s.madeWith}</span>
             </div>
           </div>
         </footer>`;

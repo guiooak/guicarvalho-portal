@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apps · gui carvalho</title>
+  <meta name="description" content="The apps Gui has built: Tymebox, Bat Hunter, csv→ofx and Dialogs Valve.">
+  <link rel="icon" href="../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../assets/stylesheets/mockup.css">
+  <script src="../assets/javascripts/mockup.js"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../" current="apps" alternate="../br/apps.html"></site-header>
+
+    <main id="main">
+      <div class="container">
+        <div class="board-title" style="margin-block-start: var(--space-xl)">
+          <span class="sticker" style="--r:8deg"><svg aria-hidden="true"><use href="#obj-laptop"/></svg></span>
+          <div>
+            <h1 style="font-size: var(--text-3xl)">Things I've built</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">Almost always to solve a problem of my own. All free to use, with the code on GitHub.</p>
+          </div>
+        </div>
+        <nav class="cluster" aria-label="Apps on this page" style="--cluster-gap: var(--space-sm)">
+          <a class="index-card" href="#tymebox" style="--r:-2deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-clock"/></svg></span><span><b>Tymebox</b><small>Productivity</small></span></a>
+          <a class="index-card" href="#bat-hunter" style="--r:1.5deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-bat"/></svg></span><span><b>Bat Hunter</b><small>Game</small></span></a>
+          <a class="index-card" href="#csv-to-ofx" style="--r:-1deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-doc"/></svg></span><span><b>csv→ofx</b><small>Finance</small></span></a>
+          <a class="index-card" href="#dialogs-valve" style="--r:2deg"><span class="sticker sticker--sm"><svg aria-hidden="true"><use href="#obj-window"/></svg></span><span><b>Dialogs Valve</b><small>Library</small></span></a>
+        </nav>
+      <section class="app-spread" id="tymebox" aria-labelledby="tymebox-title">
+        <a class="polaroid polaroid--wide app-spread__shot" href="https://tymebox.web.app/" style="--r:-1.5deg"><span class="polaroid__tag">Productivity</span><img src="../assets/images/apps/tymebox-en.png" alt="Tymebox share image: &#x27;Every event, inside its box&#x27;, with a countdown and meeting milestones" width="1200" height="630" loading="lazy"></a>
+        <div class="app-spread__card">
+          <div class="app-spread__head">
+            <span class="sticker"><svg aria-hidden="true"><use href="#obj-clock"/></svg></span>
+            <div><h2 id="tymebox-title">Tymebox</h2><p>Every event, inside its box.</p></div>
+          </div>
+          <p>Puts meetings and events in time boxes: plan the milestones, run the countdown, finish on time and then see exactly how it went.</p>
+          <ul class="app-spread__highlights"><li>The countdown compares your pace with the plan and warns you when you fall behind</li><li>Ready-made templates for planning, retros and 1:1s</li><li>A report at the end to send to everyone who was there</li></ul>
+          <div class="cluster app-spread__tech"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Firebase</span><span class="tag">PT · EN</span></div>
+          <div class="cluster app-spread__actions">
+            <a class="button" href="https://tymebox.web.app/">Open Tymebox <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+            <a class="button button--secondary" href="https://github.com/guiooak/tymebox">Code on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="app-spread" id="bat-hunter" aria-labelledby="bat-hunter-title">
+        <a class="polaroid polaroid--wide app-spread__shot" href="https://bat-hunter-game.web.app/" style="--r:1.5deg"><span class="polaroid__tag">Game</span><img src="../assets/images/apps/bat-hunter.jpg" alt="Bat Hunter artwork: a crosshair on a bat against the moon, haunted houses and pumpkins" width="1200" height="630" loading="lazy"></a>
+        <div class="app-spread__card">
+          <div class="app-spread__head">
+            <span class="sticker"><svg aria-hidden="true"><use href="#obj-bat"/></svg></span>
+            <div><h2 id="bat-hunter-title">Bat Hunter</h2><p>Too many bats. Time to drop some.</p></div>
+          </div>
+          <p>A browser shooting game born in a hackathon: the night sky is full of bats and your job is to drop as many as you can, with the best aim you can.</p>
+          <ul class="app-spread__highlights"><li>Free play, a 60-second challenge and 1v1 matches with chat</li><li>On Hard: golden bats are worth 10, and the owl costs you points</li><li>Works on desktop and phone</li></ul>
+          <div class="cluster app-spread__tech"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Firebase</span><span class="tag">Multiplayer</span></div>
+          <div class="cluster app-spread__actions">
+            <a class="button" href="https://bat-hunter-game.web.app/">Play now <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+            <a class="button button--secondary" href="https://github.com/guiooak/bat-hunter">Code on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="app-spread" id="csv-to-ofx" aria-labelledby="csv-to-ofx-title">
+        <a class="polaroid polaroid--wide app-spread__shot" href="https://guiooak.github.io/csv-to-ofx/" style="--r:-1deg"><span class="polaroid__tag">Finance</span><img src="../assets/images/apps/csv-to-ofx.png" alt="csv→ofx screen: &#x27;Convert the bill from CSV to OFX&#x27;, with the file drop area" width="1200" height="630" loading="lazy"></a>
+        <div class="app-spread__card">
+          <div class="app-spread__head">
+            <span class="sticker"><svg aria-hidden="true"><use href="#obj-doc"/></svg></span>
+            <div><h2 id="csv-to-ofx-title">csv→ofx</h2><p>Your Sicredi bill, ready for your finance app.</p></div>
+          </div>
+          <p>Turns the CSV of a Sicredi credit card bill into an OFX file, ready to import into your personal finance app. The app itself is in Portuguese, for Brazilian users.</p>
+          <ul class="app-spread__highlights"><li>Puts each installment in the right month</li><li>Shows a summary of the bill before the download</li><li>Runs in the browser: no data leaves your computer</li></ul>
+          <div class="cluster app-spread__tech"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Open source</span></div>
+          <div class="cluster app-spread__actions">
+            <a class="button" href="https://guiooak.github.io/csv-to-ofx/">Open the app <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+            <a class="button button--secondary" href="https://github.com/guiooak/csv-to-ofx">Code on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="app-spread" id="dialogs-valve" aria-labelledby="dialogs-valve-title">
+        <a class="polaroid polaroid--wide app-spread__shot" href="https://guiooak.github.io/dialogs-valve-react/" style="--r:1deg"><span class="polaroid__tag">Library</span><img src="../assets/images/apps/dialogs-valve.png" alt="@dialogs-valve/react demo page: &#x27;URL-driven dialog management for React&#x27;" width="1200" height="630" loading="lazy"></a>
+        <div class="app-spread__card">
+          <div class="app-spread__head">
+            <span class="sticker"><svg aria-hidden="true"><use href="#obj-window"/></svg></span>
+            <div><h2 id="dialogs-valve-title">Dialogs Valve</h2><p>Modals and drawers driven by the URL.</p></div>
+          </div>
+          <p>An open source React library that keeps the state of modals and drawers in the URL, so deep links, the back button and shareable URLs just work.</p>
+          <ul class="app-spread__highlights"><li>Works with any router: Next.js, React Router, TanStack…</li><li>Stacked dialogs, with permission guards</li><li>Strictly typed with TypeScript, published on npm</li></ul>
+          <div class="cluster app-spread__tech"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">npm</span><span class="tag">MIT</span></div>
+          <div class="cluster app-spread__actions">
+            <a class="button" href="https://guiooak.github.io/dialogs-valve-react/">See the demo <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+            <a class="button button--secondary" href="https://github.com/guiooak/dialogs-valve-react">Code on GitHub</a>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Want to know when there's something new? ✉️</h2>
+          <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
+          <form action="#" onsubmit="return false">
+            <label class="visually-hidden" for="newsletter-email">Your email</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            <button class="button" type="submit">Stick my email here</button>
+          </form>
+          <small>You'll get an email to confirm your subscription. Most posts are written in Portuguese.</small>
+        </div>
+      </section>
+    </main>
+
+    <site-footer root="../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Mockup tools">
+    <button type="button" data-notes-toggle>Mockup notes</button>
+  </div>
+</body>
+</html>
