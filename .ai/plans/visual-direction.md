@@ -76,6 +76,37 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
 - **Lockup: horizontal, mixed weight.** Symbol to the left of the name, all lowercase, written as one word: **gui** in Nunito Sans 800 and carvalho in Nunito Sans 400, tight letter-spacing (`-0.02em`), symbol about 1.45× the text size.
   - The lockup is built in HTML/CSS (symbol SVG + live text) rather than a text-in-SVG file, so it always uses the self-hosted font and can be translated or scaled freely.
 
+### Illustrations: flat
+
+Floating objects are drawn in a **flat** style: solid shapes in sage tones, no outlines.
+
+Construction rules, so every object (including future ones) looks like part of the same set:
+
+- **Grid**: 64×64 viewBox, object filling roughly 44–58 units, built from simple geometric shapes with rounded corners (radius 2–7).
+- **Two tones plus one detail color**, all from the sage scale:
+
+  | Role | Light theme | Dark theme |
+  |---|---|---|
+  | Main shape | `600` | `300` |
+  | Secondary shape | `200` | `700` |
+  | Detail strokes (1–2 per object, 3-unit, round caps) | `800` | `100` |
+
+- **No** outlines, gradients, shadows or text inside objects.
+- **Implementation**: inline SVG `<symbol>`s whose colors come from CSS custom properties (`--f`, `--f2`, `--dt`), so the theme switch is pure CSS. Objects are decorative (`aria-hidden="true"`).
+- **Placement**: scattered around hero areas at 40–64 px, rotated between −12° and +12°, with a slow float animation (≈6 s) that is disabled under `prefers-reduced-motion`.
+- **Production**: drawn in-house as SVG following these rules. Icon libraries are not used, so the set stays consistent with the logo.
+
+Base set for the mockup (about 25 objects):
+
+| Where | Objects |
+|---|---|
+| Home | laptop, coffee mug, paper plane, light bulb, pencil, alarm clock, music note, shamrock |
+| Blog categories | trophy (Casos de Sucesso), compass (Coaching), rocket (Empreendedorismo), speech bubble (Geral), alarm clock (Gestão de tempo), heart (Homenagens), two speech bubbles (Idiomas), light bulb (Inspiração), shamrock (Irlanda), flag (Liderança), music note (Músicas), party popper (Presepadas), book (Princípios Básicos), suitcase (Viagens), sun (Viva) |
+| Apps | smartphone, gear, puzzle piece, code brackets |
+| About | pão de queijo, mountains (Minas Gerais), camera |
+| Newsletter | envelope |
+| 404 | folded map |
+
 ### Home page
 
 - Opens with a personal, first-person introduction (e.g. "Oi, eu sou o Gui 👋") and a short line about what I do and write, framed by floating illustrated objects.
@@ -86,6 +117,6 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
 - [x] Typeface: Nunito Sans.
 - [x] Green: sage.
 - [ ] Neutral scale for light and dark.
-- [ ] Illustration style for the floating objects (3D, flat or hand-drawn) and their source (placeholders or AI-generated for the mockup, commissioned later if needed).
+- [x] Illustration style: flat, drawn in-house in sage tones.
 - [x] Logo and favicon: acorn with a leaf, mixed-weight lowercase lockup.
 - [ ] Cover image style for blog posts.
