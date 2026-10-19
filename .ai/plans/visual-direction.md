@@ -54,7 +54,28 @@ A clean, calm base with a **subtle, light sense of fun**: the playfulness comes 
   | `#eef9ee` | `#ddeddd` | `#c4dcc4` | `#a5c5a5` | `#85aa85` | `#6c926c` | `#527752` | `#3e5f3f` | `#2d472e` |
 
   - Light theme: accent `600` (`#527752`) for links and buttons (contrast 5.1:1 on white), `50` for soft highlights and tags, `800` for text on soft green.
-  - Dark theme: accent `300` (`#a5c5a5`) on `#0f1311` (contrast 9.9:1), with `#1f2d1f` for soft highlights.
+  - Dark theme: accent `300` (`#a5c5a5`) on the dark background `#0c0c0c` (contrast 10.4:1), with `#1f2d1f` for soft highlights and `#0c0c0c` as text on accent buttons.
+- **Neutrals: pure gray** (no hue), so sage stays the only color in the interface. Scale (sRGB approximations of `oklch(L 0 0)`):
+
+  | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | `#fafafa` | `#f4f4f4` | `#e6e6e6` | `#d4d4d4` | `#a1a1a1` | `#737373` | `#545454` | `#404040` | `#262626` | `#171717` | `#0c0c0c` |
+
+  Semantic roles:
+
+  | Token | Light | Dark | Use |
+  |---|---|---|---|
+  | `--color-bg` | `#ffffff` | `950` | Page background |
+  | `--color-surface` | `50` | `900` | Cards |
+  | `--color-subtle` | `100` | `800` | Tags, code blocks |
+  | `--color-border` | `200` | `800` | Decorative borders and dividers |
+  | `--color-border-input` | `500` | `500` | Form field borders (≥ 3:1 required) |
+  | `--color-placeholder` | `500` | `500` | Input placeholders |
+  | `--color-text-muted` | `600` | `400` | Dates, captions, secondary text |
+  | `--color-text` | `800` | `200` | Body text |
+  | `--color-heading` | `950` | `50` | Headings |
+
+  Measured contrast: body text 15.1 (light) and 15.7 (dark), muted text 7.6 in both, form field borders 4.7 (light) and 4.1 (dark).
 - **Dark mode**: automatic via `prefers-color-scheme`, with a manual toggle that writes `data-theme` on `<html>`. Every color is a semantic token with light and dark values.
 
 ### Shape and type
@@ -116,7 +137,7 @@ Base set for the mockup (about 25 objects):
 
 - [x] Typeface: Nunito Sans.
 - [x] Green: sage.
-- [ ] Neutral scale for light and dark.
+- [x] Neutrals: pure gray.
 - [x] Illustration style: flat, drawn in-house in sage tones.
 - [x] Logo and favicon: acorn with a leaf, mixed-weight lowercase lockup.
 - [ ] Cover image style for blog posts.
