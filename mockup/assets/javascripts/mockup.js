@@ -183,6 +183,50 @@
     <path d="M26 26l3 6 3-6 3 6 3-6" stroke="var(--dt)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <path d="M6 22h-3M61 22h-3M11 6l2 2M53 6l-2 2" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
   </symbol>
+  <symbol id="obj-sprout" viewBox="0 0 64 64">
+    <path d="M32 52V28" stroke="var(--dt)" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M32 36C19 36 11 28 11 15c13 0 21 8 21 21Z" fill="var(--f)"/>
+    <path d="M32 30c0-11 8-18 21-18 0 12-8 18-21 18Z" fill="var(--f2)"/>
+    <path d="M12 58c4-6 11-9 20-9s16 3 20 9Z" fill="var(--f)"/>
+  </symbol>
+  <symbol id="obj-target" viewBox="0 0 64 64">
+    <circle cx="29" cy="35" r="23" fill="var(--f)"/>
+    <circle cx="29" cy="35" r="15" fill="var(--f2)"/>
+    <circle cx="29" cy="35" r="7" fill="var(--f)"/>
+    <path d="M29 35 53 11" stroke="var(--dt)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M49 7l1 7 7 1M55 4l1 6 6 1" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-trophy" viewBox="0 0 64 64">
+    <path d="M19 14h-6a8 8 0 0 0 9 12M45 14h6a8 8 0 0 1-9 12" stroke="var(--f)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M18 8h28v14a14 14 0 0 1-28 0Z" fill="var(--f)"/>
+    <rect x="28" y="35" width="8" height="10" fill="var(--f)"/>
+    <rect x="18" y="45" width="28" height="11" rx="3" fill="var(--f2)"/>
+    <path d="M25 14v9" stroke="var(--f2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-flag" viewBox="0 0 64 64">
+    <path d="M6 58c5-6 11-8 18-8s13 2 18 8Z" fill="var(--f2)"/>
+    <path d="M18 52V6" stroke="var(--dt)" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M20 9c10-5 18 5 28 0l8-2v25c-10 5-18-5-28 0l-8 2Z" fill="var(--f)"/>
+    <path d="M28 15c6-1 10 3 16 2" stroke="var(--f2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-laugh" viewBox="0 0 64 64">
+    <circle cx="32" cy="34" r="25" fill="var(--f)"/>
+    <path d="M17 28l5-6 5 6M37 28l5-6 5 6" stroke="var(--f2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M18 36h28a14 14 0 0 1-28 0Z" fill="var(--f2)"/>
+    <path d="M57 13c4 5 4 9 0 10-4-1-4-5 0-10Z" fill="var(--f2)"/>
+  </symbol>
+  <symbol id="obj-rocket" viewBox="0 0 64 64">
+    <path d="M24 44h16c0 7-4 12-8 17-4-5-8-10-8-17Z" fill="var(--f2)"/>
+    <path d="M19 28 8 44l12-1ZM45 28l11 16-12-1Z" fill="var(--f2)"/>
+    <path d="M32 3c12 9 16 23 12 41H20C16 26 20 12 32 3Z" fill="var(--f)"/>
+    <circle cx="32" cy="22" r="6.5" fill="var(--f2)"/>
+  </symbol>
+  <symbol id="obj-book" viewBox="0 0 64 64">
+    <path d="M32 16C24 10 14 10 5 12v38c9-2 19-2 27 4Z" fill="var(--f)"/>
+    <path d="M32 16c8-6 18-6 27-4v38c-9-2-19-2-27 4Z" fill="var(--f2)"/>
+    <path d="M11 22c5-1 10-1 15 1M11 30c5-1 10-1 15 1M11 38c5-1 10-1 15 1" stroke="var(--f2)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M38 23c5-2 10-2 15-1M38 31c5-2 10-2 15-1M38 39c5-2 10-2 15-1" stroke="var(--dt)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </symbol>
 </svg>`;
 
   const injectSprite = () => {
