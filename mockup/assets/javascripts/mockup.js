@@ -198,7 +198,7 @@
   const STRINGS = {
     pt: {
       dir: "br/",
-      nav: [["blog", "Blog", "br/blog.html"], ["apps", "Apps", "br/apps.html"], ["about", "Sobre", "br/sobre.html"]],
+      nav: [["home", "Início", "br/index.html"], ["blog", "Blog", "br/blog.html"], ["apps", "Apps", "br/apps.html"], ["about", "Sobre", "br/sobre.html"]],
       skip: "Pular para o conteúdo",
       home: "gui carvalho, página inicial",
       main: "Principal",
@@ -214,7 +214,7 @@
     },
     en: {
       dir: "en/",
-      nav: [["blog", "Blog", "en/blog.html"], ["apps", "Apps", "en/apps.html"], ["about", "About", "en/about.html"]],
+      nav: [["home", "Home", "en/index.html"], ["blog", "Blog", "en/blog.html"], ["apps", "Apps", "en/apps.html"], ["about", "About", "en/about.html"]],
       skip: "Skip to content",
       home: "gui carvalho, home page",
       main: "Main",
