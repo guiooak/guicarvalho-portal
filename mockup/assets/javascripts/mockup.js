@@ -119,6 +119,14 @@
     <circle cx="23" cy="23" r="2.6" fill="var(--f2)"/>
     <path d="M27 38h12M27 32h8" stroke="var(--dt)" stroke-width="3" stroke-linecap="round"/>
   </symbol>
+  <symbol id="obj-suitcase" viewBox="0 0 64 64">
+    <path d="M24 20v-6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6" stroke="var(--f)" stroke-width="4" fill="none"/>
+    <rect x="9" y="20" width="46" height="32" rx="6" fill="var(--f)"/>
+    <rect x="19" y="20" width="5" height="32" fill="var(--f2)"/>
+    <rect x="40" y="20" width="5" height="32" fill="var(--f2)"/>
+    <circle cx="32" cy="34" r="4" fill="var(--dt)"/>
+    <circle cx="17" cy="56" r="3" fill="var(--dt)"/><circle cx="47" cy="56" r="3" fill="var(--dt)"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>
