@@ -26,6 +26,7 @@
 }
 
 .site-nav__link {
+  position: relative;
   display: inline-block;
   padding: 0.35em 0.85em;
   border-radius: var(--radius-pill);
@@ -35,18 +36,50 @@
   text-decoration: none;
   transition: background-color var(--duration-fast) var(--ease-standard);
 
+  /* Hand-drawn underline, the same stroke as the .scribble headings. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0.6em;
+    inset-block-end: 0.05em;
+    height: 0.4em;
+    background: var(--color-accent);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 14 C 50 4, 120 4, 197 11' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.45;
+    transition: clip-path var(--duration-base) var(--ease-standard);
+    pointer-events: none;
+  }
+
   &:hover {
     background: var(--color-subtle);
     color: var(--color-heading);
   }
 
+  &:hover::after {
+    clip-path: inset(0 0 0 0);
+  }
+
   &[aria-current="page"] {
     color: var(--color-heading);
     font-weight: var(--weight-black);
-    text-decoration: underline;
-    text-decoration-color: var(--color-accent);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 0.45em;
+  }
+
+  /* The current page's underline draws itself in when the page opens. */
+  &[aria-current="page"]::after {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    animation: nav-underline-draw 600ms var(--ease-standard) 150ms both;
+  }
+}
+
+@keyframes nav-underline-draw {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 
