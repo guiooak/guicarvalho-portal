@@ -88,27 +88,6 @@
   --note-fg: var(--color-accent-soft-text);
 }
 
-/* Closing quote written large on the page. */
-.big-quote {
-  max-width: 46rem;
-  margin: var(--space-2xl) auto;
-  text-align: center;
-
-  & p {
-    color: var(--color-heading);
-    font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
-    font-weight: var(--weight-bold);
-    line-height: 1.3;
-    letter-spacing: var(--tracking-tight);
-  }
-
-  & footer {
-    margin-block-start: var(--space-sm);
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-}
-
 @media (max-width: 44rem) {
   .about-hero {
     grid-template-columns: minmax(0, 20rem);
