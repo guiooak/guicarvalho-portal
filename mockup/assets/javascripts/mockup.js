@@ -104,6 +104,15 @@
     <circle cx="26" cy="26" r="16" fill="var(--f2)" stroke="var(--f)" stroke-width="6"/>
     <path d="M18 22a9 9 0 0 1 8-6" stroke="var(--dt)" stroke-width="3" stroke-linecap="round" fill="none"/>
   </symbol>
+  <symbol id="obj-heart" viewBox="0 0 64 64">
+    <path d="M32 55C14 43 6 33 6 22.5A12.5 12.5 0 0 1 32 16a12.5 12.5 0 0 1 26 6.5C58 33 50 43 32 55Z" fill="var(--f)"/>
+    <path d="M15 21a6 6 0 0 1 6-5" stroke="var(--f2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="obj-wave" viewBox="0 0 64 64">
+    <circle cx="48" cy="15" r="7" fill="var(--f2)"/>
+    <path d="M4 42c6-10 14-16 24-16 9 0 14 6 12 12-1 4-6 5-8 2 6-1 4-8-3-8-8 0-12 6-15 12 8 2 14 2 22-2 7-3 13-3 22 1v15H4Z" fill="var(--f)"/>
+    <path d="M10 50c6 2 12 2 18 0s12-2 18 0" stroke="var(--f2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>
