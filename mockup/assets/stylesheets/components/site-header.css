@@ -36,7 +36,7 @@
   text-decoration: none;
   transition: background-color var(--duration-fast) var(--ease-standard);
 
-  /* Hand-drawn underline, the same stroke as the .scribble headings. */
+  /* Hand-drawn underline, the .scribble stroke flipped so it curves like a smile. */
   &::after {
     content: "";
     position: absolute;
@@ -44,7 +44,7 @@
     inset-block-end: 0.05em;
     height: 0.4em;
     background: var(--color-accent);
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 14 C 50 4, 120 4, 197 11' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 6 C 50 16, 120 16, 197 9' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
     clip-path: inset(0 100% 0 0);
     opacity: 0.45;
     transition: clip-path var(--duration-base) var(--ease-standard);
