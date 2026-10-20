@@ -113,6 +113,14 @@
     <path d="M4 42c6-10 14-16 24-16 9 0 14 6 12 12-1 4-6 5-8 2 6-1 4-8-3-8-8 0-12 6-15 12 8 2 14 2 22-2 7-3 13-3 22 1v15H4Z" fill="var(--f)"/>
     <path d="M10 50c6 2 12 2 18 0s12-2 18 0" stroke="var(--f2)" stroke-width="3" stroke-linecap="round" fill="none"/>
   </symbol>
+  <symbol id="obj-wrench" viewBox="0 0 64 64">
+    <g transform="rotate(-40 32 32)">
+      <rect x="27.5" y="24" width="9" height="36" rx="4.5" fill="var(--f)"/>
+      <path d="M32 3a13 13 0 0 0-13 13 13 13 0 0 0 8.5 12.2V18h9v10.2A13 13 0 0 0 45 16 13 13 0 0 0 32 3Z" fill="var(--f)"/>
+      <circle cx="32" cy="53" r="2.6" fill="var(--f2)"/>
+    </g>
+    <path d="M47 40l4-7 2 5 5-1-6 9 0-5Z" fill="var(--f2)"/>
+  </symbol>
   <symbol id="obj-chat" viewBox="0 0 64 64">
     <path d="M13 11h38a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7H31l-11 9v-9h-7a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z" fill="var(--f)"/>
     <circle cx="22" cy="28" r="3.2" fill="var(--f2)"/><circle cx="32" cy="28" r="3.2" fill="var(--f2)"/><circle cx="42" cy="28" r="3.2" fill="var(--f2)"/>
