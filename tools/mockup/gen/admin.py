@@ -70,7 +70,7 @@ pages["index.html"] = shell("index.html", "Painel", '''<div><h1>Bom dia, Gui</h1
         <div class="stack" style="--stack-gap: var(--space-md)">
           <section class="panel mockup-stateful" aria-labelledby="groups">
             <h2 id="groups">Grupos do blog</h2>
-            <fieldset class="mockup-states"><legend class="visually-hidden">Seção Tech no mockup</legend><span>Estado:</span><label><input type="radio" name="tech-admin" value="tech-off" checked>Sem posts tech</label><label><input type="radio" name="tech-admin" value="tech-on">Com post publicado</label></fieldset>
+            <fieldset class="mockup-states mockup-states--floating" style="inset-inline: auto 13rem"><legend class="visually-hidden">Grupo Tech no mockup</legend><span>Tech:</span><label><input type="radio" name="tech-admin" value="tech-off" checked>Sem posts</label><label><input type="radio" name="tech-admin" value="tech-on">Com post publicado</label></fieldset>
             <div class="group-row">
               <div><strong>Vida</strong><span class="text-muted">23 posts publicados · sempre visível</span></div>
               <label class="switch"><input type="checkbox" checked disabled><span class="visually-hidden">Vida visível no site</span></label>
