@@ -1,0 +1,162 @@
+/*
+ * The blog's two groups, Vida and Tech, as two bands of the same weight: each
+ * with its newest post featured above a row of the next four. Tech's band is
+ * graph paper from edge to edge.
+ */
+.blog-band {
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.blog-band--tech {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc(50% - 50vw);
+    z-index: -1;
+    border-block: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    background-image:
+      linear-gradient(var(--paper-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-grid) 1px, transparent 1px);
+    background-size: var(--paper-dot-gap) var(--paper-dot-gap);
+  }
+}
+
+/* Group heading: sticker, name, one line about it, "see all". */
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-block-end: var(--space-lg);
+
+  & > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  & .sticker {
+    --sticker-size: 3.5rem;
+
+    outline-width: 4px;
+  }
+
+  & .section-heading__link {
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+}
+
+.group-head__title {
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.group-head__lead {
+  margin-block-start: 0.35rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* The newest post, big, with its summary on a post-it. */
+.blog-band__featured {
+  margin-block: var(--space-sm) var(--space-xl);
+
+  & .featured-entry__photo {
+    --r: -1.5deg;
+  }
+
+  & .featured-entry__title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Tech mirrors Vida: photo on the right, note on the left. */
+.blog-band--tech .blog-band__featured {
+  grid-template-columns: 1fr 1.4fr;
+
+  & .featured-entry__photo {
+    --r: 1.5deg;
+
+    order: 2;
+  }
+}
+
+.wall--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* "Tudo · Vida · Tech" switch at the top of the blog. */
+.group-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+  width: fit-content;
+  margin-block-start: var(--space-md);
+  padding: var(--space-3xs);
+  border-radius: var(--radius-pill);
+  background: var(--color-subtle);
+
+  & a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.4em 1.1em;
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-heading);
+    }
+
+    &[aria-current="page"] {
+      background: var(--color-bg);
+      color: var(--color-heading);
+      font-weight: var(--weight-black);
+      box-shadow: var(--paper-shadow-sm);
+    }
+  }
+
+  & svg {
+    --f: var(--illo-main);
+    --f2: var(--illo-soft);
+    --dt: var(--illo-detail);
+
+    width: 1.3em;
+    height: 1.3em;
+  }
+}
+
+@media (max-width: 60rem) {
+  .wall--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .group-head {
+    flex-wrap: wrap;
+
+    & > div {
+      flex-basis: calc(100% - 3.5rem - var(--space-sm));
+    }
+
+    & .section-heading__link {
+      order: 3;
+      margin-inline-start: calc(3.5rem + var(--space-sm));
+    }
+  }
+
+  .blog-band--tech .blog-band__featured {
+    grid-template-columns: minmax(0, 1fr);
+
+    & .featured-entry__photo {
+      order: 0;
+    }
+  }
+}

@@ -4,7 +4,7 @@ Python scripts that build the static HTML in `/mockup`. The CSS, JS and images
 in `mockup/assets` are hand-written; the pages are generated. Edit the scripts,
 then regenerate. Don't hand-edit generated HTML, or the next run overwrites it.
 
-Standard library only, Python 3.11+.
+Standard library only, Python 3.12+.
 
 ## Run
 

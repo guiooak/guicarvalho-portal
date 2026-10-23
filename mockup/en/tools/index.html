@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools · Blog · gui carvalho</title>
+  <meta name="description" content="Tools · Tech">
+  <link rel="icon" href="../../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/mockup.css">
+  <script src="../../assets/javascripts/mockup.js?v=2026-10-19f"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../../" current="blog" alternate="../../br/ferramentas/"></site-header>
+
+    <main id="main">
+      <section class="container" aria-labelledby="cat-title">
+        <nav aria-label="You are here" style="margin-block-start: var(--space-xl)">
+          <ol class="breadcrumb" role="list"><li><a href="../../en/blog.html">Blog</a></li><li>Category</li></ol>
+        </nav>
+        <div class="board-title" style="margin-block-start: var(--space-sm)">
+          <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-clock"/></svg></span>
+          <div>
+            <h1 id="cat-title" style="font-size: var(--text-3xl)">Tools</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">2 posts pinned here about Tools.</p>
+          </div>
+        </div>
+        <nav class="group-switch" aria-label="Blog groups"><a href="../../en/blog.html">All</a><a href="../../en/life/"><svg aria-hidden="true"><use href="#obj-mountain"/></svg>Life</a><a href="../../en/tech/" aria-current="page"><svg aria-hidden="true"><use href="#obj-chip"/></svg>Tech</a></nav>
+        <nav class="category-nav" aria-label="Categories">
+          <ul class="category-nav__list" role="list">
+          <li><a class="tag" href="../../en/tech/">All<span class="category-nav__count">5</span></a></li>
+          <li><a class="tag" href="../../en/front-end/">Front-end<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../en/rails/">Rails<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../en/react/">React<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../en/tools/" aria-current="page">Tools<span class="category-nav__count">2</span></a></li>
+          </ul>
+        </nav>
+        <div class="wall">
+          <a class="polaroid tech-shot " href="../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">Tools</span><span class="code-shot"><span class="code-shot__bar"><span class="code-shot__dots"></span>pace.ts</span><pre class="code-shot__code"><code><span class="c">// should it be over by now?</span>
+<span class="k">const</span> pace = spent / <span class="f">plan</span>();
+
+<span class="k">if</span> (pace &gt; <span class="n">1.1</span>) {
+  <span class="f">warn</span>(<span class="s">"Running late"</span>);
+}</code></pre></span><span class="polaroid__caption"><span class="polaroid__title">How Tymebox knows your meeting is running late</span><time class="polaroid__meta" datetime="2026-09-28">Sep 28, 2026</time></span></a>
+          <a class="polaroid tech-shot " href="../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">Tools</span><span class="code-shot"><span class="code-shot__bar"><span class="code-shot__dots"></span>.zshrc</span><pre class="code-shot__code"><code><span class="c"># shortcuts I use every day</span>
+<span class="k">alias</span> gs=<span class="s">"git status -sb"</span>
+<span class="k">alias</span> dev=<span class="s">"bin/dev"</span>
+
+<span class="f">mkcd</span>() {
+  mkdir -p <span class="p">"$1"</span> &amp;&amp; cd <span class="p">"$1"</span>
+}</code></pre></span><span class="polaroid__caption"><span class="polaroid__title">My 2026 setup: terminal, editor and shortcuts</span><time class="polaroid__meta" datetime="2026-05-10">May 10, 2026</time></span></a>
+        </div>
+      </section>
+
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Want the next post by email? ✉️</h2>
+          <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
+          <form action="#" onsubmit="return false">
+            <label class="visually-hidden" for="newsletter-email">Your email</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            <button class="button" type="submit">Stick my email here</button>
+          </form>
+          <small>You'll get an email to confirm your subscription.</small>
+        </div>
+      </section>
+    </main>
+
+    <site-footer root="../../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Mockup tools">
+    <button type="button" data-notes-toggle>Mockup notes</button>
+  </div>
+</body>
+</html>

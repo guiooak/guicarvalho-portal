@@ -98,6 +98,7 @@
   /* Notebook ("Caderno") layout */
   --paper-dot: light-dark(#ededed, #171717);
   --paper-dot-gap: 22px;
+  --paper-grid: light-dark(#eef3ee, #1a211a);
   --photo-frame: light-dark(#ffffff, var(--gray-100));
   --photo-frame-text: var(--gray-800);
   --photo-frame-heading: var(--gray-950);

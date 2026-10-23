@@ -5,7 +5,7 @@ points the rest at it."""
 from common import posts as P, cats
 
 CAT = {  # pt name: (en name, en slug)
-    "Viva": ("Life", "life"), "Coaching": ("Coaching", "coaching"), "Homenagens": ("Tributes", "tributes"),
+    "Viva": ("Living", "living"), "Coaching": ("Coaching", "coaching"), "Homenagens": ("Tributes", "tributes"),
     "Casos de Sucesso": ("Success Stories", "success-stories"), "Inspiração": ("Inspiration", "inspiration"),
     "Irlanda": ("Ireland", "ireland"), "Geral": ("General", "general"), "Idiomas": ("Languages", "languages"),
     "Liderança": ("Leadership", "leadership"), "Presepadas": ("Mishaps", "mishaps"), "Viagens": ("Travel", "travel"),
@@ -74,6 +74,6 @@ cats_en = [dict(c, name=CAT[c["name"]][0], slug=CAT[c["name"]][1], pt_name=c["na
 
 TAG = {"desenvolvimento-pessoal": ("Personal Growth", "personal-growth")}
 
-CAT_OBJ = {"Life": "sprout", "Coaching": "target", "Tributes": "heart", "Success Stories": "trophy", "Inspiration": "bulb",
+CAT_OBJ = {"Living": "sprout", "Coaching": "target", "Tributes": "heart", "Success Stories": "trophy", "Inspiration": "bulb",
            "Ireland": "clover", "General": "mug", "Languages": "chat", "Leadership": "flag", "Mishaps": "laugh",
            "Travel": "suitcase", "Entrepreneurship": "rocket", "Time Management": "clock", "Music": "note", "Basic Principles": "book"}

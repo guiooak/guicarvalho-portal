@@ -1,6 +1,8 @@
 import os, re
 from common import posts as P, cats, e, fdate, sdate, S
 from apps import APPS
+from groups import home_section, group_switch, tech_nav_items, blog_featured_on, blog_wall_on, states, T as GT
+from tech_data import posts as tech_posts
 
 M = __import__("common").MOCKUP
 article = open(f"{S}/wp/article-clean.html").read()
@@ -121,16 +123,7 @@ home = head("gui carvalho · Histórias, metas, idiomas e apps", "O caderno de G
         </div>
       </section>
 
-      <section class="container" aria-labelledby="blog-title">
-        <div class="board-title">
-          <span class="sticker" style="--r:-6deg">{obj("plane")}</span>
-          <h2 id="blog-title">Do blog</h2>
-          <a class="section-heading__link" href="{root}br/blog.html">Folhear todos os posts {arrow()}</a>
-        </div>
-        <div class="wall">
-{wall}
-        </div>
-      </section>
+      {home_section("pt", root, P, polaroid, sdate)}
 
       <section class="container" aria-labelledby="topics-title">
         <div class="board-title">
@@ -148,21 +141,22 @@ home = head("gui carvalho · Histórias, metas, idiomas e apps", "O caderno de G
 ''' + foot(root)
 
 # ---------------------------------------------------------------- Blog
-cat_nav = f'          <li><a class="tag" href="{root}br/blog.html" aria-current="page">Todos<span class="category-nav__count">{len(P)}</span></a></li>\n' + "\n".join(f'          <li><a class="tag" href="{root}br/{c["slug"]}/">{e(c["name"])}<span class="category-nav__count">{c["count"]}</span></a></li>' for c in sorted(cats, key=lambda c: c["name"]))
+cat_nav = f'          <li data-state="tech-off"><a class="tag" href="{root}br/blog.html" aria-current="page">Todos<span class="category-nav__count">{len(P)}</span></a></li>\n' + f'          <li data-state="tech-on"><a class="tag" href="{root}br/blog.html" aria-current="page">Todos<span class="category-nav__count">{len(P) + len(tech_posts("pt"))}</span></a></li>\n' + "\n".join(f'          <li><a class="tag" href="{root}br/{c["slug"]}/">{e(c["name"])}<span class="category-nav__count">{c["count"]}</span></a></li>' for c in sorted(cats, key=lambda c: c["name"])) + "\n" + tech_nav_items("pt", root)
 latest = P[0]
 blog_wall = "\n".join("          " + polaroid(p, root) for p in P[1:13])
 blog = head("Blog · gui carvalho", "Histórias, metas, idiomas, viagens e as presepadas da vida, desde 2015.", root) + f'''
     <site-header root="{root}" current="blog" alternate="{root}en/blog.html"></site-header>
 
-    <main id="main">
+    <main id="main" class="mockup-stateful">
       <section class="container blog-intro" aria-labelledby="blog-title">
         <div class="board-title" style="margin-block-start: var(--space-xl)">
           <span class="sticker" style="--r:-8deg">{obj("pencil")}</span>
           <div>
             <h1 id="blog-title" style="font-size: var(--text-3xl)">Blog</h1>
-            <p class="text-muted" style="font-size: var(--text-md)">{len(P)} histórias coladas aqui desde 2015.</p>
+            <p class="text-muted" style="font-size: var(--text-md)"><span data-state="tech-off">{len(P)} histórias coladas aqui desde 2015.</span><span data-state="tech-on">{len(P) + len(tech_posts("pt"))} histórias coladas aqui desde 2015.</span></p>
           </div>
         </div>
+        <div data-state="tech-on">{group_switch("pt", root, "all")}</div>
         <nav class="category-nav" aria-label="Categorias">
           <ul class="category-nav__list" role="list">
 {cat_nav}
@@ -170,7 +164,9 @@ blog = head("Blog · gui carvalho", "Histórias, metas, idiomas, viagens e as pr
         </nav>
       </section>
 
-      <section class="container featured-entry" aria-label="Post mais recente">
+      {blog_featured_on("pt", root, sdate)}
+
+      <section class="container featured-entry" aria-label="Post mais recente" data-state="tech-off">
         {polaroid(latest, root, lazy=False, extra_cls="polaroid--wide featured-entry__photo", style="--r:-2deg")}
         <div class="sticky-note featured-entry__note" style="--r:3deg">
           <span class="sticky-note__title">Post mais recente</span>
@@ -181,8 +177,11 @@ blog = head("Blog · gui carvalho", "Histórias, metas, idiomas, viagens e as pr
       </section>
 
       <section class="container" aria-label="Todos os posts">
-        <div class="wall" style="margin-block-start: var(--space-xl)">
+        <div class="wall" style="margin-block-start: var(--space-xl)" data-state="tech-off">
 {blog_wall}
+        </div>
+        <div class="wall" style="margin-block-start: var(--space-xl)" data-state="tech-on">
+{blog_wall_on("pt", root, P, polaroid, sdate)}
         </div>
         <nav class="pagination" aria-label="Paginação">
           <a class="pagination__page" href="{root}br/blog.html" aria-current="page">1</a>
@@ -193,6 +192,8 @@ blog = head("Blog · gui carvalho", "Histórias, metas, idiomas, viagens e as pr
       </section>
 
       {newsletter()}
+      <aside class="container mockup-note">{GT["pt"]["blog_note"]}</aside>
+      {states("pt", floating=True)}
     </main>
 ''' + foot(root)
 

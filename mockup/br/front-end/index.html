@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Front-end · Blog · gui carvalho</title>
+  <meta name="description" content="Front-end · Tech">
+  <link rel="icon" href="../../assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+  <link rel="stylesheet" href="../../assets/stylesheets/mockup.css">
+  <script src="../../assets/javascripts/mockup.js?v=2026-10-19f"></script>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="../../" current="blog" alternate="../../en/front-end/"></site-header>
+
+    <main id="main">
+      <section class="container" aria-labelledby="cat-title">
+        <nav aria-label="Você está em" style="margin-block-start: var(--space-xl)">
+          <ol class="breadcrumb" role="list"><li><a href="../../br/blog.html">Blog</a></li><li>Categoria</li></ol>
+        </nav>
+        <div class="board-title" style="margin-block-start: var(--space-sm)">
+          <span class="sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-window"/></svg></span>
+          <div>
+            <h1 id="cat-title" style="font-size: var(--text-3xl)">Front-end</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">1 post colado aqui sobre Front-end.</p>
+          </div>
+        </div>
+        <nav class="group-switch" aria-label="Grupos do blog"><a href="../../br/blog.html">Tudo</a><a href="../../br/vida/"><svg aria-hidden="true"><use href="#obj-mountain"/></svg>Vida</a><a href="../../br/tech/" aria-current="page"><svg aria-hidden="true"><use href="#obj-chip"/></svg>Tech</a></nav>
+        <nav class="category-nav" aria-label="Categorias">
+          <ul class="category-nav__list" role="list">
+          <li><a class="tag" href="../../br/tech/">Todos<span class="category-nav__count">5</span></a></li>
+          <li><a class="tag" href="../../br/ferramentas/">Ferramentas<span class="category-nav__count">2</span></a></li>
+          <li><a class="tag" href="../../br/front-end/" aria-current="page">Front-end<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../br/rails/">Rails<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../br/react/">React<span class="category-nav__count">1</span></a></li>
+          </ul>
+        </nav>
+        <div class="wall">
+          <a class="polaroid tech-shot " href="../idiomas/o-que-te-impede-de-aprender-outro-idioma/"><span class="polaroid__tag">Front-end</span><span class="code-shot"><span class="code-shot__bar"><span class="code-shot__dots"></span>tokens.css</span><pre class="code-shot__code"><code><span class="t">:root</span> {
+  <span class="p">color-scheme</span>: light dark;
+  <span class="p">--accent</span>: <span class="f">light-dark</span>(
+    <span class="n">#527752</span>,
+    <span class="n">#a5c5a5</span>
+  );
+}</code></pre></span><span class="polaroid__caption"><span class="polaroid__title">Tokens de design só com CSS e light-dark()</span><time class="polaroid__meta" datetime="2026-07-19">19 jul 2026</time></span></a>
+        </div>
+      </section>
+
+      <section class="container" aria-labelledby="newsletter-title">
+        <div class="sticky-note newsletter-note" id="newsletter" style="--r:-1.2deg">
+          <h2 id="newsletter-title">Quer receber o próximo post? ✉️</h2>
+          <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
+          <form action="#" onsubmit="return false">
+            <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
+            <button class="button" type="submit">Colar meu e-mail</button>
+          </form>
+          <small>Você vai receber um e-mail para confirmar a inscrição.</small>
+        </div>
+      </section>
+    </main>
+
+    <site-footer root="../../"></site-footer>
+  </div>
+
+  <div class="mockup-toolbar" aria-label="Ferramentas do mockup">
+    <button type="button" data-notes-toggle>Notas do mockup</button>
+  </div>
+</body>
+</html>

@@ -68,6 +68,24 @@ pages["index.html"] = shell("index.html", "Painel", '''<div><h1>Bom dia, Gui</h1
             {recent_rows}</tbody></table></div>
         </section>
         <div class="stack" style="--stack-gap: var(--space-md)">
+          <section class="panel mockup-stateful" aria-labelledby="groups">
+            <h2 id="groups">Grupos do blog</h2>
+            <fieldset class="mockup-states"><legend class="visually-hidden">Seção Tech no mockup</legend><span>Estado:</span><label><input type="radio" name="tech-admin" value="tech-off" checked>Sem posts tech</label><label><input type="radio" name="tech-admin" value="tech-on">Com post publicado</label></fieldset>
+            <div class="group-row">
+              <div><strong>Vida</strong><span class="text-muted">23 posts publicados · sempre visível</span></div>
+              <label class="switch"><input type="checkbox" checked disabled><span class="visually-hidden">Vida visível no site</span></label>
+            </div>
+            <div class="group-row" data-state="tech-off">
+              <div><strong>Tech</strong><span class="text-muted">0 publicados · 5 rascunhos</span></div>
+              <label class="switch"><input type="checkbox" disabled><span class="visually-hidden">Mostrar Tech no site</span></label>
+            </div>
+            <p class="text-sm text-muted" data-state="tech-off">A seção Tech fica oculta na home e no blog. Dá para ligar assim que o primeiro post tech for publicado.</p>
+            <div class="group-row" data-state="tech-on">
+              <div><strong>Tech</strong><span class="text-muted">1 publicado · 4 rascunhos</span></div>
+              <label class="switch"><input type="checkbox"><span class="visually-hidden">Mostrar Tech no site</span></label>
+            </div>
+            <p class="text-sm text-muted" data-state="tech-on">Ligue para mostrar a faixa Tech na home, o seletor Tudo · Vida · Tech no blog e as categorias tech.</p>
+          </section>
           <section class="panel" aria-labelledby="todo">
             <h2 id="todo">Para fazer</h2>
             <div class="sticky-note" style="--r:-1deg"><ul><li>Moderar 2 comentários</li><li>Terminar “{DRAFT["title"]}”</li><li>Traduzir mais posts para o inglês (1 de {len(P)})</li></ul></div>
@@ -130,6 +148,7 @@ side = f'''        <aside class="editor__side">
             <span class="field__hint">Sem foto, o post ganha a capa tipográfica automática.</span></div>
           </section>
           <section class="panel" aria-label="Organização">
+            <div class="field"><label class="field__label" for="group">Grupo</label><select class="input" id="group"><option selected>Vida</option><option>Tech</option></select><span class="text-sm text-muted">As categorias mudam conforme o grupo.</span></div>
             <div class="field"><label class="field__label" for="cat">Categoria principal</label><select class="input" id="cat">{"".join(f"<option{' selected' if c['slug'] == 'idiomas' else ''}>{e(c['name'])}</option>" for c in sorted(cats, key=lambda c: c["name"]))}</select></div>
             <div class="field"><span class="field__label">Tags</span><div class="chip-input"><span class="tag">coaching ×</span><span class="tag">viagens ×</span><input placeholder="Adicionar…" aria-label="Adicionar tag"></div></div>
           </section>

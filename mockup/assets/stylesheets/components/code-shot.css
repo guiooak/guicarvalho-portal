@@ -1,0 +1,78 @@
+/*
+ * Tech post cover: a printed screenshot of code taped into the notebook, in
+ * place of the photo a Vida post gets. Lives inside a .polaroid.tech-shot.
+ * <a class="polaroid tech-shot"><span class="code-shot">
+ *   <span class="code-shot__bar"><span class="code-shot__dots"></span>file.ts</span>
+ *   <pre class="code-shot__code"><code>…<span class="k">const</span>…</code></pre>
+ * </span><span class="polaroid__caption">…</span></a>
+ */
+.code-shot {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background:
+    radial-gradient(130% 90% at 100% 0%, rgb(165 197 165 / 0.22), transparent 55%),
+    #17201a;
+  container-type: inline-size;
+}
+
+.polaroid--wide .code-shot {
+  aspect-ratio: 3 / 2;
+}
+
+.code-shot__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.75rem;
+  border-block-end: 1px solid rgb(255 255 255 / 0.06);
+  background: rgb(255 255 255 / 0.05);
+  color: #9fb89f;
+  font: 600 0.7rem/1 var(--font-mono);
+}
+
+/* The three window dots, drawn with shadows. */
+.code-shot__dots {
+  width: 7px;
+  height: 7px;
+  margin-inline-end: 22px;
+  border-radius: 50%;
+  background: #e9d97c;
+  box-shadow: 11px 0 0 #a5c5a5, 22px 0 0 #6c926c;
+}
+
+.code-shot__code {
+  flex: 1;
+  margin: 0;
+  padding: 0.9rem 0.95rem;
+  overflow: hidden;
+  color: #dde8dd;
+  font: 500 clamp(0.55rem, 5.6cqi, 0.85rem) / 1.65 var(--font-mono);
+  white-space: pre;
+}
+
+.polaroid--wide .code-shot__code {
+  padding: 1.4rem 1.6rem;
+  font-size: clamp(0.75rem, 3.8cqi, 1.3rem);
+}
+
+/* Syntax colors: keyword, string, comment, function, number, property, tag. */
+.code-shot .k { color: #a5c5a5; font-weight: 700; }
+.code-shot .s { color: #f1df7f; }
+.code-shot .c { color: #6f8f70; font-style: italic; }
+.code-shot .f { color: #c9e6c9; }
+.code-shot .n { color: #f4b78c; }
+.code-shot .p { color: #9cc9c4; }
+.code-shot .t { color: #e6a8a0; }
+
+/* Yellow tape and a dark label tell a Tech print from a Vida photo. */
+.tech-shot::before {
+  background: rgb(233 217 124 / 0.75);
+  rotate: 3deg;
+}
+
+.tech-shot .polaroid__tag {
+  background: #2d3a30;
+}

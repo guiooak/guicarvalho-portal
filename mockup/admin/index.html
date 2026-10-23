@@ -35,6 +35,24 @@
             <tr><td><a href="post-editar.html">Um turbo para metas pessoais</a></td><td class="cell-muted">13 fev 2021</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Quem é mineiro me entende</a></td><td class="cell-muted">19 mai 2019</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Mas me conta, como vocês dois se conheceram?</a></td><td class="cell-muted">25 nov 2018</td><td><span class="badge badge--ok">Publicado</span></td></tr><tr><td><a href="post-editar.html">Psicólogo é só para doidos</a></td><td class="cell-muted">21 out 2018</td><td><span class="badge badge--ok">Publicado</span></td></tr></tbody></table></div>
         </section>
         <div class="stack" style="--stack-gap: var(--space-md)">
+          <section class="panel mockup-stateful" aria-labelledby="groups">
+            <h2 id="groups">Grupos do blog</h2>
+            <fieldset class="mockup-states"><legend class="visually-hidden">Seção Tech no mockup</legend><span>Estado:</span><label><input type="radio" name="tech-admin" value="tech-off" checked>Sem posts tech</label><label><input type="radio" name="tech-admin" value="tech-on">Com post publicado</label></fieldset>
+            <div class="group-row">
+              <div><strong>Vida</strong><span class="text-muted">23 posts publicados · sempre visível</span></div>
+              <label class="switch"><input type="checkbox" checked disabled><span class="visually-hidden">Vida visível no site</span></label>
+            </div>
+            <div class="group-row" data-state="tech-off">
+              <div><strong>Tech</strong><span class="text-muted">0 publicados · 5 rascunhos</span></div>
+              <label class="switch"><input type="checkbox" disabled><span class="visually-hidden">Mostrar Tech no site</span></label>
+            </div>
+            <p class="text-sm text-muted" data-state="tech-off">A seção Tech fica oculta na home e no blog. Dá para ligar assim que o primeiro post tech for publicado.</p>
+            <div class="group-row" data-state="tech-on">
+              <div><strong>Tech</strong><span class="text-muted">1 publicado · 4 rascunhos</span></div>
+              <label class="switch"><input type="checkbox"><span class="visually-hidden">Mostrar Tech no site</span></label>
+            </div>
+            <p class="text-sm text-muted" data-state="tech-on">Ligue para mostrar a faixa Tech na home, o seletor Tudo · Vida · Tech no blog e as categorias tech.</p>
+          </section>
           <section class="panel" aria-labelledby="todo">
             <h2 id="todo">Para fazer</h2>
             <div class="sticky-note" style="--r:-1deg"><ul><li>Moderar 2 comentários</li><li>Terminar “Um ano de portal novo”</li><li>Traduzir mais posts para o inglês (1 de 23)</li></ul></div>

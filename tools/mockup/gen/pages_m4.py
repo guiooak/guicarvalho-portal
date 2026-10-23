@@ -162,6 +162,78 @@ en_tag = en.head(f"#{tag_name} · Blog · gui carvalho", f"Posts tagged {tag_nam
 os.makedirs(f"{M}/en/tag/{tag_slug}", exist_ok=True)
 open(f"{M}/en/tag/{tag_slug}/index.html", "w").write(en_tag)
 
+
+# ---------------------------------------------------------------- Vida / Tech group pages and tech category pages
+from groups import group_switch, tech_nav_items, T as GT
+from tech_data import GROUPS, posts as tech_posts, cats as tech_cats, shot, TECH_CATS
+
+def group_page(lang, path, title, desc, alt, crumb, sticker, lead, nav_items, cards, switch_on, note=""):
+    t = GT[lang]
+    head, foot = (pt.head, pt.foot) if lang == "pt" else (en.head, en.foot)
+    news = pt.newsletter() if lang == "pt" else en.newsletter()
+    here, cats_label = ("Você está em", "Categorias") if lang == "pt" else ("You are here", "Categories")
+    note_html = f'\n        <aside class="mockup-note" style="margin-block-start: var(--space-md)">{note}</aside>' if note else ""
+    page = head(f"{title} · Blog · gui carvalho", desc, root) + f'''
+    <site-header root="{root}" current="blog" alternate="{alt}"></site-header>
+
+    <main id="main">
+      <section class="container" aria-labelledby="cat-title">
+        <nav aria-label="{here}" style="margin-block-start: var(--space-xl)">
+          <ol class="breadcrumb" role="list"><li><a href="{root}{t["loc"]}/blog.html">Blog</a></li><li>{crumb}</li></ol>
+        </nav>
+        <div class="board-title" style="margin-block-start: var(--space-sm)">
+          <span class="sticker" style="--r:-8deg">{obj(sticker)}</span>
+          <div>
+            <h1 id="cat-title" style="font-size: var(--text-3xl)">{e(title)}</h1>
+            <p class="text-muted" style="font-size: var(--text-md)">{e(lead)}</p>
+          </div>
+        </div>
+        {group_switch(lang, root, switch_on)}
+        <nav class="category-nav" aria-label="{cats_label}">
+          <ul class="category-nav__list" role="list">
+{nav_items}
+          </ul>
+        </nav>
+        <div class="wall">
+{cards}
+        </div>{note_html}
+      </section>
+
+      {news}
+    </main>
+''' + foot(root)
+    os.makedirs(os.path.dirname(f"{M}/{path}"), exist_ok=True)
+    open(f"{M}/{path}", "w").write(page)
+
+for lang in ("pt", "en"):
+    t = GT[lang]; loc = t["loc"]; g = GROUPS[lang]; other = "en" if lang == "pt" else "br"; og = GROUPS["en" if lang == "pt" else "pt"]
+    sdate_l = pt.sdate if lang == "pt" else en.sdate
+    vida_ps = P if lang == "pt" else PE
+    vida_cats = cats if lang == "pt" else cats_en
+    polaroid = pt.polaroid if lang == "pt" else en.polaroid
+    tps_l = tech_posts(lang)
+    group_word, cat_word = ("Grupo", "Categoria") if lang == "pt" else ("Group", "Category")
+    def li(name, href, n, cur):
+        return f'          <li><a class="tag" href="{href}"{' aria-current="page"' if cur else ""}>{e(name)}<span class="category-nav__count">{n}</span></a></li>'
+    # Vida
+    nav_v = "\n".join([li(t["all"], f"{root}{loc}/{g['vida'][1]}/", len(vida_ps), True)] +
+                      [li(c["name"], f"{root}{loc}/{c['slug']}/", c["count"], False) for c in sorted(vida_cats, key=lambda c: c["name"])])
+    group_page(lang, f"{loc}/{g['vida'][1]}/index.html", g["vida"][0], g["vida"][3], f"{root}{other}/{og['vida'][1]}/", group_word,
+               g["vida"][2], g["vida"][3], nav_v, "\n".join("          " + polaroid(p, root) for p in vida_ps[:12]), "vida", t["group_note"])
+    # Tech
+    nav_t = "\n".join([li(t["all"], f"{root}{loc}/tech/", len(tps_l), True)]) + "\n" + tech_nav_items(lang, root, attr="")
+    group_page(lang, f"{loc}/tech/index.html", "Tech", g["tech"][3], f"{root}{other}/tech/", group_word,
+               g["tech"][2], g["tech"][3], nav_t, "\n".join("          " + shot(p, root, sdate_l, lang) for p in tps_l), "tech", t["group_note"])
+    # Tech categories
+    for c in tech_cats(lang):
+        oc = next(x for x in TECH_CATS if (x[1] if lang == "pt" else x[3]) == c["slug"])
+        nav_c = li(t["all"], f"{root}{loc}/tech/", len(tps_l), False) + "\n" + tech_nav_items(lang, root, current=c["slug"], attr="")
+        n = c["count"]
+        lead = (f"{n} {'post colado' if n == 1 else 'posts colados'} aqui sobre {c['name']}." if lang == "pt"
+                else f"{n} {'post' if n == 1 else 'posts'} pinned here about {c['name']}.")
+        group_page(lang, f"{loc}/{c['slug']}/index.html", c["name"], f"{c['name']} · Tech", f"{root}{other}/{oc[3] if lang == 'pt' else oc[1]}/",
+                   cat_word, c["obj"], lead, nav_c, "\n".join("          " + shot(p, root, sdate_l, lang) for p in tps_l if p["cat"] == c["name"]), "tech")
+
 # Search lives in search_a.py
 import search_a  # noqa: F401  (writes the search pages)
 
