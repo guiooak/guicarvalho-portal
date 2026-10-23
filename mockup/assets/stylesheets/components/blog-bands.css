@@ -94,7 +94,7 @@
   flex-wrap: wrap;
   gap: var(--space-3xs);
   width: fit-content;
-  margin-block-start: var(--space-md);
+  margin-block: var(--space-md);
   padding: var(--space-3xs);
   border-radius: var(--radius-pill);
   background: var(--color-subtle);
