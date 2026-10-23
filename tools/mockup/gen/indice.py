@@ -22,7 +22,7 @@ css = '''
 .entry:hover .peek { opacity:1; scale:1; }
 @media (max-width: 56rem) { .book { grid-template-columns:1fr; } .cover-page { position:static; min-height:auto; } .entry .peek { display:none; } .entry .t { max-width:80%; } }
 '''
-chapters = [("I", "Vida", ["Viva", "Homenagens", "Presepadas"]), ("II", "Mundo afora", ["Irlanda", "Viagens", "Idiomas", "Músicas"]), ("III", "Crescer", ["Coaching", "Inspiração", "Liderança", "Gestão de tempo", "Empreendedorismo", "Casos de Sucesso", "Princípios Básicos", "Geral"])]
+chapters = [("I", "Vida", ["Viva", "Homenagens", "Presepadas"]), ("II", "Mundo afora", ["Irlanda", "Viagens", "Idiomas", "Músicas"]), ("III", "Crescer", ["Produtividade", "Inspiração", "Liderança", "Gestão de tempo", "Empreendedorismo", "Casos de Sucesso", "Princípios Básicos", "Geral"])]
 seen = set(); out = []; page_no = 1
 for num, name, cs in chapters:
     items = [p for p in P if p["cat"] in cs and p["slug"] not in seen]

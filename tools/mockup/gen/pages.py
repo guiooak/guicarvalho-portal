@@ -6,7 +6,7 @@ from tech_data import posts as tech_posts
 
 M = __import__("common").MOCKUP
 article = open(f"{S}/wp/article-clean.html").read()
-CAT_OBJ = {"Viva": "sprout", "Coaching": "target", "Homenagens": "heart", "Casos de Sucesso": "trophy", "Inspiração": "bulb",
+CAT_OBJ = {"Viva": "sprout", "Produtividade": "target", "Homenagens": "heart", "Casos de Sucesso": "trophy", "Inspiração": "bulb",
            "Irlanda": "clover", "Geral": "mug", "Idiomas": "chat", "Liderança": "flag", "Presepadas": "laugh",
            "Viagens": "suitcase", "Empreendedorismo": "rocket", "Gestão de tempo": "clock", "Músicas": "note", "Princípios Básicos": "book"}
 
@@ -52,11 +52,18 @@ def newsletter(title="Quer receber o próximo post? ✉️", r="-1.2deg"):
           <h2 id="newsletter-title">{title}</h2>
           <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
           <form action="#" onsubmit="return false">
+            <fieldset class="newsletter-topics">
+              <legend>Quero receber</legend>
+              <label><input type="radio" name="newsletter-topics" value="all" checked>Tudo</label>
+              <label><input type="radio" name="newsletter-topics" value="vida">Só Vida</label>
+              <label><input type="radio" name="newsletter-topics" value="tech">Só Tech</label>
+            </fieldset>
             <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
             <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
             <button class="button" type="submit">Colar meu e-mail</button>
           </form>
           <small>Você vai receber um e-mail para confirmar a inscrição.</small>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">A escolha entre Tudo, Vida e Tech só aparece com a seção Tech ligada. Sem ela, todo mundo recebe tudo, e quem já assinava continua em Tudo.</aside>
         </div>
       </section>'''
 
@@ -250,7 +257,7 @@ post = head(f"{p['title']} · gui carvalho", p["excerpt"], proot, extra=f'''
 
           <footer class="post-footer">
             <div class="cluster">
-              <a class="tag" href="{proot}br/coaching/">Coaching</a>
+              <a class="tag" href="{proot}br/produtividade/">Produtividade</a>
               <a class="tag" href="{proot}br/idiomas/">Idiomas</a>
               <a class="tag" href="{proot}br/viagens/">Viagens</a>
             </div>

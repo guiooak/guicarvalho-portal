@@ -194,19 +194,22 @@ SUBS = [("ana@email.com", "pt-BR", "ok", "Confirmado", "18 out 2026", "rodapé d
         ("mariana@email.com", "pt-BR", "ok", "Confirmado", "02 out 2026", "importado do WordPress"), ("rafael@email.com", "pt-BR", "wait", "Aguardando confirmação", "19 out 2026", "home"),
         ("camila@email.com", "pt-BR", "off", "Descadastrado", "28 set 2026", "rodapé do post"), ("bounce@exemplo.com", "pt-BR", "off", "E-mail inválido", "15 set 2026", "importado do WordPress"),
         ("emma@email.com", "en", "ok", "Confirmado", "09 set 2026", "post em inglês")]
-srows = "".join(f'<tr><td><a href="#">{em}</a></td><td>{badge(k, st)}</td><td>{badge("", loc)}</td><td class="cell-muted">{d}</td><td class="cell-muted">{src}</td></tr>' for em, loc, k, st, d, src in SUBS)
+GROUP_OF = {"liam@email.com": "Só Tech", "rafael@email.com": "Só Vida", "mariana@email.com": "Só Vida"}
+srows = "".join(f'<tr><td><a href="#">{em}</a></td><td>{badge(k, st)}</td><td>{badge("", loc)}</td><td>{badge("", GROUP_OF.get(em, "Tudo"))}</td><td class="cell-muted">{d}</td><td class="cell-muted">{src}</td></tr>' for em, loc, k, st, d, src in SUBS)
 pages["inscritos.html"] = shell("inscritos.html", "Inscritos", '''<div><h1>Inscritos</h1><p>38 confirmados · 1 aguardando · 3 saíram</p></div>
         <div class="cluster"><button class="button button--secondary button--small" type="button">Importar CSV</button><button class="button button--secondary button--small" type="button">Exportar</button></div>''', f'''      <div class="stats">
         <div class="stat"><strong>36</strong><span>em português</span></div>
         <div class="stat"><strong>2</strong><span>em inglês</span></div>
         <div class="stat"><strong>61%</strong><span>abertura média</span></div>
       </div>
+      <p class="text-sm text-muted">Recebem: <strong>31</strong> Tudo · <strong>5</strong> só Vida · <strong>2</strong> só Tech</p>
       <div class="toolbar">
         <input class="input" type="search" placeholder="Buscar por e-mail…" aria-label="Buscar inscritos">
         <nav class="segmented" aria-label="Filtrar por status"><a href="#" aria-current="true">Todos</a><a href="#">Confirmados</a><a href="#">Aguardando</a><a href="#">Saíram</a></nav>
+        <nav class="segmented" aria-label="Filtrar pelo que recebem"><a href="#" aria-current="true">Qualquer grupo</a><a href="#">Tudo</a><a href="#">Só Vida</a><a href="#">Só Tech</a></nav>
       </div>
       <div class="table-wrap"><table class="data-table">
-        <thead><tr><th>E-mail</th><th>Status</th><th>Idioma</th><th>Desde</th><th>Origem</th></tr></thead>
+        <thead><tr><th>E-mail</th><th>Status</th><th>Idioma</th><th>Recebe</th><th>Desde</th><th>Origem</th></tr></thead>
         <tbody>{srows}</tbody>
       </table></div>
       <aside class="mockup-note">E-mails fictícios. A lista real (menos de 50 pessoas) vem do WordPress depois; quem não tiver consentimento registrado recebe um pedido de reconfirmação. Bounces e marcações de spam chegam pelo webhook do SendGrid e mudam o status sozinhos.</aside>''')
@@ -217,10 +220,10 @@ hist = "".join(f'<tr><td>{t}</td><td>{badge("", l)}</td><td class="cell-muted">{
 pages["newsletter.html"] = shell("newsletter.html", "Newsletter", '''<div><h1>Enviar newsletter</h1><p>Escolha o post, confira o e-mail e envie. Nada sai sem você confirmar.</p></div>''', f'''      <div class="send-layout">
         <section class="panel" aria-label="Envio">
           <div class="field"><label class="field__label" for="np">Post</label><select class="input" id="np"><option>{e(SRC["title"])}</option>{"".join(f"<option>{e(p['title'])}</option>" for p in P[:5])}</select></div>
-          <div class="field"><label class="field__label" for="nl">Para</label><select class="input" id="nl"><option>Inscritos em português (36)</option><option>Inscritos em inglês (2)</option></select><span class="field__hint">Só aparece um idioma se o post tiver tradução nele.</span></div>
+          <div class="field"><label class="field__label" for="nl">Para</label><select class="input" id="nl"><option>Português · Tudo e só Vida (34)</option><option>Inglês · Tudo e só Vida (2)</option></select><span class="field__hint">O post é do grupo Vida, então vai para quem assina Tudo ou só Vida. Só aparece um idioma se o post tiver tradução nele.</span></div>
           <div class="field"><label class="field__label" for="ns">Assunto</label><input class="input" id="ns" value="{e(SRC["title"])}"></div>
           <div class="field"><label class="field__label" for="nn">Bilhete (opcional)</label><textarea class="input" id="nn">Esse é um dos posts mais antigos do blog, agora de casa nova. Se você também já travou numa conversa em outro idioma, me responde contando como foi!</textarea><span class="field__hint">Aparece num post-it amarelo no e-mail.</span></div>
-          <div class="cluster"><button class="button button--secondary" type="button">Enviar teste para mim</button><button class="button" type="button" popovertarget="confirm-send">Enviar para 36 pessoas</button></div>
+          <div class="cluster"><button class="button button--secondary" type="button">Enviar teste para mim</button><button class="button" type="button" popovertarget="confirm-send">Enviar para 34 pessoas</button></div>
         </section>
         <section aria-label="Prévia do e-mail">
           <iframe src="{R}emails/novo-post.html" title="Prévia do e-mail"></iframe>
@@ -232,8 +235,8 @@ pages["newsletter.html"] = shell("newsletter.html", "Newsletter", '''<div><h1>En
       </section>
       <div class="confirm-pop" id="confirm-send" popover>
         <div class="stack" style="--stack-gap: var(--space-sm)">
-          <h2>Enviar para 36 pessoas?</h2>
-          <p class="text-muted">“{e(SRC["title"])}” vai para os inscritos em português. Depois de enviado, não dá para desfazer.</p>
+          <h2>Enviar para 34 pessoas?</h2>
+          <p class="text-muted">“{e(SRC["title"])}” vai para os inscritos em português que recebem Tudo ou só Vida. Depois de enviado, não dá para desfazer.</p>
           <div class="cluster"><button class="button" type="button" popovertarget="confirm-send" popovertargetaction="hide">Sim, enviar agora</button><button class="button button--ghost" type="button" popovertarget="confirm-send" popovertargetaction="hide">Cancelar</button></div>
         </div>
       </div>

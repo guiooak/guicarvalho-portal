@@ -19,13 +19,18 @@
         <span class="sticker center-stage__sticker" style="--r:-8deg"><svg aria-hidden="true"><use href="#obj-envelope"/></svg></span>
         <div class="sheet center-stage__card" style="--r:-1deg">
           <h1>Você saiu da newsletter</h1>
-          <p class="text-muted">Pronto, você não vai mais receber os posts por e-mail. Se foi engano, é só voltar:</p>
-          <button class="button" type="button">Me inscrever de novo</button>
+          <p class="text-muted">Pronto, você não vai mais receber os posts por e-mail. Se foi engano, é só voltar, e dá para escolher só uma parte:</p>
+          <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-2xs)">
+            <button class="button" type="button">Voltar a receber tudo</button>
+            <button class="button button--secondary" type="button">Só Vida</button>
+            <button class="button button--secondary" type="button">Só Tech</button>
+          </div>
           <form class="stack" action="#" onsubmit="return false" style="--stack-gap: var(--space-sm); width: 100%; margin-block-start: var(--space-md); padding-block-start: var(--space-md); border-top: 1px dashed var(--color-border)">
             <fieldset class="choice-list" style="border: 0; padding: 0">
               <legend class="field__label" style="margin-block-end: var(--space-2xs)">Se quiser, me conta por quê (opcional):</legend>
               <label><input type="radio" name="why" value="many">Recebia e-mails demais</label>
               <label><input type="radio" name="why" value="topics">Os assuntos não me interessam mais</label>
+              <label><input type="radio" name="why" value="group">Só me interessa Vida ou só Tech</label>
               <label><input type="radio" name="why" value="never">Não lembro de ter me inscrito</label>
               <label><input type="radio" name="why" value="other">Outro motivo</label>
             </fieldset>

@@ -30,7 +30,6 @@
           <ul class="category-nav__list" role="list">
           <li><a class="tag" href="../../en/blog.html">All<span class="category-nav__count">23</span></a></li>
           <li><a class="tag" href="../../en/basic-principles/">Basic Principles<span class="category-nav__count">1</span></a></li>
-          <li><a class="tag" href="../../en/coaching/">Coaching<span class="category-nav__count">7</span></a></li>
           <li><a class="tag" href="../../en/entrepreneurship/">Entrepreneurship<span class="category-nav__count">1</span></a></li>
           <li><a class="tag" href="../../en/general/">General<span class="category-nav__count">3</span></a></li>
           <li><a class="tag" href="../../en/inspiration/">Inspiration<span class="category-nav__count">5</span></a></li>
@@ -40,6 +39,7 @@
           <li><a class="tag" href="../../en/living/">Living<span class="category-nav__count">10</span></a></li>
           <li><a class="tag" href="../../en/mishaps/">Mishaps<span class="category-nav__count">2</span></a></li>
           <li><a class="tag" href="../../en/music/">Music<span class="category-nav__count">1</span></a></li>
+          <li><a class="tag" href="../../en/productivity/">Productivity<span class="category-nav__count">7</span></a></li>
           <li><a class="tag" href="../../en/success-stories/">Success Stories<span class="category-nav__count">5</span></a></li>
           <li><a class="tag" href="../../en/time-management/" aria-current="page">Time Management<span class="category-nav__count">1</span></a></li>
           <li><a class="tag" href="../../en/travel/">Travel<span class="category-nav__count">2</span></a></li>
@@ -56,11 +56,18 @@
           <h2 id="newsletter-title">Want the next post by email? ✉️</h2>
           <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
           <form action="#" onsubmit="return false">
+            <fieldset class="newsletter-topics">
+              <legend>I want</legend>
+              <label><input type="radio" name="newsletter-topics" value="all" checked>Everything</label>
+              <label><input type="radio" name="newsletter-topics" value="vida">Only Life</label>
+              <label><input type="radio" name="newsletter-topics" value="tech">Only Tech</label>
+            </fieldset>
             <label class="visually-hidden" for="newsletter-email">Your email</label>
             <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
             <button class="button" type="submit">Stick my email here</button>
           </form>
           <small>You'll get an email to confirm your subscription.</small>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">The choice between Everything, Life and Tech only shows up with the Tech section on. Without it, everyone gets everything, and existing subscribers stay on Everything.</aside>
         </div>
       </section>
     </main>

@@ -29,7 +29,7 @@
         <div class="wall">
           <a class="polaroid " href="../../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">General</span><img src="../../../assets/images/covers/life-without-tv-768x513.jpg" alt="Life without television" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">The price of free media</span><time class="polaroid__meta" datetime="2018-09-30">Sep 30, 2018</time></span></a>
           <a class="polaroid " href="../../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">General</span><img src="../../../assets/images/covers/garota-pensando-768x462.jpg" alt="Girl thinking" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">The small big assumptions of everyday life</span><time class="polaroid__meta" datetime="2017-02-19">Feb 19, 2017</time></span></a>
-          <a class="polaroid " href="../../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">Coaching</span><img src="../../../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="Hero body language" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Boosting your self-confidence in just 2 minutes</span><time class="polaroid__meta" datetime="2016-10-22">Oct 22, 2016</time></span></a>
+          <a class="polaroid " href="../../languages/what-stops-you-from-learning-another-language/"><span class="polaroid__tag">Productivity</span><img src="../../../assets/images/covers/linguagem-corporal-de-heroi-768x416.jpg" alt="Hero body language" width="768" height="512" loading="lazy"><span class="polaroid__caption"><span class="polaroid__title">Boosting your self-confidence in just 2 minutes</span><time class="polaroid__meta" datetime="2016-10-22">Oct 22, 2016</time></span></a>
         </div>
         <aside class="mockup-note" style="margin-block-start: var(--space-md)">The current blog has 36 tags, almost all used only once. It's worth deciding during the migration whether they stay or only the categories remain.</aside>
       </section>
@@ -39,11 +39,18 @@
           <h2 id="newsletter-title">Want the next post by email? ✉️</h2>
           <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
           <form action="#" onsubmit="return false">
+            <fieldset class="newsletter-topics">
+              <legend>I want</legend>
+              <label><input type="radio" name="newsletter-topics" value="all" checked>Everything</label>
+              <label><input type="radio" name="newsletter-topics" value="vida">Only Life</label>
+              <label><input type="radio" name="newsletter-topics" value="tech">Only Tech</label>
+            </fieldset>
             <label class="visually-hidden" for="newsletter-email">Your email</label>
             <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
             <button class="button" type="submit">Stick my email here</button>
           </form>
           <small>You'll get an email to confirm your subscription.</small>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">The choice between Everything, Life and Tech only shows up with the Tech section on. Without it, everyone gets everything, and existing subscribers stay on Everything.</aside>
         </div>
       </section>
     </main>

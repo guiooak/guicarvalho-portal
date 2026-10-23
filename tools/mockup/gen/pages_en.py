@@ -55,11 +55,18 @@ def newsletter(title="Want the next post by email? ✉️", r="-1.2deg"):
           <h2 id="newsletter-title">{title}</h2>
           <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
           <form action="#" onsubmit="return false">
+            <fieldset class="newsletter-topics">
+              <legend>I want</legend>
+              <label><input type="radio" name="newsletter-topics" value="all" checked>Everything</label>
+              <label><input type="radio" name="newsletter-topics" value="vida">Only Life</label>
+              <label><input type="radio" name="newsletter-topics" value="tech">Only Tech</label>
+            </fieldset>
             <label class="visually-hidden" for="newsletter-email">Your email</label>
             <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
             <button class="button" type="submit">Stick my email here</button>
           </form>
           <small>You'll get an email to confirm your subscription.</small>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">The choice between Everything, Life and Tech only shows up with the Tech section on. Without it, everyone gets everything, and existing subscribers stay on Everything.</aside>
         </div>
       </section>'''
 
@@ -341,7 +348,7 @@ post = head(f"{POST['title']} · gui carvalho", POST["excerpt"], proot, extra=f'
 
           <footer class="post-footer">
             <div class="cluster">
-              <a class="tag" href="{proot}en/coaching/">Coaching</a>
+              <a class="tag" href="{proot}en/productivity/">Productivity</a>
               <a class="tag" href="{proot}en/languages/">Languages</a>
               <a class="tag" href="{proot}en/travel/">Travel</a>
             </div>

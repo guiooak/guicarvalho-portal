@@ -88,3 +88,49 @@
     font-size: var(--text-xs);
   }
 }
+
+/* "Quero receber: Tudo · Só Vida · Só Tech" on the newsletter note. */
+.newsletter-topics {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  align-items: center;
+  gap: var(--space-3xs);
+  margin: 0 0 var(--space-2xs);
+  padding: 0;
+  border: 0;
+
+  & legend {
+    float: inline-start;
+    margin-inline-end: var(--space-2xs);
+    color: var(--note-fg);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  & label {
+    padding: 0.3em 0.9em;
+    border: 1.5px solid var(--note-border);
+    border-radius: var(--radius-pill);
+    color: var(--note-fg);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & label:has(input:checked) {
+    border-color: var(--note-fg);
+    background: var(--note-fg);
+    color: var(--note-bg);
+  }
+
+  & label:has(input:focus-visible) {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+  }
+}

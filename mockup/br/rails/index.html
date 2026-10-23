@@ -50,11 +50,18 @@
           <h2 id="newsletter-title">Quer receber o próximo post? ✉️</h2>
           <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
           <form action="#" onsubmit="return false">
+            <fieldset class="newsletter-topics">
+              <legend>Quero receber</legend>
+              <label><input type="radio" name="newsletter-topics" value="all" checked>Tudo</label>
+              <label><input type="radio" name="newsletter-topics" value="vida">Só Vida</label>
+              <label><input type="radio" name="newsletter-topics" value="tech">Só Tech</label>
+            </fieldset>
             <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
             <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
             <button class="button" type="submit">Colar meu e-mail</button>
           </form>
           <small>Você vai receber um e-mail para confirmar a inscrição.</small>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">A escolha entre Tudo, Vida e Tech só aparece com a seção Tech ligada. Sem ela, todo mundo recebe tudo, e quem já assinava continua em Tudo.</aside>
         </div>
       </section>
     </main>

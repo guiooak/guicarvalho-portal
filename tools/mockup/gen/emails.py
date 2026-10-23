@@ -87,7 +87,7 @@ for lang, f, d in [("pt-BR", "confirmacao-inscricao.html", dict(
         b1="Alguém (tomara que você!) pediu para receber os posts do caderno do Gui neste endereço: <strong>seu@email.com</strong>.",
         b2="Para começar, é só confirmar:", cta="Confirmar inscrição",
         fine="Se não foi você, é só ignorar este e-mail. Sem a confirmação, você não recebe nada.",
-        note="<strong>O que vem por aí:</strong> um e-mail quando sair post novo, com histórias, metas, idiomas e as presepadas da vida. Sem spam.",
+        note="<strong>O que vem por aí:</strong> um e-mail quando sair post novo. Você escolheu <strong>Tudo</strong>: Vida (histórias, metas, idiomas e as presepadas da vida) e Tech (código e front-end). Sem spam.",
         foot="Você recebeu este e-mail porque alguém digitou este endereço em <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>. O link de confirmação vale por 7 dias.")),
     ("en", "en/subscription-confirmation.html", dict(
         subject="Is this you? ✉️", pre="One click away from getting Gui's posts by email.",
@@ -95,7 +95,7 @@ for lang, f, d in [("pt-BR", "confirmacao-inscricao.html", dict(
         b1="Someone (hopefully you!) asked to get the posts from Gui's notebook at this address: <strong>you@email.com</strong>.",
         b2="To start, just confirm:", cta="Confirm subscription",
         fine="If it wasn't you, just ignore this email. Without confirmation you won't get anything.",
-        note="<strong>What's coming:</strong> one email per new post, with stories, goals, languages and life's shenanigans. Most posts are in Portuguese. No spam.",
+        note="<strong>What's coming:</strong> one email per new post. You chose <strong>Everything</strong>: Life (stories, goals, languages and life's shenanigans) and Tech (code and front-end). No spam.",
         foot="You got this email because someone typed this address at <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>. The confirmation link is valid for 7 days."))]:
     body = "\n".join([eyebrow(d["eb"]), h1(d["h"]), p(d["b1"]), p(d["b2"]), f'<div style="margin:8px 0 24px">{button(d["cta"])}</div>',
                       p(d["fine"], 14, MUTED), note(d["note"])])
@@ -103,15 +103,15 @@ for lang, f, d in [("pt-BR", "confirmacao-inscricao.html", dict(
 
 # 2. New post --------------------------------------------------------------------
 for lang, f, d in [("pt-BR", "novo-post.html", dict(
-        subject=SRC["title"], pre=SRC["excerpt"], eb="Post novo no caderno", title=SRC["title"],
+        subject=SRC["title"], pre=SRC["excerpt"], eb="Post novo no caderno · Vida", title=SRC["title"],
         meta="Idiomas · 7 min de leitura", excerpt=SRC["excerpt"], alt=SRC["alt"] or SRC["title"], cta="Ler o post completo",
         note="<strong>Um bilhete:</strong> esse é um dos posts mais antigos do blog, agora de casa nova. Se você também já travou numa conversa em outro idioma, me responde este e-mail contando como foi!",
-        foot="Você recebe este e-mail porque se inscreveu na newsletter de <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>.<br><a href=\"#\" style=\"color:#545454\">Ver no navegador</a> · <a href=\"#\" style=\"color:#545454\">Descadastrar</a>")),
+        foot="Você recebe este e-mail porque assina <strong>Tudo</strong> na newsletter de <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>.<br><a href=\"#\" style=\"color:#545454\">Ver no navegador</a> · <a href=\"#\" style=\"color:#545454\">Mudar o que recebo</a> · <a href=\"#\" style=\"color:#545454\">Descadastrar</a>")),
     ("en", "en/new-post.html", dict(
-        subject=en.POST["title"], pre=en.POST["excerpt"], eb="New post in the notebook", title=en.POST["title"],
+        subject=en.POST["title"], pre=en.POST["excerpt"], eb="New post in the notebook · Life", title=en.POST["title"],
         meta="Languages · 6 min read", excerpt=en.POST["excerpt"], alt=en.POST["alt"], cta="Read the full post",
         note="<strong>A note:</strong> this is one of the oldest posts on the blog, now in its new home and in English. If you've ever frozen mid-conversation in another language, reply and tell me how it went!",
-        foot="You get this email because you subscribed to the newsletter at <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>.<br><a href=\"#\" style=\"color:#545454\">View in browser</a> · <a href=\"#\" style=\"color:#545454\">Unsubscribe</a>"))]:
+        foot="You get this email because you subscribed to <strong>Everything</strong> in the newsletter at <a href=\"#\" style=\"color:#545454\">guicarvalho.com.br</a>.<br><a href=\"#\" style=\"color:#545454\">View in browser</a> · <a href=\"#\" style=\"color:#545454\">Change what I get</a> · <a href=\"#\" style=\"color:#545454\">Unsubscribe</a>"))]:
     body = "\n".join([eyebrow(d["eb"]), h1(d["title"]), p(d["meta"], 14, MUTED), polaroid_img(f"{A}/images/covers/{SRC['cover']}", d["alt"]),
                       p(d["excerpt"], 18), f'<div style="margin:8px 0 28px">{button(d["cta"])}</div>', note(d["note"])])
     T.append((f, lang, d["subject"], d["pre"], email(lang, d["subject"], d["pre"], body, p(d["foot"], 12, MUTED, extra="margin:0"))))

@@ -305,32 +305,44 @@ PAGES.append(("en/newsletter/check-your-inbox.html", simple("en", "../../", "../
 # Newsletter: confirmed
 PAGES.append(("br/newsletter/confirmado.html", simple("pt", "../../", "../../en/newsletter/confirmed.html", "Inscrição confirmada", "Sua inscrição na newsletter está confirmada.", "envelope", "sticky-note", '''          <h1>Inscrição confirmada!</h1>
           <p>Pronto, você está no caderno. A partir de agora, cada post novo chega direto no seu e-mail.</p>
+          <p class="center-stage__fine">Você escolheu receber <strong>Tudo</strong> (Vida e Tech). <a href="#">Mudar o que recebo</a></p>
           <p class="center-stage__fine">Um e-mail por post, sem spam. Dá para sair quando quiser pelo link no rodapé de cada e-mail.</p>''', recent("../../", "pt"))))
 PAGES.append(("en/newsletter/confirmed.html", simple("en", "../../", "../../br/newsletter/confirmado.html", "Subscription confirmed", "Your newsletter subscription is confirmed.", "envelope", "sticky-note", '''          <h1>You're in!</h1>
           <p>Your subscription is confirmed. From now on, every new post lands straight in your inbox.</p>
+          <p class="center-stage__fine">You chose to get <strong>Everything</strong> (Life and Tech). <a href="#">Change what I get</a></p>
           <p class="center-stage__fine">One email per post, no spam. You can leave anytime through the link at the bottom of each email.</p>''', recent("../../", "en"))))
 # Newsletter: unsubscribed
 PAGES.append(("br/newsletter/descadastrado.html", simple("pt", "../../", "../../en/newsletter/unsubscribed.html", "Inscrição cancelada", "Você saiu da newsletter.", "envelope", "sheet", '''          <h1>Você saiu da newsletter</h1>
-          <p class="text-muted">Pronto, você não vai mais receber os posts por e-mail. Se foi engano, é só voltar:</p>
-          <button class="button" type="button">Me inscrever de novo</button>
+          <p class="text-muted">Pronto, você não vai mais receber os posts por e-mail. Se foi engano, é só voltar, e dá para escolher só uma parte:</p>
+          <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-2xs)">
+            <button class="button" type="button">Voltar a receber tudo</button>
+            <button class="button button--secondary" type="button">Só Vida</button>
+            <button class="button button--secondary" type="button">Só Tech</button>
+          </div>
           <form class="stack" action="#" onsubmit="return false" style="--stack-gap: var(--space-sm); width: 100%; margin-block-start: var(--space-md); padding-block-start: var(--space-md); border-top: 1px dashed var(--color-border)">
             <fieldset class="choice-list" style="border: 0; padding: 0">
               <legend class="field__label" style="margin-block-end: var(--space-2xs)">Se quiser, me conta por quê (opcional):</legend>
               <label><input type="radio" name="why" value="many">Recebia e-mails demais</label>
               <label><input type="radio" name="why" value="topics">Os assuntos não me interessam mais</label>
+              <label><input type="radio" name="why" value="group">Só me interessa Vida ou só Tech</label>
               <label><input type="radio" name="why" value="never">Não lembro de ter me inscrito</label>
               <label><input type="radio" name="why" value="other">Outro motivo</label>
             </fieldset>
             <button class="button button--secondary" type="submit" style="justify-self: center">Enviar</button>
           </form>''')))
 PAGES.append(("en/newsletter/unsubscribed.html", simple("en", "../../", "../../br/newsletter/descadastrado.html", "Unsubscribed", "You left the newsletter.", "envelope", "sheet", '''          <h1>You left the newsletter</h1>
-          <p class="text-muted">Done, you won't get posts by email anymore. If it was a mistake, come right back:</p>
-          <button class="button" type="button">Subscribe again</button>
+          <p class="text-muted">Done, you won't get posts by email anymore. If it was a mistake, come right back, and you can pick just one part:</p>
+          <div class="cluster" style="justify-content: center; --cluster-gap: var(--space-2xs)">
+            <button class="button" type="button">Get everything again</button>
+            <button class="button button--secondary" type="button">Only Life</button>
+            <button class="button button--secondary" type="button">Only Tech</button>
+          </div>
           <form class="stack" action="#" onsubmit="return false" style="--stack-gap: var(--space-sm); width: 100%; margin-block-start: var(--space-md); padding-block-start: var(--space-md); border-top: 1px dashed var(--color-border)">
             <fieldset class="choice-list" style="border: 0; padding: 0">
               <legend class="field__label" style="margin-block-end: var(--space-2xs)">If you like, tell me why (optional):</legend>
               <label><input type="radio" name="why" value="many">Too many emails</label>
               <label><input type="radio" name="why" value="topics">The topics no longer interest me</label>
+              <label><input type="radio" name="why" value="group">I only care about Life or only Tech</label>
               <label><input type="radio" name="why" value="never">I don't remember subscribing</label>
               <label><input type="radio" name="why" value="other">Something else</label>
             </fieldset>
