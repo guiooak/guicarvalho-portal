@@ -23,6 +23,15 @@ To try a change without touching `/mockup`, set `MOCKUP_OUT` to a copy:
 MOCKUP_OUT=/tmp/mockup-copy python3 pages.py
 ```
 
+## Serve
+
+```bash
+python3 tools/mockup/serve.py
+```
+
+Serves `/mockup` on http://localhost:8000 with caching off, so the browser
+always picks up regenerated pages and edited CSS without a hard reload.
+
 ## Files
 
 | Script | Writes |
@@ -37,7 +46,8 @@ MOCKUP_OUT=/tmp/mockup-copy python3 pages.py
 | `emails.py` | `emails/` |
 | `admin.py` | `admin/` |
 | `bento.py`, `revista.py`, `timeline.py`, `caderno.py`, `indice.py` | The five layout concepts in `explorations/` |
-| `tech_data.py` | Made-up Tech posts for the Vida / Tech groups (work in progress) |
+| `tech_data.py`, `groups.py` | Made-up Tech posts and the Vida / Tech group building blocks |
+| `blog_groups_explore.py`, `newsletter_choice_explore.py` | Exploration pages in `explorations/` |
 | `../validate.py` | Light HTML checks: `python3 validate.py ../../mockup/**/*.html` |
 
 `data/wp/` holds what came from the WordPress API: posts, categories, tags and

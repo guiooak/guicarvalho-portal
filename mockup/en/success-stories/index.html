@@ -61,17 +61,16 @@
           <p>Leave your email on this note. One email per new post, no spam, and you can leave anytime.</p>
           <form action="#" onsubmit="return false">
             <fieldset class="newsletter-topics">
-              <legend>I want</legend>
-              <label><input type="radio" name="newsletter-topics" value="all" checked>Everything</label>
-              <label><input type="radio" name="newsletter-topics" value="vida">Only Life</label>
-              <label><input type="radio" name="newsletter-topics" value="tech">Only Tech</label>
+              <legend>Send me</legend>
+              <label class="tick"><input type="checkbox" name="groups" value="vida" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Life</strong><small>stories, goals and travel</small></span></label>
+              <label class="tick"><input type="checkbox" name="groups" value="tech" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Tech</strong><small>code and front-end</small></span></label>
             </fieldset>
             <label class="visually-hidden" for="newsletter-email">Your email</label>
             <input class="input" id="newsletter-email" type="email" placeholder="you@email.com" autocomplete="email" required>
             <button class="button" type="submit">Stick my email here</button>
           </form>
           <small>You'll get an email to confirm your subscription.</small>
-          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">The choice between Everything, Life and Tech only shows up with the Tech section on. Without it, everyone gets everything, and existing subscribers stay on Everything.</aside>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">The tick boxes only show up with the Tech section on. Without it, everyone gets everything, and existing subscribers keep both ticked. At least one has to stay ticked.</aside>
         </div>
       </section>
     </main>

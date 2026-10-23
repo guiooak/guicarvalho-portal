@@ -89,48 +89,84 @@
   }
 }
 
-/* "Quero receber: Tudo · Só Vida · Só Tech" on the newsletter note. */
+/* "Quero receber: [x] Vida [x] Tech" on the newsletter note: hand-drawn tick boxes. */
 .newsletter-topics {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   flex-basis: 100%;
-  align-items: center;
-  gap: var(--space-3xs);
-  margin: 0 0 var(--space-2xs);
+  gap: 0.5rem;
+  min-width: 0;
+  margin: 0 0 var(--space-xs);
   padding: 0;
   border: 0;
 
   & legend {
-    float: inline-start;
-    margin-inline-end: var(--space-2xs);
+    margin-block-end: var(--space-2xs);
+    padding: 0;
     color: var(--note-fg);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--weight-black);
-  }
-
-  & label {
-    padding: 0.3em 0.9em;
-    border: 1.5px solid var(--note-border);
-    border-radius: var(--radius-pill);
-    color: var(--note-fg);
-    cursor: pointer;
-    font-size: var(--text-sm);
-    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
   }
 
   & input {
     position: absolute;
+    width: 1px;
+    height: 1px;
     opacity: 0;
   }
+}
 
-  & label:has(input:checked) {
-    border-color: var(--note-fg);
-    background: var(--note-fg);
-    color: var(--note-bg);
+.tick {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--note-fg);
+  cursor: pointer;
+
+  & strong {
+    font-weight: var(--weight-black);
   }
 
-  & label:has(input:focus-visible) {
+  & small {
+    display: inline;
+    margin: 0 0 0 0.45rem;
+    font-size: var(--text-sm);
+    opacity: 0.75;
+  }
+
+  &:has(input:focus-visible) .tick__box {
     outline: var(--focus-ring);
-    outline-offset: 2px;
+    outline-offset: 3px;
+  }
+}
+
+/* A slightly crooked box; the tick draws itself in when checked. */
+.tick__box {
+  position: relative;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--note-fg);
+  border-radius: 4px 6px 3px 5px;
+  background: var(--note-bg-soft);
+  rotate: -2deg;
+
+  .tick + .tick & {
+    rotate: 2deg;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.45rem -0.35rem 0.05rem 0.1rem;
+    background: var(--sage-700);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 13c2 1.5 3.5 3.5 5 6 3-7 7-12 12-16' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path var(--duration-base) var(--ease-standard);
+  }
+
+  .tick:has(input:checked) &::after {
+    clip-path: inset(0 0 0 0);
   }
 }

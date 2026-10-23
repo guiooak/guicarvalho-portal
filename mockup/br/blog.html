@@ -142,16 +142,15 @@
           <form action="#" onsubmit="return false">
             <fieldset class="newsletter-topics">
               <legend>Quero receber</legend>
-              <label><input type="radio" name="newsletter-topics" value="all" checked>Tudo</label>
-              <label><input type="radio" name="newsletter-topics" value="vida">Só Vida</label>
-              <label><input type="radio" name="newsletter-topics" value="tech">Só Tech</label>
+              <label class="tick"><input type="checkbox" name="groups" value="vida" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Vida</strong><small>histórias, metas e viagens</small></span></label>
+              <label class="tick"><input type="checkbox" name="groups" value="tech" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Tech</strong><small>código e front-end</small></span></label>
             </fieldset>
             <label class="visually-hidden" for="newsletter-email">Seu e-mail</label>
             <input class="input" id="newsletter-email" type="email" placeholder="seu@email.com" autocomplete="email" required>
             <button class="button" type="submit">Colar meu e-mail</button>
           </form>
           <small>Você vai receber um e-mail para confirmar a inscrição.</small>
-          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">A escolha entre Tudo, Vida e Tech só aparece com a seção Tech ligada. Sem ela, todo mundo recebe tudo, e quem já assinava continua em Tudo.</aside>
+          <aside class="mockup-note" style="margin-block-start: var(--space-sm)">As caixinhas só aparecem com a seção Tech ligada. Sem ela, todo mundo recebe tudo, e quem já assinava continua com as duas marcadas. Pelo menos uma precisa ficar marcada.</aside>
         </div>
       </section>
       <aside class="container mockup-note">Com a seção Tech oculta, o blog fica como hoje: sem o seletor de grupos e sem as categorias tech. Os posts tech são fictícios.</aside>

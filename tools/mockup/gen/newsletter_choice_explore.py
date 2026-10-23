@@ -1,0 +1,141 @@
+"""Exploration: three ways to pick Vida, Tech or both on the newsletter note.
+Writes mockup/explorations/newsletter-escolha.html (pt only)."""
+from common import MOCKUP
+
+ROOT = "../"
+
+
+def obj(name):
+    return f'<svg aria-hidden="true"><use href="#obj-{name}"/></svg>'
+
+
+def note(letter, title, desc, choice):
+    return f'''
+      <section class="option" aria-labelledby="opt-{letter}">
+        <div class="option__label"><span>{letter}</span><div><h2 id="opt-{letter}">{title}</h2><p>{desc}</p></div></div>
+        <div class="sticky-note newsletter-note" style="--r:-1.2deg; margin: 0">
+          <h3 class="note-title">Quer receber o próximo post? ✉️</h3>
+          <p>Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.</p>
+          <form action="#" onsubmit="return false">
+{choice}
+            <label class="visually-hidden" for="email-{letter}">Seu e-mail</label>
+            <input class="input" id="email-{letter}" type="email" placeholder="seu@email.com">
+            <button class="button" type="submit">Colar meu e-mail</button>
+          </form>
+          <small>Você vai receber um e-mail para confirmar a inscrição.</small>
+        </div>
+      </section>'''
+
+
+A = note("A", "Lista de tarefas", "Duas caixinhas desenhadas, como numa lista do caderno, já marcadas. Desmarcar uma é escolher só a outra. Cada grupo diz em poucas palavras do que trata.", '''            <fieldset class="ticks">
+              <legend>Quero receber</legend>
+              <label class="tick"><input type="checkbox" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Vida</strong><small>histórias, metas e viagens</small></span></label>
+              <label class="tick"><input type="checkbox" checked><span class="tick__box" aria-hidden="true"></span><span><strong>Tech</strong><small>código e front-end</small></span></label>
+            </fieldset>''')
+
+B = note("B", "Dois adesivos", "Dois adesivos lado a lado, com o desenho de cada grupo. Os dois começam escolhidos; tocar em um tira ou põe de volta, e o escolhido ganha um visto verde no canto.", f'''            <fieldset class="picks">
+              <legend>Quero receber</legend>
+              <label class="pick"><input type="checkbox" checked><span class="pick__sticker">{obj("mountain")}</span><span class="pick__text"><strong>Vida</strong><small>histórias, metas e viagens</small></span></label>
+              <label class="pick"><input type="checkbox" checked><span class="pick__sticker">{obj("chip")}</span><span class="pick__text"><strong>Tech</strong><small>código e front-end</small></span></label>
+            </fieldset>''')
+
+C = note("C", "Seletor deslizante", "Um trilho único com três opções, e uma pílula branca que desliza até a escolhida. Mais compacto, ocupa uma linha só.", '''            <fieldset class="slide-pick">
+              <legend>Quero receber</legend>
+              <div class="slide-pick__track">
+                <label><input type="radio" name="c" value="all" checked>Tudo</label>
+                <label><input type="radio" name="c" value="vida">Só Vida</label>
+                <label><input type="radio" name="c" value="tech">Só Tech</label>
+              </div>
+            </fieldset>''')
+
+CSS = '''
+    @layer mockup {
+      .intro { margin-block: var(--space-xl) var(--space-lg); max-width: 46rem; }
+      .intro h1 { font-size: var(--text-3xl); }
+      .intro p { margin-block-start: var(--space-sm); color: var(--color-text-muted); font-size: var(--text-md); }
+      .options { display: grid; gap: var(--space-2xl); margin-block-end: var(--space-2xl); }
+      .option { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34rem); gap: var(--space-xl); align-items: center; }
+      @media (max-width: 52rem) { .option { grid-template-columns: minmax(0, 1fr); } }
+      .option__label { display: flex; gap: var(--space-sm); align-items: flex-start; }
+      .option__label > span { flex: none; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #d4a017; color: #1a1400; font-weight: var(--weight-black); }
+      .option__label h2 { font-size: var(--text-lg); }
+      .option__label p { margin-block-start: 0.25rem; color: var(--color-text-muted); font-size: var(--text-sm); }
+      .option .newsletter-note { max-width: none; }
+      .note-title { color: var(--note-fg); font-size: var(--text-xl); }
+      .newsletter-note fieldset { flex-basis: 100%; margin: 0 0 var(--space-xs); padding: 0; border: 0; min-width: 0; }
+      .newsletter-note legend { margin-block-end: var(--space-2xs); padding: 0; color: var(--note-fg); font-size: var(--text-xs); font-weight: var(--weight-black); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+      .newsletter-note fieldset input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+      /* A: hand-drawn tick boxes. */
+      .ticks { display: grid; gap: 0.5rem; }
+      .tick { display: flex; align-items: center; gap: 0.7rem; color: var(--note-fg); cursor: pointer; }
+      .tick strong { font-weight: var(--weight-black); }
+      .tick small { display: inline; margin: 0 0 0 0.45rem; opacity: 0.75; font-size: var(--text-sm); }
+      .tick__box { position: relative; flex: none; width: 1.5rem; height: 1.5rem; border: 2px solid var(--note-fg); border-radius: 4px 6px 3px 5px; background: var(--note-bg-soft); rotate: -2deg; }
+      .tick:nth-child(3) .tick__box { rotate: 2deg; }
+      .tick__box::after { content: ""; position: absolute; inset: -0.45rem -0.35rem 0.05rem 0.1rem; background: var(--sage-700);
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 13c2 1.5 3.5 3.5 5 6 3-7 7-12 12-16' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+        clip-path: inset(0 100% 0 0); transition: clip-path var(--duration-base) var(--ease-standard); }
+      .tick:has(input:checked) .tick__box::after { clip-path: inset(0 0 0 0); }
+      .tick:has(input:focus-visible) .tick__box { outline: var(--focus-ring); outline-offset: 3px; }
+
+      /* B: two sticker cards. */
+      .picks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xs); }
+      .picks legend { grid-column: 1 / -1; }
+      .pick { position: relative; display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.75rem; border: 2px solid rgb(59 50 0 / 0.18); border-radius: 14px; background: var(--note-bg-soft); color: var(--note-fg); cursor: pointer;
+        transition: border-color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard), translate var(--duration-fast) var(--ease-standard); }
+      .pick:hover { translate: 0 -2px; }
+      .pick__sticker { --f: var(--sage-600); --f2: var(--sage-200); --dt: var(--sage-800); display: grid; place-items: center; flex: none; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: #ffffff; box-shadow: 0 2px 6px rgb(0 0 0 / 0.12); rotate: -6deg; opacity: 0.55; filter: grayscale(1); transition: opacity var(--duration-fast), filter var(--duration-fast); }
+      .pick:nth-child(3) .pick__sticker { rotate: 6deg; }
+      .pick__sticker svg { width: 66%; height: 66%; }
+      .pick__text { display: grid; line-height: 1.2; }
+      .pick strong { font-weight: var(--weight-black); }
+      .pick small { margin: 0; font-size: var(--text-xs); opacity: 0.75; }
+      .pick:has(input:checked) { border-color: var(--sage-600); background: #ffffff; }
+      .pick:has(input:checked) .pick__sticker { opacity: 1; filter: none; }
+      .pick:has(input:checked)::after { content: ""; position: absolute; inset-block-start: -0.55rem; inset-inline-end: -0.55rem; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--sage-600)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 75% no-repeat; box-shadow: 0 2px 6px rgb(0 0 0 / 0.2); }
+      .pick:has(input:focus-visible) { outline: var(--focus-ring); outline-offset: 2px; }
+
+      /* C: one track, a sliding pill. */
+      .slide-pick__track { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); padding: 4px; border-radius: var(--radius-pill); background: rgb(59 50 0 / 0.1); isolation: isolate; }
+      .slide-pick__track::before { content: ""; position: absolute; inset: 4px auto 4px 4px; z-index: -1; width: calc((100% - 8px) / 3); border-radius: var(--radius-pill); background: #ffffff; box-shadow: 0 2px 6px rgb(0 0 0 / 0.14); transition: translate var(--duration-base) var(--ease-bounce); }
+      .slide-pick__track:has(input[value="vida"]:checked)::before { translate: 100% 0; }
+      .slide-pick__track:has(input[value="tech"]:checked)::before { translate: 200% 0; }
+      .slide-pick__track label { padding: 0.45em 0.5em; color: rgb(59 50 0 / 0.7); cursor: pointer; font-size: var(--text-sm); font-weight: var(--weight-bold); text-align: center; transition: color var(--duration-fast); }
+      .slide-pick__track label:has(input:checked) { color: var(--note-fg); font-weight: var(--weight-black); }
+      .slide-pick__track label:has(input:focus-visible) { outline: var(--focus-ring); border-radius: var(--radius-pill); }
+    }'''
+
+html = f'''<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escolha da newsletter · exploração · gui carvalho</title>
+  <link rel="icon" href="{ROOT}assets/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css">
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css">
+  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-19f"></script>
+  <style>{CSS}
+  </style>
+</head>
+<body class="paper">
+  <div class="site">
+    <site-header root="{ROOT}"></site-header>
+    <main id="main" class="container">
+      <div class="intro">
+        <span class="eyebrow">Exploração</span>
+        <h1>Escolher Vida, Tech ou os dois</h1>
+        <p>Três jeitos de perguntar o que a pessoa quer receber, todos dentro do bilhete da newsletter. Clique para testar cada um.</p>
+      </div>
+      <div class="options">{A}{B}{C}
+      </div>
+    </main>
+    <site-footer root="{ROOT}"></site-footer>
+  </div>
+</body>
+</html>
+'''
+open(f"{MOCKUP}/explorations/newsletter-escolha.html", "w").write(html)
+print("ok")
