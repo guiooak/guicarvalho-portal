@@ -268,6 +268,8 @@
       privacy: "Política de privacidade",
       cookies: "Política de cookies",
       otherVersion: "English version",
+      admin: "Painel admin",
+      adminNote: "O link do painel só aparece para o Gui, quando ele está logado como admin. Visitantes não veem nada aqui.",
       note: { title: "Quer receber o próximo post? ✉️", text: "Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.",
         want: "Quero receber", vida: ["Vida", "histórias, metas e viagens"], tech: ["Tech", "código e front-end"],
         email: "Seu e-mail", placeholder: "seu@email.com", send: "Colar meu e-mail", fine: "Você vai receber um e-mail para confirmar a inscrição.", close: "Fechar" }
@@ -295,6 +297,8 @@
       privacy: "Privacy policy",
       cookies: "Cookie policy",
       otherVersion: "Versão em português",
+      admin: "Admin dashboard",
+      adminNote: "The dashboard link only shows up for Gui, when he is signed in as admin. Visitors see nothing here.",
       note: { title: "Want the next post by email? ✉️", text: "Leave your email on this note. One email per new post, no spam, and you can leave anytime.",
         want: "Send me", vida: ["Life", "stories, goals and travel"], tech: ["Tech", "code and front-end"],
         email: "Your email", placeholder: "you@email.com", send: "Stick my email here", fine: "You'll get an email to confirm your subscription.", close: "Close" }
@@ -408,7 +412,9 @@
             <a href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}">${s.otherVersion}</a>
             <span><a href="#">${s.privacy}</a> · <a href="#">${s.cookies}</a></span>
             <span>${s.madeWith}</span>
+            <a class="site-footer__admin" href="${root}admin/index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${s.admin}</a>
           </div>
+          <div class="container"><aside class="mockup-note" style="margin-block-start: var(--space-sm)">${s.adminNote}</aside></div>
           <svg class="site-footer__acorn" aria-hidden="true"><use href="#logo-acorn"/></svg>
         </footer>
         ${newsletterDrop(s.note)}`;

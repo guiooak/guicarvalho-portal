@@ -150,6 +150,29 @@
   }
 }
 
+/* Only rendered for the signed-in admin: a small pill with a padlock. */
+.site-footer .site-footer__admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2em 0.75em;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-pill);
+  color: var(--sage-100);
+  font-weight: var(--weight-bold);
+
+  & svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    color: var(--note-bg);
+  }
+
+  &:hover {
+    border-color: var(--note-bg);
+    text-decoration: none;
+  }
+}
+
 .site-footer__acorn {
   --logo-cap: rgb(255 255 255 / 0.05);
   --logo-nut: rgb(255 255 255 / 0.04);
