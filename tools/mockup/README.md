@@ -32,6 +32,11 @@ python3 tools/mockup/serve.py
 Serves `/mockup` on http://localhost:8000 with caching off, so the browser
 always picks up regenerated pages and edited CSS without a hard reload.
 
+## Publish
+
+Every push to `main` that changes `mockup/` deploys it to GitHub Pages
+(`.github/workflows/mockup-pages.yml`): https://guiooak.github.io/guicarvalho-portal/
+
 ## Files
 
 | Script | Writes |

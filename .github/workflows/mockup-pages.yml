@@ -1,0 +1,37 @@
+# Publishes the static mockup (/mockup) to GitHub Pages on every push to main
+# that touches it. The HTML is generated locally by tools/mockup and committed,
+# so the job only uploads the folder.
+name: Deploy mockup to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "mockup/**"
+      - ".github/workflows/mockup-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push cancels the waiting one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: mockup
+      - id: deployment
+        uses: actions/deploy-pages@v4
