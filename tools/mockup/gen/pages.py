@@ -23,9 +23,9 @@ def head(title, desc, root, extra=""):
   <title>{e(title)}</title>
   <meta name="description" content="{e(desc)}">{extra}
   <link rel="icon" href="{root}assets/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{root}assets/stylesheets/application.css">
-  <link rel="stylesheet" href="{root}assets/stylesheets/mockup.css">
-  <script src="{root}assets/javascripts/mockup.js?v=2026-10-19f"></script>
+  <link rel="stylesheet" href="{root}assets/stylesheets/application.css?v=2026-10-23a">
+  <link rel="stylesheet" href="{root}assets/stylesheets/mockup.css?v=2026-10-23a">
+  <script src="{root}assets/javascripts/mockup.js?v=2026-10-23a"></script>
 </head>
 <body class="paper">
   <div class="site">'''
@@ -47,6 +47,8 @@ def polaroid(p, root, tag=True, lazy=True, extra_cls="", style=""):
     return f'''<a class="polaroid {extra_cls}" href="{link(p, root)}"{f' style="{style}"' if style else ''}>{t}<img src="{cover(p, root)}" alt="{e(p['alt'] or p['title'])}" width="768" height="512"{' loading="lazy"' if lazy else ''}><span class="polaroid__caption"><span class="polaroid__title">{e(p['title'])}</span><time class="polaroid__meta" datetime="{p['date']}">{sdate(p['date'])}</time></span></a>'''
 
 def newsletter(title="Quer receber o próximo post? ✉️", r="-1.2deg"):
+    if not __import__("common").NEWSLETTER_INLINE:
+        return ""
     return f'''<section class="container" aria-labelledby="newsletter-title">
         <div class="sticky-note newsletter-note" id="newsletter" style="--r:{r}">
           <h2 id="newsletter-title">{title}</h2>

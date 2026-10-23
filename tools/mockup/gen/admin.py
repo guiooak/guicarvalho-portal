@@ -21,9 +21,9 @@ def shell(file, title, head_html, main):
   <meta name="robots" content="noindex">
   <title>{e(title)} · Admin · gui carvalho</title>
   <link rel="icon" href="{R}assets/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{R}assets/stylesheets/application.css">
-  <link rel="stylesheet" href="{R}assets/stylesheets/mockup.css">
-  <script src="{R}assets/javascripts/mockup.js?v=2026-10-19f"></script>
+  <link rel="stylesheet" href="{R}assets/stylesheets/application.css?v=2026-10-23a">
+  <link rel="stylesheet" href="{R}assets/stylesheets/mockup.css?v=2026-10-23a">
+  <script src="{R}assets/javascripts/mockup.js?v=2026-10-23a"></script>
 </head>
 <body>
   <div class="admin">

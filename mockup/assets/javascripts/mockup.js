@@ -42,6 +42,11 @@
   document.addEventListener("click", (event) => {
     if (event.target.closest("[data-theme-toggle]")) toggleTheme();
     if (event.target.closest("[data-notes-toggle]")) toggleNotes();
+    // From the phone menu: close the menu first, then drop the newsletter note in.
+    if (event.target.closest("[data-newsletter-from-menu]")) {
+      document.getElementById("site-menu")?.hidePopover();
+      document.getElementById("newsletter-drop")?.showPopover();
+    }
   });
 
   // 2. Sprite -------------------------------------------------------------
@@ -254,7 +259,18 @@
       tagline: "Histórias, metas, idiomas e os apps que eu construo.",
       portal: "Portal",
       social: "Redes",
-      madeWith: "Feito com Rails, CSS puro e um pouco de café ☕"
+      madeWith: "Feito com Rails, CSS puro e um pouco de café ☕",
+      footer: "Rodapé",
+      thanks: "Obrigado por folhear o caderno.",
+      lead: "Histórias, metas, idiomas e os apps que eu construo, colados aqui desde 2015.",
+      cta: "Receber os próximos posts",
+      blogLinks: [["Vida", "br/vida/"], ["Tech", "br/tech/"], ["Buscar", "br/busca.html"], ["RSS", "#"]],
+      privacy: "Política de privacidade",
+      cookies: "Política de cookies",
+      otherVersion: "English version",
+      note: { title: "Quer receber o próximo post? ✉️", text: "Deixa seu e-mail aqui no bilhete. Um e-mail por post novo, sem spam, e dá para sair quando quiser.",
+        want: "Quero receber", vida: ["Vida", "histórias, metas e viagens"], tech: ["Tech", "código e front-end"],
+        email: "Seu e-mail", placeholder: "seu@email.com", send: "Colar meu e-mail", fine: "Você vai receber um e-mail para confirmar a inscrição.", close: "Fechar" }
     },
     en: {
       dir: "en/",
@@ -270,7 +286,18 @@
       tagline: "Stories, goals, languages and the apps I build.",
       portal: "Portal",
       social: "Social",
-      madeWith: "Made with Rails, plain CSS and a bit of coffee ☕"
+      madeWith: "Made with Rails, plain CSS and a bit of coffee ☕",
+      footer: "Footer",
+      thanks: "Thanks for leafing through the notebook.",
+      lead: "Stories, goals, languages and the apps I build, pinned here since 2015.",
+      cta: "Get the next posts",
+      blogLinks: [["Life", "en/life/"], ["Tech", "en/tech/"], ["Search", "en/search.html"], ["RSS", "#"]],
+      privacy: "Privacy policy",
+      cookies: "Cookie policy",
+      otherVersion: "Versão em português",
+      note: { title: "Want the next post by email? ✉️", text: "Leave your email on this note. One email per new post, no spam, and you can leave anytime.",
+        want: "Send me", vida: ["Life", "stories, goals and travel"], tech: ["Tech", "code and front-end"],
+        email: "Your email", placeholder: "you@email.com", send: "Stick my email here", fine: "You'll get an email to confirm your subscription.", close: "Close" }
     }
   };
 
@@ -303,7 +330,7 @@
               <a class="lang-switch" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}" title="${s.other.name}">${s.other.code}</a>
               <a class="icon-button" href="${root}${s.searchHref}" aria-label="${s.search}"><svg aria-hidden="true"><use href="#icon-search"/></svg></a>
               <button class="icon-button" type="button" data-theme-toggle><svg aria-hidden="true"><use href="#icon-moon"/></svg></button>
-              <a class="button button--small site-header__newsletter" href="#newsletter">Newsletter</a>
+              <button class="button button--small site-header__newsletter" type="button" popovertarget="newsletter-drop">Newsletter</button>
               <button class="icon-button site-header__menu-button" type="button" popovertarget="site-menu" aria-label="${s.menu}"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>
             </div>
           </div>
@@ -313,52 +340,78 @@
                 <li><a class="site-nav__link" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}">${s.other.name}</a></li>
               </ul>
             </nav>
-            <a class="button" href="#newsletter" style="width:100%;margin-top:var(--space-xs)">${s.subscribe}</a>
+            <button class="button" type="button" data-newsletter-from-menu style="width:100%;margin-top:var(--space-xs)">${s.subscribe}</button>
           </div>
         </header>`;
       syncThemeButtons();
     }
   }
 
+  // Small single-color social glyphs for the footer.
+  const SOCIAL = [
+    ["LinkedIn", "https://www.linkedin.com/in/linkguicarvalho", '<rect x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/><path d="M7 10v7M7 7v.01M11 17v-4.2c0-1.6 1-2.8 2.5-2.8S16 11.2 16 12.8V17M11 10v7" stroke="var(--icon-cut)" stroke-width="2" stroke-linecap="round" fill="none"/>'],
+    ["GitHub", "https://github.com/guiooak", '<path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/>'],
+    ["YouTube", "https://youtube.com/c/GuilhermeCarvalhoOnline", '<rect x="1.5" y="5" width="21" height="14" rx="4.5" fill="currentColor"/><path d="M10 9v6l5-3Z" fill="var(--icon-cut)"/>'],
+    ["Instagram", "https://www.instagram.com/guicarvalho.com.br", '<rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/>']
+  ];
+
+  // The newsletter note, hidden until a "Newsletter" button drops it in,
+  // falling through the air like a loose sheet of paper.
+  const newsletterDrop = (n) => `
+    <div class="sticky-note newsletter-note newsletter-drop" id="newsletter-drop" popover aria-labelledby="newsletter-drop-title">
+      <button class="newsletter-drop__close" type="button" popovertarget="newsletter-drop" popovertargetaction="hide" aria-label="${n.close}">×</button>
+      <h2 id="newsletter-drop-title">${n.title}</h2>
+      <p>${n.text}</p>
+      <form action="#" onsubmit="return false">
+        <fieldset class="newsletter-topics">
+          <legend>${n.want}</legend>
+          ${[["vida", n.vida], ["tech", n.tech]].map(([v, [name, about]]) => `<label class="tick"><input type="checkbox" name="groups" value="${v}" checked><span class="tick__box" aria-hidden="true"></span><span><strong>${name}</strong><small>${about}</small></span></label>`).join("")}
+        </fieldset>
+        <label class="visually-hidden" for="newsletter-drop-email">${n.email}</label>
+        <input class="input" id="newsletter-drop-email" type="email" placeholder="${n.placeholder}" autocomplete="email" required>
+        <button class="button" type="submit">${n.send}</button>
+      </form>
+      <small>${n.fine}</small>
+    </div>`;
+
+  // The notebook's back cover: dark sage, a big sign-off, links, legal.
   class SiteFooter extends HTMLElement {
     connectedCallback() {
       injectSprite();
       const s = t();
       const root = this.getAttribute("root") || "";
+      const header = document.querySelector("site-header");
+      const alternate = (header && header.getAttribute("alternate")) || `${root}${s.other.home}`;
+      const list = (items) => items.map(([label, href]) => `<li><a href="${root}${href}">${label}</a></li>`).join("");
       this.innerHTML = `
         <footer class="site-footer">
-          <div class="container">
-            <div class="site-footer__grid">
-              <div class="stack" style="--stack-gap: var(--space-xs)">
-                <a class="brand" href="${root}${s.dir}index.html" style="--brand-size: 1.125rem">
-                  <svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg>
-                  <span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span>
-                </a>
-                <p>${s.tagline}</p>
-              </div>
-              <div>
-                <h2 class="site-footer__title">${s.portal}</h2>
-                <ul class="site-footer__links" role="list">
-                  ${s.nav.map(([, label, href]) => `<li><a href="${root}${href}">${label}</a></li>`).join("")}
-                  <li><a href="#">RSS</a></li>
-                </ul>
-              </div>
-              <div>
-                <h2 class="site-footer__title">${s.social}</h2>
-                <ul class="site-footer__links" role="list">
-                  <li><a href="https://www.linkedin.com/in/linkguicarvalho">LinkedIn</a></li>
-                  <li><a href="https://github.com/guiooak">GitHub</a></li>
-                  <li><a href="https://youtube.com/c/GuilhermeCarvalhoOnline">YouTube</a></li>
-                  <li><a href="https://www.instagram.com/guicarvalho.com.br">Instagram</a></li>
-                </ul>
-              </div>
+          <div class="container site-footer__inner">
+            <div class="site-footer__sign">
+              <a class="brand site-footer__brand" href="${root}${s.dir}index.html" aria-label="${s.home}">
+                <svg class="brand__symbol" aria-hidden="true"><use href="#logo-acorn"/></svg>
+                <span><span class="brand__first">gui</span><span class="brand__last">carvalho</span></span>
+              </a>
+              <p class="site-footer__thanks">${s.thanks}</p>
+              <p class="site-footer__lead">${s.lead}</p>
+              <button class="site-footer__cta" type="button" popovertarget="newsletter-drop">✉️ ${s.cta}</button>
             </div>
-            <div class="site-footer__bottom">
-              <span>© ${new Date().getFullYear()} Guilherme Carvalho</span>
-              <span>${s.madeWith}</span>
-            </div>
+            <nav class="site-footer__cols" aria-label="${s.footer}">
+              <div><h2 class="site-footer__title">${s.portal}</h2><ul class="site-footer__links" role="list">${list(s.nav.map(([, label, href]) => [label, href]))}</ul></div>
+              <div><h2 class="site-footer__title">Blog</h2><ul class="site-footer__links" role="list">${list(s.blogLinks)}</ul></div>
+              <div><h2 class="site-footer__title">${s.social}</h2><ul class="site-footer__links site-footer__social" role="list">
+                ${SOCIAL.map(([name, href, icon]) => `<li><a href="${href}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg>${name}</a></li>`).join("")}
+              </ul></div>
+            </nav>
           </div>
-        </footer>`;
+          <div class="container site-footer__bottom">
+            <span>© ${new Date().getFullYear()} Guilherme Carvalho</span>
+            <a href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}">${s.otherVersion}</a>
+            <span><a href="#">${s.privacy}</a> · <a href="#">${s.cookies}</a></span>
+            <span>${s.madeWith}</span>
+          </div>
+          <svg class="site-footer__acorn" aria-hidden="true"><use href="#logo-acorn"/></svg>
+        </footer>
+        ${newsletterDrop(s.note)}`;
     }
   }
 

@@ -238,9 +238,9 @@ html = f'''<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vida e Tech · exploração · gui carvalho</title>
   <link rel="icon" href="{ROOT}assets/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css">
-  <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css">
-  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-19f"></script>
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css?v=2026-10-23a">
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css?v=2026-10-23a">
+  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23a"></script>
   <style>{CSS}
   </style>
 </head>

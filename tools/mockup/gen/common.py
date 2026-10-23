@@ -4,6 +4,9 @@ TOOLS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S = os.path.join(TOOLS, "data")
 MOCKUP = os.environ.get("MOCKUP_OUT") or os.path.join(os.path.dirname(os.path.dirname(TOOLS)), "mockup")
 OUT = f"{MOCKUP}/explorations"
+# The newsletter note is not part of the pages: the header, footer and phone-menu
+# buttons drop it in as a popover (mockup.js). True brings back the inline note.
+NEWSLETTER_INLINE = False
 posts = json.load(open(f"{S}/wp/data.json"))
 cats = sorted([c for c in json.load(open(f"{S}/wp/cats.json")) if c["count"] > 0], key=lambda c: -c["count"])
 MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]
@@ -26,9 +29,9 @@ def page(title, concept, desc, body, css):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{e(title)} · conceito de layout</title>
   <link rel="icon" href="{ROOT}assets/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css">
-  <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css">
-  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-19f"></script>
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css?v=2026-10-23a">
+  <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css?v=2026-10-23a">
+  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23a"></script>
   <style>
     @layer mockup {{
       .concept-bar {{ display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; justify-content:space-between; padding:.6rem var(--gutter); background:#d4a017; color:#1a1400; font-size:var(--text-xs); font-weight:800; }}
