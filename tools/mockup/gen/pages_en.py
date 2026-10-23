@@ -32,7 +32,7 @@ def head(title, desc, root, extra=""):
   <link rel="icon" href="{root}assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{root}assets/stylesheets/application.css?v=2026-10-23a">
   <link rel="stylesheet" href="{root}assets/stylesheets/mockup.css?v=2026-10-23a">
-  <script src="{root}assets/javascripts/mockup.js?v=2026-10-23a"></script>
+  <script src="{root}assets/javascripts/mockup.js?v=2026-10-23c"></script>
 </head>
 <body class="paper">
   <div class="site">'''

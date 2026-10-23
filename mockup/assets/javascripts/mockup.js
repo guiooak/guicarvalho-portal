@@ -42,10 +42,18 @@
   document.addEventListener("click", (event) => {
     if (event.target.closest("[data-theme-toggle]")) toggleTheme();
     if (event.target.closest("[data-notes-toggle]")) toggleNotes();
-    // From the phone menu: close the menu first, then drop the newsletter note in.
-    if (event.target.closest("[data-newsletter-from-menu]")) {
+    // The newsletter note is a modal dialog: it blocks the page until closed
+    // (the × button, Esc, or a click on the dimmed backdrop).
+    const note = document.getElementById("newsletter-drop");
+    if (note && event.target.closest("[data-newsletter-open]")) {
       document.getElementById("site-menu")?.hidePopover();
-      document.getElementById("newsletter-drop")?.showPopover();
+      note.showModal();
+    } else if (note && event.target.closest("[data-newsletter-close]")) {
+      note.close();
+    } else if (note && event.target === note) {
+      const r = note.getBoundingClientRect();
+      const inside = event.clientX >= r.left && event.clientX <= r.right && event.clientY >= r.top && event.clientY <= r.bottom;
+      if (!inside) note.close();
     }
   });
 
@@ -334,7 +342,7 @@
               <a class="lang-switch" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}" title="${s.other.name}">${s.other.code}</a>
               <a class="icon-button" href="${root}${s.searchHref}" aria-label="${s.search}"><svg aria-hidden="true"><use href="#icon-search"/></svg></a>
               <button class="icon-button" type="button" data-theme-toggle><svg aria-hidden="true"><use href="#icon-moon"/></svg></button>
-              <button class="button button--small site-header__newsletter" type="button" popovertarget="newsletter-drop">Newsletter</button>
+              <button class="button button--small site-header__newsletter" type="button" data-newsletter-open>Newsletter</button>
               <button class="icon-button site-header__menu-button" type="button" popovertarget="site-menu" aria-label="${s.menu}"><svg aria-hidden="true"><use href="#icon-menu"/></svg></button>
             </div>
           </div>
@@ -344,7 +352,7 @@
                 <li><a class="site-nav__link" href="${alternate}" hreflang="${s.other.lang}" lang="${s.other.lang}">${s.other.name}</a></li>
               </ul>
             </nav>
-            <button class="button" type="button" data-newsletter-from-menu style="width:100%;margin-top:var(--space-xs)">${s.subscribe}</button>
+            <button class="button" type="button" data-newsletter-open style="width:100%;margin-top:var(--space-xs)">${s.subscribe}</button>
           </div>
         </header>`;
       syncThemeButtons();
@@ -362,8 +370,8 @@
   // The newsletter note, hidden until a "Newsletter" button drops it in,
   // falling through the air like a loose sheet of paper.
   const newsletterDrop = (n) => `
-    <div class="sticky-note newsletter-note newsletter-drop" id="newsletter-drop" popover aria-labelledby="newsletter-drop-title">
-      <button class="newsletter-drop__close" type="button" popovertarget="newsletter-drop" popovertargetaction="hide" aria-label="${n.close}">×</button>
+    <dialog class="sticky-note newsletter-note newsletter-drop" id="newsletter-drop" aria-labelledby="newsletter-drop-title">
+      <button class="newsletter-drop__close" type="button" data-newsletter-close aria-label="${n.close}">×</button>
       <h2 id="newsletter-drop-title">${n.title}</h2>
       <p>${n.text}</p>
       <form action="#" onsubmit="return false">
@@ -376,7 +384,7 @@
         <button class="button" type="submit">${n.send}</button>
       </form>
       <small>${n.fine}</small>
-    </div>`;
+    </dialog>`;
 
   // The notebook's back cover: dark sage, a big sign-off, links, legal.
   class SiteFooter extends HTMLElement {
@@ -397,7 +405,7 @@
               </a>
               <p class="site-footer__thanks">${s.thanks}</p>
               <p class="site-footer__lead">${s.lead}</p>
-              <button class="site-footer__cta" type="button" popovertarget="newsletter-drop">✉️ ${s.cta}</button>
+              <button class="site-footer__cta" type="button" data-newsletter-open>✉️ ${s.cta}</button>
             </div>
             <nav class="site-footer__cols" aria-label="${s.footer}">
               <div><h2 class="site-footer__title">${s.portal}</h2><ul class="site-footer__links" role="list">${list(s.nav.map(([, label, href]) => [label, href]))}</ul></div>

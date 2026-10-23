@@ -116,7 +116,7 @@ html = f'''<!doctype html>
   <link rel="icon" href="{ROOT}assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css?v=2026-10-23a">
   <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css?v=2026-10-23a">
-  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23a"></script>
+  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23c"></script>
   <style>{CSS}
   </style>
 </head>

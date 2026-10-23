@@ -172,14 +172,16 @@
 }
 
 /*
- * The newsletter note as a popover: it drops in from above the page,
+ * The newsletter note as a modal <dialog>: it drops in from above the page,
  * swaying side to side like a loose sheet of paper, and lands tilted.
  */
 .newsletter-drop {
   position: fixed;
   inset: 0;
   width: min(34rem, 100vw - 2 * var(--gutter));
+  max-width: none;
   height: fit-content;
+  max-height: none;
   margin: auto;
   border: 0;
   overflow: visible;
@@ -191,19 +193,19 @@
   scale: 0.85;
   opacity: 0;
   transition:
-    translate 750ms cubic-bezier(0.55, -0.35, 0.75, 0.45),
-    rotate 750ms cubic-bezier(0.55, -0.35, 0.75, 0.45),
-    scale 750ms ease-in,
-    opacity 250ms ease-in 500ms,
-    display 750ms allow-discrete,
-    overlay 750ms allow-discrete;
+    translate 375ms cubic-bezier(0.55, -0.35, 0.75, 0.45),
+    rotate 375ms cubic-bezier(0.55, -0.35, 0.75, 0.45),
+    scale 375ms ease-in,
+    opacity 125ms ease-in 250ms,
+    display 600ms allow-discrete,
+    overlay 600ms allow-discrete;
 
-  &:popover-open {
+  &[open] {
     translate: 0 0;
     rotate: -1.2deg;
     scale: 1;
     opacity: 1;
-    animation: paper-fall 1.9s backwards;
+    animation: paper-fall 950ms backwards;
   }
 
   /* The overlay fades (and blurs) in as the note drops, and out as it flies off. */
@@ -213,18 +215,18 @@
     transition:
       background-color 600ms ease,
       backdrop-filter 600ms ease,
-      display 750ms allow-discrete,
-      overlay 750ms allow-discrete;
+      display 600ms allow-discrete,
+      overlay 600ms allow-discrete;
   }
 
-  &:popover-open::backdrop {
+  &[open]::backdrop {
     background-color: rgb(23 32 26 / 0.35);
     backdrop-filter: blur(2px);
   }
 }
 
 @starting-style {
-  .newsletter-drop:popover-open::backdrop {
+  .newsletter-drop[open]::backdrop {
     background-color: rgb(23 32 26 / 0);
     backdrop-filter: blur(0);
   }
@@ -273,7 +275,12 @@
     transition: opacity 200ms, display 200ms allow-discrete, overlay 200ms allow-discrete;
   }
 
-  .newsletter-drop:popover-open {
+  .newsletter-drop[open] {
     animation: backdrop-in 200ms ease-out both;
   }
+}
+
+/* No scrolling the page behind the open note. */
+html:has(.newsletter-drop[open]) {
+  overflow: hidden;
 }

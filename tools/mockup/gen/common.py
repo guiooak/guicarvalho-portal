@@ -31,7 +31,7 @@ def page(title, concept, desc, body, css):
   <link rel="icon" href="{ROOT}assets/images/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{ROOT}assets/stylesheets/application.css?v=2026-10-23a">
   <link rel="stylesheet" href="{ROOT}assets/stylesheets/mockup.css?v=2026-10-23a">
-  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23a"></script>
+  <script src="{ROOT}assets/javascripts/mockup.js?v=2026-10-23c"></script>
   <style>
     @layer mockup {{
       .concept-bar {{ display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; justify-content:space-between; padding:.6rem var(--gutter); background:#d4a017; color:#1a1400; font-size:var(--text-xs); font-weight:800; }}
